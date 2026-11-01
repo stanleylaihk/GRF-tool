@@ -1,5 +1,7 @@
 # GRF Tool for macOS
 
+<img src="Assets/grf-app-icon-pixel-wand.png" alt="GRF Tool App 圖示：淺灰底、深灰 GRF 及像素魔法棒" width="160">
+
 原生 macOS《仙境傳說 RO》資源管理及預覽工具。用一個 App 瀏覽 GRF／GPF、搜尋文字、預覽地圖及角色資源，再解包或另存修改後嘅 GRF。
 
 以 SwiftUI 重建舊 Windows 工具嘅工作流程，整合 **GRF Tool 1.2.0（`grftool.exe`）**、**GRFBuilder 0.1.30（`grfbuilder.exe`）** 同 **SPRViewer（`SPRViewer.exe`）** 嘅主要用途，並加入場景、模型、動作及文字編碼預覽。呢個係原生重建嘅 App，唔係將 EXE 包裝後執行；唔需要 Windows、Wine、帳戶或伺服器，所有資源都喺本機處理。

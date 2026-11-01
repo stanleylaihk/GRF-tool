@@ -14,6 +14,7 @@ output="$project_dir/release/GRF Tool.app"
 mkdir -p "$output/Contents/MacOS" "$output/Contents/Resources"
 cp "$binary_dir/GRFToolMac" "$output/Contents/MacOS/GRFToolMac"
 cp "$project_dir/Info.plist" "$output/Contents/Info.plist"
+cp "$project_dir/Assets/AppIcon.icns" "$output/Contents/Resources/AppIcon.icns"
 if [[ -d "$binary_dir/GRFToolMac_GRFCore.bundle" ]]; then
     ditto "$binary_dir/GRFToolMac_GRFCore.bundle" "$output/Contents/Resources/GRFToolMac_GRFCore.bundle"
 fi
