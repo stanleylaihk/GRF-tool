@@ -1,0 +1,7 @@
+.build/
+.swiftpm/
+release/
+*.grf
+*.gpf
+
+.DS_Store

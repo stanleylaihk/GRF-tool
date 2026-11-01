@@ -1,0 +1,456 @@
+{
+  "dllSHA256": "befa33fb43f03c6d0b9cbb302bfd7eb7efa2ba8ec682f75f63ac5cd03653570d",
+  "oracle": "Unicorn isolated sub_1001d060, allocator/free stubs, no DLL initialization",
+  "sections": [
+    {
+      "file": "11725.gr2",
+      "fileSHA256": "e1d09f70d4f9148c1939784750db1d0af083e77ca207483527b4575e0dffe0fd",
+      "section": 0,
+      "compression": 1,
+      "size": 52368,
+      "sha256": "95fce9f7d8e70ec75236aa8a394443c2677b29e1fd2ba37551bac9bc0f78a3c8",
+      "output": "11725-0.bin"
+    },
+    {
+      "file": "13214.gr2",
+      "fileSHA256": "6217636e88bee0f8c0870309d28d5796b7c2493169fd4a91f3d8c1348cdc4648",
+      "section": 0,
+      "compression": 1,
+      "size": 41104,
+      "sha256": "e23384cd1ca368251b89e832d42107065a7cff5d09bd937d5358c9004a5af0db",
+      "output": "13214-0.bin"
+    },
+    {
+      "file": "1468.gr2",
+      "fileSHA256": "36fa5e49a257e7afbdd5b086b728498d5b423c7b5b6d175ca278280056c00fd1",
+      "section": 0,
+      "compression": 1,
+      "size": 69796,
+      "sha256": "86efba94d1aedf47132997f618c678cfe08efa8b76e606fac7c63f1943a3835e",
+      "output": "1468-0.bin"
+    },
+    {
+      "file": "1468.gr2",
+      "fileSHA256": "36fa5e49a257e7afbdd5b086b728498d5b423c7b5b6d175ca278280056c00fd1",
+      "section": 1,
+      "compression": 1,
+      "size": 2560,
+      "sha256": "d43abbdce654c722e7d5dec757a3e9bb526b4f0437d57e9765ad6d46b41b3f85",
+      "output": "1468-1.bin"
+    },
+    {
+      "file": "1468.gr2",
+      "fileSHA256": "36fa5e49a257e7afbdd5b086b728498d5b423c7b5b6d175ca278280056c00fd1",
+      "section": 2,
+      "compression": 1,
+      "size": 672,
+      "sha256": "b7b8b45c0895c3a847c163765969325a653ed311818d8b2b02cc71057a3215b8",
+      "output": "1468-2.bin"
+    },
+    {
+      "file": "17.gr2",
+      "fileSHA256": "31d8c6334be7eac0e5c930b4b5df526410646f28758172e3a266b7665672cc0d",
+      "section": 0,
+      "compression": 1,
+      "size": 38520,
+      "sha256": "9913c5cd8d5a4d213915512d87636b4fbf88e5fed32b2476f48fca90d4f83436",
+      "output": "17-0.bin"
+    },
+    {
+      "file": "17.gr2",
+      "fileSHA256": "31d8c6334be7eac0e5c930b4b5df526410646f28758172e3a266b7665672cc0d",
+      "section": 1,
+      "compression": 1,
+      "size": 2560,
+      "sha256": "371454cdea8622ad9dc40c5e88efae272d4895f42fa963a3ae91cb5a8cbf8ace",
+      "output": "17-1.bin"
+    },
+    {
+      "file": "17.gr2",
+      "fileSHA256": "31d8c6334be7eac0e5c930b4b5df526410646f28758172e3a266b7665672cc0d",
+      "section": 2,
+      "compression": 1,
+      "size": 672,
+      "sha256": "b7b8b45c0895c3a847c163765969325a653ed311818d8b2b02cc71057a3215b8",
+      "output": "17-2.bin"
+    },
+    {
+      "file": "18046.gr2",
+      "fileSHA256": "22311b3f02500305745cb6a59e3fd6f4e474212994ad3a618e644726c02de72a",
+      "section": 0,
+      "compression": 1,
+      "size": 76344,
+      "sha256": "ee46782355d8e1a9112f1165354d7b9dfac7664900f6d3ff0b659d00bde271fa",
+      "output": "18046-0.bin"
+    },
+    {
+      "file": "18046.gr2",
+      "fileSHA256": "22311b3f02500305745cb6a59e3fd6f4e474212994ad3a618e644726c02de72a",
+      "section": 1,
+      "compression": 1,
+      "size": 2560,
+      "sha256": "8cd24c071a5aecf192eaac33e50205694afda301a08d0c095d1632d1953852e1",
+      "output": "18046-1.bin"
+    },
+    {
+      "file": "18046.gr2",
+      "fileSHA256": "22311b3f02500305745cb6a59e3fd6f4e474212994ad3a618e644726c02de72a",
+      "section": 2,
+      "compression": 1,
+      "size": 672,
+      "sha256": "b7b8b45c0895c3a847c163765969325a653ed311818d8b2b02cc71057a3215b8",
+      "output": "18046-2.bin"
+    },
+    {
+      "file": "18046.gr2",
+      "fileSHA256": "22311b3f02500305745cb6a59e3fd6f4e474212994ad3a618e644726c02de72a",
+      "section": 3,
+      "compression": 1,
+      "size": 31520,
+      "sha256": "9cec495eaf68e8be844f04a7da297f0b8c54fb7ce0c2bb4f6a8c6c29e413fe59",
+      "output": "18046-3.bin"
+    },
+    {
+      "file": "18046.gr2",
+      "fileSHA256": "22311b3f02500305745cb6a59e3fd6f4e474212994ad3a618e644726c02de72a",
+      "section": 4,
+      "compression": 1,
+      "size": 11736,
+      "sha256": "9d7e89164621fb914ccf806022300cc28063dcd5c46c2d846715a760d48de254",
+      "output": "18046-4.bin"
+    },
+    {
+      "file": "18046.gr2",
+      "fileSHA256": "22311b3f02500305745cb6a59e3fd6f4e474212994ad3a618e644726c02de72a",
+      "section": 5,
+      "compression": 0,
+      "size": 70532,
+      "sha256": "68ac56ddf58976c0ada1ac866db2c4d02c29cb16ab48b181d358f52745c00318",
+      "output": "18046-5.bin"
+    },
+    {
+      "file": "19601.gr2",
+      "fileSHA256": "9c22930c8b008aa7e17261d08af931ebf264432d28149e676b756350f4f42470",
+      "section": 0,
+      "compression": 1,
+      "size": 37100,
+      "sha256": "9501ebf26f55c9a352be53ba078374d7ead43dee6be2b3f89b037c1bdaeabd9b",
+      "output": "19601-0.bin"
+    },
+    {
+      "file": "2026.gr2",
+      "fileSHA256": "054a538b8067b8bf6cfa5973cdb42084f2bd1eb768df0ec6a16651fb9462bfdf",
+      "section": 0,
+      "compression": 1,
+      "size": 65180,
+      "sha256": "ba33b0ddc4189228fcf8496026503959ea81b0260a3035081e34cc958cd794ba",
+      "output": "2026-0.bin"
+    },
+    {
+      "file": "2026.gr2",
+      "fileSHA256": "054a538b8067b8bf6cfa5973cdb42084f2bd1eb768df0ec6a16651fb9462bfdf",
+      "section": 3,
+      "compression": 1,
+      "size": 29440,
+      "sha256": "4fc38540856831d8d8a7daf74039ba721d578aa33ea2ba8c2c63108da20a6a46",
+      "output": "2026-3.bin"
+    },
+    {
+      "file": "2026.gr2",
+      "fileSHA256": "054a538b8067b8bf6cfa5973cdb42084f2bd1eb768df0ec6a16651fb9462bfdf",
+      "section": 4,
+      "compression": 1,
+      "size": 11340,
+      "sha256": "f494e538064704b089c7512741e3d11a41c14a3158872ad30157534a0bb10bd6",
+      "output": "2026-4.bin"
+    },
+    {
+      "file": "2026.gr2",
+      "fileSHA256": "054a538b8067b8bf6cfa5973cdb42084f2bd1eb768df0ec6a16651fb9462bfdf",
+      "section": 5,
+      "compression": 0,
+      "size": 73556,
+      "sha256": "b70ee37be0ec9478cd7f4278b6f94b7d450feaf55eb81033a4410032cba9e18d",
+      "output": "2026-5.bin"
+    },
+    {
+      "file": "24398.gr2",
+      "fileSHA256": "ac6be7fd49ab3eb3292d9b506996f20eef65839c4785b2e744da9b1f8acad471",
+      "section": 0,
+      "compression": 1,
+      "size": 84472,
+      "sha256": "219e1404424919c510a0d299c0a4ce57b06597268e7b217ad58f6cdd41c5e5d5",
+      "output": "24398-0.bin"
+    },
+    {
+      "file": "25470.gr2",
+      "fileSHA256": "a6d455a4204c27e0bc1d5e508c3135d2f610e56933e182cfaac98cec6fc03158",
+      "section": 0,
+      "compression": 1,
+      "size": 58952,
+      "sha256": "f77ffe2ef2622b20cc79b97fd7e53056cc8cad60c4f8eb6788c2bbab9f8a4246",
+      "output": "25470-0.bin"
+    },
+    {
+      "file": "25470.gr2",
+      "fileSHA256": "a6d455a4204c27e0bc1d5e508c3135d2f610e56933e182cfaac98cec6fc03158",
+      "section": 1,
+      "compression": 1,
+      "size": 2560,
+      "sha256": "cb13ebdc71dbe9533a5dbbbb319c21e3a25020414023dac86585280623eddfe8",
+      "output": "25470-1.bin"
+    },
+    {
+      "file": "25470.gr2",
+      "fileSHA256": "a6d455a4204c27e0bc1d5e508c3135d2f610e56933e182cfaac98cec6fc03158",
+      "section": 2,
+      "compression": 1,
+      "size": 672,
+      "sha256": "b7b8b45c0895c3a847c163765969325a653ed311818d8b2b02cc71057a3215b8",
+      "output": "25470-2.bin"
+    },
+    {
+      "file": "2627.gr2",
+      "fileSHA256": "b850bcb443505e6b9e87196cb8b6ed3b2744dcda0fc73dd6cab8da679f42957f",
+      "section": 0,
+      "compression": 1,
+      "size": 51660,
+      "sha256": "262fc90d9129c1a7a787bfe2977eef8f4702599bc6e580c205bcb6016b1ca143",
+      "output": "2627-0.bin"
+    },
+    {
+      "file": "2627.gr2",
+      "fileSHA256": "b850bcb443505e6b9e87196cb8b6ed3b2744dcda0fc73dd6cab8da679f42957f",
+      "section": 3,
+      "compression": 1,
+      "size": 6368,
+      "sha256": "84dd06f0f1fe44d84b542fff1d14988b8e486eb1b72c4c5bb27a5c872731eef0",
+      "output": "2627-3.bin"
+    },
+    {
+      "file": "2627.gr2",
+      "fileSHA256": "b850bcb443505e6b9e87196cb8b6ed3b2744dcda0fc73dd6cab8da679f42957f",
+      "section": 4,
+      "compression": 1,
+      "size": 1656,
+      "sha256": "6b4f630ca5bb7d724f1a618aec2294932c9ac73de8ec0abb6bbf1f7164678e9d",
+      "output": "2627-4.bin"
+    },
+    {
+      "file": "2627.gr2",
+      "fileSHA256": "b850bcb443505e6b9e87196cb8b6ed3b2744dcda0fc73dd6cab8da679f42957f",
+      "section": 5,
+      "compression": 0,
+      "size": 17692,
+      "sha256": "67ca79b55542caf58a80958bc43d939a7a866d048140acb0aebdc4d1ce7c33b2",
+      "output": "2627-5.bin"
+    },
+    {
+      "file": "26402.gr2",
+      "fileSHA256": "1cdb974bf8341435defbd1a1fe95be5ed9a1ac1b8fe277e177817e354483adce",
+      "section": 0,
+      "compression": 1,
+      "size": 76316,
+      "sha256": "a84e01905672673329ee0fdf1c64a6af0d9100213deda0123e48f875e9d46677",
+      "output": "26402-0.bin"
+    },
+    {
+      "file": "37864.gr2",
+      "fileSHA256": "dc08c70f05a368477128cc40e644342ed6adfd3a03e83b734346c49b6a27c6cc",
+      "section": 0,
+      "compression": 1,
+      "size": 59444,
+      "sha256": "068e852326e8239913fd7987642ad2ddb1677141a406ddcdba2e8d3afe82ed72",
+      "output": "37864-0.bin"
+    },
+    {
+      "file": "37864.gr2",
+      "fileSHA256": "dc08c70f05a368477128cc40e644342ed6adfd3a03e83b734346c49b6a27c6cc",
+      "section": 3,
+      "compression": 1,
+      "size": 23200,
+      "sha256": "09ccdee4293333e171dae703c443b85751abd7c55799bf9cfb52377dc86d8b14",
+      "output": "37864-3.bin"
+    },
+    {
+      "file": "37864.gr2",
+      "fileSHA256": "dc08c70f05a368477128cc40e644342ed6adfd3a03e83b734346c49b6a27c6cc",
+      "section": 4,
+      "compression": 1,
+      "size": 9072,
+      "sha256": "64371f0834b39d879bee385c0104b985ea8552c644b909c955049f3142c4fc57",
+      "output": "37864-4.bin"
+    },
+    {
+      "file": "37864.gr2",
+      "fileSHA256": "dc08c70f05a368477128cc40e644342ed6adfd3a03e83b734346c49b6a27c6cc",
+      "section": 5,
+      "compression": 0,
+      "size": 72368,
+      "sha256": "8ab9b608d3c080de29dfc1ffc8c8fd552fafd68d3e124976a1daf228b2b61e76",
+      "output": "37864-5.bin"
+    },
+    {
+      "file": "41590.gr2",
+      "fileSHA256": "f03887ef10f6acb95e3c454cc11885514a36fa08d74b9ef9002334aecdeed061",
+      "section": 0,
+      "compression": 1,
+      "size": 66792,
+      "sha256": "a582b5cae10404afff475a4c9348406b6bdfb0afeb25b91968abd1d90e4fab78",
+      "output": "41590-0.bin"
+    },
+    {
+      "file": "41590.gr2",
+      "fileSHA256": "f03887ef10f6acb95e3c454cc11885514a36fa08d74b9ef9002334aecdeed061",
+      "section": 5,
+      "compression": 0,
+      "size": 98028,
+      "sha256": "ddbf1f7fd10e1d87643c1d8d1c7b65faa9d60ce594e006174b4e0ced4e73772b",
+      "output": "41590-5.bin"
+    },
+    {
+      "file": "43356.gr2",
+      "fileSHA256": "06f845d0c018d399f9870c405ac38a071066a613ec14f8b5babcc215aa082d37",
+      "section": 0,
+      "compression": 1,
+      "size": 54820,
+      "sha256": "352f3f34d32a5f429dc5ac15876f8704c24e6318624da38226a2e901d8316dd5",
+      "output": "43356-0.bin"
+    },
+    {
+      "file": "43356.gr2",
+      "fileSHA256": "06f845d0c018d399f9870c405ac38a071066a613ec14f8b5babcc215aa082d37",
+      "section": 3,
+      "compression": 1,
+      "size": 11840,
+      "sha256": "a3ab8e9e57187415ae5cc9c5002b1ab01e01025e5c9de7c52f8c6d3a58f70a91",
+      "output": "43356-3.bin"
+    },
+    {
+      "file": "43356.gr2",
+      "fileSHA256": "06f845d0c018d399f9870c405ac38a071066a613ec14f8b5babcc215aa082d37",
+      "section": 4,
+      "compression": 1,
+      "size": 2280,
+      "sha256": "f9582cec8da4c4dbffac7bb8dfcbff7131c7834f7dc2e783ad4f9e4e6a74ba1c",
+      "output": "43356-4.bin"
+    },
+    {
+      "file": "43356.gr2",
+      "fileSHA256": "06f845d0c018d399f9870c405ac38a071066a613ec14f8b5babcc215aa082d37",
+      "section": 5,
+      "compression": 0,
+      "size": 18976,
+      "sha256": "09b0cc6a9cb6d6a26a187803af04132e1494fae739bb92524453d078931c3617",
+      "output": "43356-5.bin"
+    },
+    {
+      "file": "49145.gr2",
+      "fileSHA256": "785a3019be8a0feb4aaf46949d28b5bbe6a3a19590be40f3c0d813f67a5ca5eb",
+      "section": 0,
+      "compression": 1,
+      "size": 60516,
+      "sha256": "01dbc386a8d2f36cfe1eab8ea3d7f3030b827452ab61ce490bc1ca1dd4a4f9dc",
+      "output": "49145-0.bin"
+    },
+    {
+      "file": "50589.gr2",
+      "fileSHA256": "b177c370c659eab33746574f21af1d536372020c47c67aa43bbece94969852d1",
+      "section": 0,
+      "compression": 1,
+      "size": 46032,
+      "sha256": "f7eba3843378804d7c3f0f73e32babf46974b1799ae8d68a840d2f06d2762bc3",
+      "output": "50589-0.bin"
+    },
+    {
+      "file": "51738.gr2",
+      "fileSHA256": "b139dc834d9578c0a67a7ae4fcefecb0dead03b4a74f19758a099cfc1b7a4e14",
+      "section": 0,
+      "compression": 1,
+      "size": 27416,
+      "sha256": "489aa242095a36b326683efcc1201c66089355b53f751945d5def344d8bcba77",
+      "output": "51738-0.bin"
+    },
+    {
+      "file": "51738.gr2",
+      "fileSHA256": "b139dc834d9578c0a67a7ae4fcefecb0dead03b4a74f19758a099cfc1b7a4e14",
+      "section": 3,
+      "compression": 1,
+      "size": 8704,
+      "sha256": "e6541d228e196425c605ddb730bc7e1ffa559e8e3a8ae5bc19b91a9b5a121154",
+      "output": "51738-3.bin"
+    },
+    {
+      "file": "51738.gr2",
+      "fileSHA256": "b139dc834d9578c0a67a7ae4fcefecb0dead03b4a74f19758a099cfc1b7a4e14",
+      "section": 4,
+      "compression": 1,
+      "size": 2304,
+      "sha256": "3d3b190265cf7d1092afd1ed6b4fc41f4e1128061521a541d315ee2c8c451c36",
+      "output": "51738-4.bin"
+    },
+    {
+      "file": "51738.gr2",
+      "fileSHA256": "b139dc834d9578c0a67a7ae4fcefecb0dead03b4a74f19758a099cfc1b7a4e14",
+      "section": 5,
+      "compression": 0,
+      "size": 17648,
+      "sha256": "70f2cea3204cf4a2bec0ffb283fb1bd93aacf004352245b8054b8d58301cca75",
+      "output": "51738-5.bin"
+    },
+    {
+      "file": "51834.gr2",
+      "fileSHA256": "24bdc6321a98f4bc5c7455480cb0203f98d2e5e89721a0a72d711939489aa45c",
+      "section": 0,
+      "compression": 1,
+      "size": 22160,
+      "sha256": "5661c9efdf8f1be34dc74a18348be40839a0d0cf6fd4d12d391dca386ae2d259",
+      "output": "51834-0.bin"
+    },
+    {
+      "file": "55045.gr2",
+      "fileSHA256": "111e893ae933afb96331adf2dfebbe141569446ed4bffc1597c7ef70ba30644e",
+      "section": 0,
+      "compression": 1,
+      "size": 59496,
+      "sha256": "9586ada6d46387b3c9bf4d6c60c7e3d6662e3230114e051f45843f62a69c65f3",
+      "output": "55045-0.bin"
+    },
+    {
+      "file": "55983.gr2",
+      "fileSHA256": "624cd8f5d094d2bf92b4ad6bba42ad3b055154a2d4dfea0ee84991ca2a07ed36",
+      "section": 0,
+      "compression": 1,
+      "size": 51612,
+      "sha256": "7001f7d9f37318135c780b92b8637de1b59dbdec87c6099fac8e2462bc158a1a",
+      "output": "55983-0.bin"
+    },
+    {
+      "file": "55983.gr2",
+      "fileSHA256": "624cd8f5d094d2bf92b4ad6bba42ad3b055154a2d4dfea0ee84991ca2a07ed36",
+      "section": 1,
+      "compression": 1,
+      "size": 2560,
+      "sha256": "664fb91ea7ab3006d7f80b85d3741d8135c4ce3f74d566f13bf1c7b48d2f8975",
+      "output": "55983-1.bin"
+    },
+    {
+      "file": "55983.gr2",
+      "fileSHA256": "624cd8f5d094d2bf92b4ad6bba42ad3b055154a2d4dfea0ee84991ca2a07ed36",
+      "section": 2,
+      "compression": 1,
+      "size": 672,
+      "sha256": "b7b8b45c0895c3a847c163765969325a653ed311818d8b2b02cc71057a3215b8",
+      "output": "55983-2.bin"
+    },
+    {
+      "file": "56871.gr2",
+      "fileSHA256": "ec2bbfbc4f76bfe0bb94d29f1b3ca40a7c5d2f278bbc87d671977eb86c0c3680",
+      "section": 0,
+      "compression": 1,
+      "size": 52796,
+      "sha256": "d1db99e238652e153db056be0a1a6fe3722ccadee6bd0720876f3e8a88d36e4e",
+      "output": "56871-0.bin"
+    }
+  ]
+}

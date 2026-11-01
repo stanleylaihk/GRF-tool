@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0"><dict>
+    <key>CFBundleIdentifier</key><string>local.grftool.mac</string>
+    <key>CFBundleName</key><string>GRF Tool</string>
+    <key>CFBundleDisplayName</key><string>GRF Tool</string>
+    <key>CFBundleExecutable</key><string>GRFToolMac</string>
+    <key>CFBundlePackageType</key><string>APPL</string>
+    <key>CFBundleShortVersionString</key><string>1.4.1</string>
+    <key>CFBundleVersion</key><string>12</string>
+    <key>LSMinimumSystemVersion</key><string>14.0</string>
+    <key>NSHighResolutionCapable</key><true/>
+    <key>NSPrincipalClass</key><string>NSApplication</string>
+    <key>CFBundleDocumentTypes</key><array><dict>
+        <key>CFBundleTypeName</key><string>GRF Archive</string>
+        <key>CFBundleTypeExtensions</key><array><string>grf</string><string>gpf</string><string>spr</string><string>pal</string><string>act</string><string>lua</string><string>lub</string><string>gat</string><string>gnd</string><string>rsw</string><string>rsm</string><string>imf</string><string>fna</string><string>gr2</string></array>
+        <key>CFBundleTypeRole</key><string>Viewer</string>
+        <key>LSHandlerRank</key><string>Alternate</string>
+    </dict></array>
+</dict></plist>

@@ -1,0 +1,462 @@
+{
+  "dllEvidence": "ev_9c27d96a1a0d08539796879aabff5ad5bd86cf89838d4db379311951ba6fa8ae",
+  "exeEvidence": "ev_d797e022fd81ed5cd0090125ded9c4df98ad6c74d71359b8b126e36f2fc38153",
+  "dll": {
+    "path": "/Users/successslai/Git/REA/grf/RO 私服/granny2.dll",
+    "sha256": "befa33fb43f03c6d0b9cbb302bfd7eb7efa2ba8ec682f75f63ac5cd03653570d",
+    "bytes": 230455
+  },
+  "exports": [
+    {
+      "name": "_GrannyDecompressData@28",
+      "ordinal": 86,
+      "address": "0x100274d0",
+      "forwarder": null
+    },
+    {
+      "name": "_GrannyFreeFile@4",
+      "ordinal": 137,
+      "address": "0x100272e0",
+      "forwarder": null
+    },
+    {
+      "name": "_GrannyGetFileInfo@4",
+      "ordinal": 181,
+      "address": "0x10027620",
+      "forwarder": null
+    },
+    {
+      "name": "_GrannyGetMeshIndexCount@4",
+      "ordinal": 205,
+      "address": "0x10027ef0",
+      "forwarder": null
+    },
+    {
+      "name": "_GrannyGetMeshIndices@4",
+      "ordinal": 206,
+      "address": "0x10027f10",
+      "forwarder": null
+    },
+    {
+      "name": "_GrannyGetMeshVertexCount@4",
+      "ordinal": 209,
+      "address": "0x10027ea0",
+      "forwarder": null
+    },
+    {
+      "name": "_GrannyGetMeshVertexType@4",
+      "ordinal": 210,
+      "address": "0x10027e90",
+      "forwarder": null
+    },
+    {
+      "name": "_GrannyGetMeshVertices@4",
+      "ordinal": 211,
+      "address": "0x10027ed0",
+      "forwarder": null
+    },
+    {
+      "name": "_GrannyReadEntireFile@4",
+      "ordinal": 374,
+      "address": "0x10027220",
+      "forwarder": null
+    },
+    {
+      "name": "_GrannyReadEntireFileFromMemory@8",
+      "ordinal": 375,
+      "address": "0x10027230",
+      "forwarder": null
+    },
+    {
+      "name": "_GrannyReadEntireFileFromReader@4",
+      "ordinal": 376,
+      "address": "0x10027250",
+      "forwarder": null
+    }
+  ],
+  "grannyImports": [
+    {
+      "index": 9,
+      "name": "granny2.dll",
+      "name_rva": 5990766,
+      "original_first_thunk_rva": 5987240,
+      "first_thunk_rva": 5244804,
+      "time_date_stamp": 0,
+      "forwarder_chain": 0,
+      "location": {
+        "offset": 5978400,
+        "bytes": 20
+      },
+      "functions": [
+        {
+          "hint": 220,
+          "name": "_GrannyGetControlDurationLeft@4",
+          "ordinal": null,
+          "ilt_rva": 5987240,
+          "iat_rva": 5244804,
+          "thunk_hex": "5b6912"
+        },
+        {
+          "hint": 362,
+          "name": "_GrannyNewLocalPose@4",
+          "ordinal": null,
+          "ilt_rva": 5987244,
+          "iat_rva": 5244808,
+          "thunk_hex": "5b685e"
+        },
+        {
+          "hint": 396,
+          "name": "_GrannyReadEntireFileFromMemory@8",
+          "ordinal": null,
+          "ilt_rva": 5987248,
+          "iat_rva": 5244812,
+          "thunk_hex": "5b688e"
+        },
+        {
+          "hint": 335,
+          "name": "_GrannyInstantiateModel@4",
+          "ordinal": null,
+          "ilt_rva": 5987252,
+          "iat_rva": 5244816,
+          "thunk_hex": "5b6826"
+        },
+        {
+          "hint": 376,
+          "name": "_GrannyPlayControlledAnimation@12",
+          "ordinal": null,
+          "ilt_rva": 5987256,
+          "iat_rva": 5244820,
+          "thunk_hex": "5b68ee"
+        },
+        {
+          "hint": 139,
+          "name": "_GrannyCopyMeshVertices@12",
+          "ordinal": null,
+          "ilt_rva": 5987260,
+          "iat_rva": 5244824,
+          "thunk_hex": "5b67f0"
+        },
+        {
+          "hint": 138,
+          "name": "_GrannyCopyMeshIndices@12",
+          "ordinal": null,
+          "ilt_rva": 5987264,
+          "iat_rva": 5244828,
+          "thunk_hex": "5b67d4"
+        },
+        {
+          "hint": 36,
+          "name": "GrannyPNT332VertexType",
+          "ordinal": null,
+          "ilt_rva": 5987268,
+          "iat_rva": 5244832,
+          "thunk_hex": "5b67ba"
+        },
+        {
+          "hint": 266,
+          "name": "_GrannyGetMeshVertexType@4",
+          "ordinal": null,
+          "ilt_rva": 5987272,
+          "iat_rva": 5244836,
+          "thunk_hex": "5b679c"
+        },
+        {
+          "hint": 443,
+          "name": "_GrannySetControlLoopCount@8",
+          "ordinal": null,
+          "ilt_rva": 5987276,
+          "iat_rva": 5244840,
+          "thunk_hex": "5b68ce"
+        },
+        {
+          "hint": 369,
+          "name": "_GrannyNewWorldPose@4",
+          "ordinal": null,
+          "ilt_rva": 5987280,
+          "iat_rva": 5244844,
+          "thunk_hex": "5b680e"
+        },
+        {
+          "hint": 512,
+          "name": "_GrannyVersionsMatch_@16",
+          "ordinal": null,
+          "ilt_rva": 5987284,
+          "iat_rva": 5244848,
+          "thunk_hex": "5b68b2"
+        },
+        {
+          "hint": 302,
+          "name": "_GrannyGetSystemSeconds@0",
+          "ordinal": null,
+          "ilt_rva": 5987288,
+          "iat_rva": 5244852,
+          "thunk_hex": "5b6934"
+        },
+        {
+          "hint": 298,
+          "name": "_GrannyGetSecondsElapsed@8",
+          "ordinal": null,
+          "ilt_rva": 5987292,
+          "iat_rva": 5244856,
+          "thunk_hex": "5b6950"
+        },
+        {
+          "hint": 237,
+          "name": "_GrannyGetFileInfo@4",
+          "ordinal": null,
+          "ilt_rva": 5987296,
+          "iat_rva": 5244860,
+          "thunk_hex": "5b6876"
+        },
+        {
+          "hint": 195,
+          "name": "_GrannyFreeFileSection@8",
+          "ordinal": null,
+          "ilt_rva": 5987300,
+          "iat_rva": 5244864,
+          "thunk_hex": "5b6842"
+        },
+        {
+          "hint": 262,
+          "name": "_GrannyGetMeshIndices@4",
+          "ordinal": null,
+          "ilt_rva": 5987304,
+          "iat_rva": 5244868,
+          "thunk_hex": "5b661e"
+        },
+        {
+          "hint": 191,
+          "name": "_GrannyFreeControl@4",
+          "ordinal": null,
+          "ilt_rva": 5987308,
+          "iat_rva": 5244872,
+          "thunk_hex": "5b641e"
+        },
+        {
+          "hint": 436,
+          "name": "_GrannySetControlActive@8",
+          "ordinal": null,
+          "ilt_rva": 5987312,
+          "iat_rva": 5244876,
+          "thunk_hex": "5b6436"
+        },
+        {
+          "hint": 194,
+          "name": "_GrannyFreeFile@4",
+          "ordinal": null,
+          "ilt_rva": 5987316,
+          "iat_rva": 5244880,
+          "thunk_hex": "5b6452"
+        },
+        {
+          "hint": 196,
+          "name": "_GrannyFreeLocalPose@4",
+          "ordinal": null,
+          "ilt_rva": 5987320,
+          "iat_rva": 5244884,
+          "thunk_hex": "5b6466"
+        },
+        {
+          "hint": 202,
+          "name": "_GrannyFreeWorldPose@4",
+          "ordinal": null,
+          "ilt_rva": 5987324,
+          "iat_rva": 5244888,
+          "thunk_hex": "5b6480"
+        },
+        {
+          "hint": 200,
+          "name": "_GrannyFreeModelInstance@4",
+          "ordinal": null,
+          "ilt_rva": 5987328,
+          "iat_rva": 5244892,
+          "thunk_hex": "5b649a"
+        },
+        {
+          "hint": 199,
+          "name": "_GrannyFreeMeshDeformer@4",
+          "ordinal": null,
+          "ilt_rva": 5987332,
+          "iat_rva": 5244896,
+          "thunk_hex": "5b64b8"
+        },
+        {
+          "hint": 198,
+          "name": "_GrannyFreeMeshBinding@4",
+          "ordinal": null,
+          "ilt_rva": 5987336,
+          "iat_rva": 5244900,
+          "thunk_hex": "5b64d4"
+        },
+        {
+          "hint": 140,
+          "name": "_GrannyCopyTextureImage@32",
+          "ordinal": null,
+          "ilt_rva": 5987340,
+          "iat_rva": 5244904,
+          "thunk_hex": "5b64f0"
+        },
+        {
+          "hint": 50,
+          "name": "GrannyRGBA8888PixelFormat",
+          "ordinal": null,
+          "ilt_rva": 5987344,
+          "iat_rva": 5244908,
+          "thunk_hex": "5b650e"
+        },
+        {
+          "hint": 492,
+          "name": "_GrannyTextureHasAlpha@4",
+          "ordinal": null,
+          "ilt_rva": 5987348,
+          "iat_rva": 5244912,
+          "thunk_hex": "5b652a"
+        },
+        {
+          "hint": 249,
+          "name": "_GrannyGetMaterialTextureByType@8",
+          "ordinal": null,
+          "ilt_rva": 5987352,
+          "iat_rva": 5244916,
+          "thunk_hex": "5b6546"
+        },
+        {
+          "hint": 190,
+          "name": "_GrannyFreeCompletedModelControls@4",
+          "ordinal": null,
+          "ilt_rva": 5987356,
+          "iat_rva": 5244920,
+          "thunk_hex": "5b656a"
+        },
+        {
+          "hint": 114,
+          "name": "_GrannyBuildWorldPose@24",
+          "ordinal": null,
+          "ilt_rva": 5987360,
+          "iat_rva": 5244924,
+          "thunk_hex": "5b6590"
+        },
+        {
+          "hint": 424,
+          "name": "_GrannySampleModelAnimations@16",
+          "ordinal": null,
+          "ilt_rva": 5987364,
+          "iat_rva": 5244928,
+          "thunk_hex": "5b65ac"
+        },
+        {
+          "hint": 458,
+          "name": "_GrannySetModelClock@8",
+          "ordinal": null,
+          "ilt_rva": 5987368,
+          "iat_rva": 5244932,
+          "thunk_hex": "5b65ce"
+        },
+        {
+          "hint": 301,
+          "name": "_GrannyGetSourceSkeleton@4",
+          "ordinal": null,
+          "ilt_rva": 5987372,
+          "iat_rva": 5244936,
+          "thunk_hex": "5b65e8"
+        },
+        {
+          "hint": 355,
+          "name": "_GrannyMeshIsRigid@4",
+          "ordinal": null,
+          "ilt_rva": 5987376,
+          "iat_rva": 5244940,
+          "thunk_hex": "5b6606"
+        },
+        {
+          "hint": 260,
+          "name": "_GrannyGetMeshBytesPerIndex@4",
+          "ordinal": null,
+          "ilt_rva": 5987380,
+          "iat_rva": 5244944,
+          "thunk_hex": "5b6638"
+        },
+        {
+          "hint": 148,
+          "name": "_GrannyDeformVertices@24",
+          "ordinal": null,
+          "ilt_rva": 5987384,
+          "iat_rva": 5244948,
+          "thunk_hex": "5b6658"
+        },
+        {
+          "hint": 267,
+          "name": "_GrannyGetMeshVertices@4",
+          "ordinal": null,
+          "ilt_rva": 5987388,
+          "iat_rva": 5244952,
+          "thunk_hex": "5b6674"
+        },
+        {
+          "hint": 261,
+          "name": "_GrannyGetMeshIndexCount@4",
+          "ordinal": null,
+          "ilt_rva": 5987392,
+          "iat_rva": 5244956,
+          "thunk_hex": "5b6690"
+        },
+        {
+          "hint": 324,
+          "name": "_GrannyGetWorldPoseComposite4x4@8",
+          "ordinal": null,
+          "ilt_rva": 5987396,
+          "iat_rva": 5244960,
+          "thunk_hex": "5b66ae"
+        },
+        {
+          "hint": 264,
+          "name": "_GrannyGetMeshTriangleGroups@4",
+          "ordinal": null,
+          "ilt_rva": 5987400,
+          "iat_rva": 5244964,
+          "thunk_hex": "5b66d2"
+        },
+        {
+          "hint": 265,
+          "name": "_GrannyGetMeshVertexCount@4",
+          "ordinal": null,
+          "ilt_rva": 5987404,
+          "iat_rva": 5244968,
+          "thunk_hex": "5b66f4"
+        },
+        {
+          "hint": 259,
+          "name": "_GrannyGetMeshBindingToBoneIndices@4",
+          "ordinal": null,
+          "ilt_rva": 5987408,
+          "iat_rva": 5244972,
+          "thunk_hex": "5b6712"
+        },
+        {
+          "hint": 325,
+          "name": "_GrannyGetWorldPoseComposite4x4Array@4",
+          "ordinal": null,
+          "ilt_rva": 5987412,
+          "iat_rva": 5244976,
+          "thunk_hex": "5b673a"
+        },
+        {
+          "hint": 365,
+          "name": "_GrannyNewMeshBinding@12",
+          "ordinal": null,
+          "ilt_rva": 5987416,
+          "iat_rva": 5244980,
+          "thunk_hex": "5b6764"
+        },
+        {
+          "hint": 367,
+          "name": "_GrannyNewMeshDeformer@12",
+          "ordinal": null,
+          "ilt_rva": 5987420,
+          "iat_rva": 5244984,
+          "thunk_hex": "5b6780"
+        }
+      ]
+    }
+  ]
+}

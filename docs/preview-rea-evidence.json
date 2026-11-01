@@ -1,0 +1,3823 @@
+{
+  "purpose": "SPRViewer static reference for preview/export work. No target execution.",
+  "records": [
+    {
+      "evidence_id": "ev_6741e944bcb74960f121811d9075c822ab0ae4c105456c6cb18bb2f5573a01bb",
+      "subject": {
+        "name": "SPRViewer.exe",
+        "digest": {
+          "sha256": "3dd6b55503f6a32b18be46945da2697624e0e27fc8928c0a09ad54d2cbc3664b"
+        },
+        "local_path": "/Users/successslai/Git/REA/SPRViewer.exe",
+        "format": "pe",
+        "architecture": "x86"
+      },
+      "provider": {
+        "id": "rea-pe-resources",
+        "name": "REA PE resource parser",
+        "version": "1"
+      },
+      "analysis_profile": null,
+      "predicate_type": "rea.analysis",
+      "operation": "inspect_pe_resources",
+      "parameters": {
+        "path": "/Users/successslai/Git/REA/SPRViewer.exe",
+        "max_file_bytes": 67108864,
+        "max_entries": 16384
+      },
+      "raw_result": null,
+      "normalized_result": {
+        "artifact": {
+          "path": "/Users/successslai/Git/REA/SPRViewer.exe",
+          "sha256": "3dd6b55503f6a32b18be46945da2697624e0e27fc8928c0a09ad54d2cbc3664b",
+          "bytes": 416768
+        },
+        "format": "pe32",
+        "machine": 332,
+        "directory": {
+          "rva": 421888,
+          "location": {
+            "offset": 395264,
+            "bytes": 21504
+          },
+          "data_directory_location": {
+            "offset": 392,
+            "bytes": 8
+          }
+        },
+        "directories": [
+          {
+            "path": [],
+            "entry_locations": [],
+            "location": {
+              "offset": 395264,
+              "bytes": 80
+            },
+            "characteristics": 0,
+            "timestamp": 783902937,
+            "major_version": 0,
+            "minor_version": 0,
+            "named_entries": 0,
+            "id_entries": 8
+          },
+          {
+            "path": [
+              {
+                "kind": "id",
+                "id": 1
+              }
+            ],
+            "entry_locations": [
+              {
+                "offset": 395280,
+                "bytes": 8
+              }
+            ],
+            "location": {
+              "offset": 395344,
+              "bytes": 72
+            },
+            "characteristics": 0,
+            "timestamp": 783902937,
+            "major_version": 0,
+            "minor_version": 0,
+            "named_entries": 0,
+            "id_entries": 7
+          },
+          {
+            "path": [
+              {
+                "kind": "id",
+                "id": 1
+              },
+              {
+                "kind": "id",
+                "id": 1
+              }
+            ],
+            "entry_locations": [
+              {
+                "offset": 395280,
+                "bytes": 8
+              },
+              {
+                "offset": 395360,
+                "bytes": 8
+              }
+            ],
+            "location": {
+              "offset": 395816,
+              "bytes": 24
+            },
+            "characteristics": 0,
+            "timestamp": 783902937,
+            "major_version": 0,
+            "minor_version": 0,
+            "named_entries": 0,
+            "id_entries": 1
+          },
+          {
+            "path": [
+              {
+                "kind": "id",
+                "id": 1
+              },
+              {
+                "kind": "id",
+                "id": 2
+              }
+            ],
+            "entry_locations": [
+              {
+                "offset": 395280,
+                "bytes": 8
+              },
+              {
+                "offset": 395368,
+                "bytes": 8
+              }
+            ],
+            "location": {
+              "offset": 395840,
+              "bytes": 24
+            },
+            "characteristics": 0,
+            "timestamp": 783902937,
+            "major_version": 0,
+            "minor_version": 0,
+            "named_entries": 0,
+            "id_entries": 1
+          },
+          {
+            "path": [
+              {
+                "kind": "id",
+                "id": 1
+              },
+              {
+                "kind": "id",
+                "id": 3
+              }
+            ],
+            "entry_locations": [
+              {
+                "offset": 395280,
+                "bytes": 8
+              },
+              {
+                "offset": 395376,
+                "bytes": 8
+              }
+            ],
+            "location": {
+              "offset": 395864,
+              "bytes": 24
+            },
+            "characteristics": 0,
+            "timestamp": 783902937,
+            "major_version": 0,
+            "minor_version": 0,
+            "named_entries": 0,
+            "id_entries": 1
+          },
+          {
+            "path": [
+              {
+                "kind": "id",
+                "id": 1
+              },
+              {
+                "kind": "id",
+                "id": 4
+              }
+            ],
+            "entry_locations": [
+              {
+                "offset": 395280,
+                "bytes": 8
+              },
+              {
+                "offset": 395384,
+                "bytes": 8
+              }
+            ],
+            "location": {
+              "offset": 395888,
+              "bytes": 24
+            },
+            "characteristics": 0,
+            "timestamp": 783902937,
+            "major_version": 0,
+            "minor_version": 0,
+            "named_entries": 0,
+            "id_entries": 1
+          },
+          {
+            "path": [
+              {
+                "kind": "id",
+                "id": 1
+              },
+              {
+                "kind": "id",
+                "id": 5
+              }
+            ],
+            "entry_locations": [
+              {
+                "offset": 395280,
+                "bytes": 8
+              },
+              {
+                "offset": 395392,
+                "bytes": 8
+              }
+            ],
+            "location": {
+              "offset": 395912,
+              "bytes": 24
+            },
+            "characteristics": 0,
+            "timestamp": 783902937,
+            "major_version": 0,
+            "minor_version": 0,
+            "named_entries": 0,
+            "id_entries": 1
+          },
+          {
+            "path": [
+              {
+                "kind": "id",
+                "id": 1
+              },
+              {
+                "kind": "id",
+                "id": 6
+              }
+            ],
+            "entry_locations": [
+              {
+                "offset": 395280,
+                "bytes": 8
+              },
+              {
+                "offset": 395400,
+                "bytes": 8
+              }
+            ],
+            "location": {
+              "offset": 395936,
+              "bytes": 24
+            },
+            "characteristics": 0,
+            "timestamp": 783902937,
+            "major_version": 0,
+            "minor_version": 0,
+            "named_entries": 0,
+            "id_entries": 1
+          },
+          {
+            "path": [
+              {
+                "kind": "id",
+                "id": 1
+              },
+              {
+                "kind": "id",
+                "id": 7
+              }
+            ],
+            "entry_locations": [
+              {
+                "offset": 395280,
+                "bytes": 8
+              },
+              {
+                "offset": 395408,
+                "bytes": 8
+              }
+            ],
+            "location": {
+              "offset": 395960,
+              "bytes": 24
+            },
+            "characteristics": 0,
+            "timestamp": 783902937,
+            "major_version": 0,
+            "minor_version": 0,
+            "named_entries": 0,
+            "id_entries": 1
+          },
+          {
+            "path": [
+              {
+                "kind": "id",
+                "id": 2
+              }
+            ],
+            "entry_locations": [
+              {
+                "offset": 395288,
+                "bytes": 8
+              }
+            ],
+            "location": {
+              "offset": 395416,
+              "bytes": 96
+            },
+            "characteristics": 0,
+            "timestamp": 783902937,
+            "major_version": 0,
+            "minor_version": 0,
+            "named_entries": 10,
+            "id_entries": 0
+          },
+          {
+            "path": [
+              {
+                "kind": "id",
+                "id": 2
+              },
+              {
+                "kind": "name",
+                "name": "BBABORT",
+                "utf16le_hex": "42004200410042004f0052005400",
+                "location": {
+                  "offset": 397536,
+                  "bytes": 16
+                }
+              }
+            ],
+            "entry_locations": [
+              {
+                "offset": 395288,
+                "bytes": 8
+              },
+              {
+                "offset": 395432,
+                "bytes": 8
+              }
+            ],
+            "location": {
+              "offset": 395984,
+              "bytes": 24
+            },
+            "characteristics": 0,
+            "timestamp": 783902937,
+            "major_version": 0,
+            "minor_version": 0,
+            "named_entries": 0,
+            "id_entries": 1
+          },
+          {
+            "path": [
+              {
+                "kind": "id",
+                "id": 2
+              },
+              {
+                "kind": "name",
+                "name": "BBALL",
+                "utf16le_hex": "4200420041004c004c00",
+                "location": {
+                  "offset": 397552,
+                  "bytes": 12
+                }
+              }
+            ],
+            "entry_locations": [
+              {
+                "offset": 395288,
+                "bytes": 8
+              },
+              {
+                "offset": 395440,
+                "bytes": 8
+              }
+            ],
+            "location": {
+              "offset": 396008,
+              "bytes": 24
+            },
+            "characteristics": 0,
+            "timestamp": 783902937,
+            "major_version": 0,
+            "minor_version": 0,
+            "named_entries": 0,
+            "id_entries": 1
+          },
+          {
+            "path": [
+              {
+                "kind": "id",
+                "id": 2
+              },
+              {
+                "kind": "name",
+                "name": "BBCANCEL",
+                "utf16le_hex": "42004200430041004e00430045004c00",
+                "location": {
+                  "offset": 397564,
+                  "bytes": 18
+                }
+              }
+            ],
+            "entry_locations": [
+              {
+                "offset": 395288,
+                "bytes": 8
+              },
+              {
+                "offset": 395448,
+                "bytes": 8
+              }
+            ],
+            "location": {
+              "offset": 396032,
+              "bytes": 24
+            },
+            "characteristics": 0,
+            "timestamp": 783902937,
+            "major_version": 0,
+            "minor_version": 0,
+            "named_entries": 0,
+            "id_entries": 1
+          },
+          {
+            "path": [
+              {
+                "kind": "id",
+                "id": 2
+              },
+              {
+                "kind": "name",
+                "name": "BBCLOSE",
+                "utf16le_hex": "4200420043004c004f0053004500",
+                "location": {
+                  "offset": 397582,
+                  "bytes": 16
+                }
+              }
+            ],
+            "entry_locations": [
+              {
+                "offset": 395288,
+                "bytes": 8
+              },
+              {
+                "offset": 395456,
+                "bytes": 8
+              }
+            ],
+            "location": {
+              "offset": 396056,
+              "bytes": 24
+            },
+            "characteristics": 0,
+            "timestamp": 783902937,
+            "major_version": 0,
+            "minor_version": 0,
+            "named_entries": 0,
+            "id_entries": 1
+          },
+          {
+            "path": [
+              {
+                "kind": "id",
+                "id": 2
+              },
+              {
+                "kind": "name",
+                "name": "BBHELP",
+                "utf16le_hex": "42004200480045004c005000",
+                "location": {
+                  "offset": 397598,
+                  "bytes": 14
+                }
+              }
+            ],
+            "entry_locations": [
+              {
+                "offset": 395288,
+                "bytes": 8
+              },
+              {
+                "offset": 395464,
+                "bytes": 8
+              }
+            ],
+            "location": {
+              "offset": 396080,
+              "bytes": 24
+            },
+            "characteristics": 0,
+            "timestamp": 783902937,
+            "major_version": 0,
+            "minor_version": 0,
+            "named_entries": 0,
+            "id_entries": 1
+          },
+          {
+            "path": [
+              {
+                "kind": "id",
+                "id": 2
+              },
+              {
+                "kind": "name",
+                "name": "BBIGNORE",
+                "utf16le_hex": "42004200490047004e004f0052004500",
+                "location": {
+                  "offset": 397612,
+                  "bytes": 18
+                }
+              }
+            ],
+            "entry_locations": [
+              {
+                "offset": 395288,
+                "bytes": 8
+              },
+              {
+                "offset": 395472,
+                "bytes": 8
+              }
+            ],
+            "location": {
+              "offset": 396104,
+              "bytes": 24
+            },
+            "characteristics": 0,
+            "timestamp": 783902937,
+            "major_version": 0,
+            "minor_version": 0,
+            "named_entries": 0,
+            "id_entries": 1
+          },
+          {
+            "path": [
+              {
+                "kind": "id",
+                "id": 2
+              },
+              {
+                "kind": "name",
+                "name": "BBNO",
+                "utf16le_hex": "420042004e004f00",
+                "location": {
+                  "offset": 397630,
+                  "bytes": 10
+                }
+              }
+            ],
+            "entry_locations": [
+              {
+                "offset": 395288,
+                "bytes": 8
+              },
+              {
+                "offset": 395480,
+                "bytes": 8
+              }
+            ],
+            "location": {
+              "offset": 396128,
+              "bytes": 24
+            },
+            "characteristics": 0,
+            "timestamp": 783902937,
+            "major_version": 0,
+            "minor_version": 0,
+            "named_entries": 0,
+            "id_entries": 1
+          },
+          {
+            "path": [
+              {
+                "kind": "id",
+                "id": 2
+              },
+              {
+                "kind": "name",
+                "name": "BBOK",
+                "utf16le_hex": "420042004f004b00",
+                "location": {
+                  "offset": 397640,
+                  "bytes": 10
+                }
+              }
+            ],
+            "entry_locations": [
+              {
+                "offset": 395288,
+                "bytes": 8
+              },
+              {
+                "offset": 395488,
+                "bytes": 8
+              }
+            ],
+            "location": {
+              "offset": 396152,
+              "bytes": 24
+            },
+            "characteristics": 0,
+            "timestamp": 783902937,
+            "major_version": 0,
+            "minor_version": 0,
+            "named_entries": 0,
+            "id_entries": 1
+          },
+          {
+            "path": [
+              {
+                "kind": "id",
+                "id": 2
+              },
+              {
+                "kind": "name",
+                "name": "BBRETRY",
+                "utf16le_hex": "4200420052004500540052005900",
+                "location": {
+                  "offset": 397650,
+                  "bytes": 16
+                }
+              }
+            ],
+            "entry_locations": [
+              {
+                "offset": 395288,
+                "bytes": 8
+              },
+              {
+                "offset": 395496,
+                "bytes": 8
+              }
+            ],
+            "location": {
+              "offset": 396176,
+              "bytes": 24
+            },
+            "characteristics": 0,
+            "timestamp": 783902937,
+            "major_version": 0,
+            "minor_version": 0,
+            "named_entries": 0,
+            "id_entries": 1
+          },
+          {
+            "path": [
+              {
+                "kind": "id",
+                "id": 2
+              },
+              {
+                "kind": "name",
+                "name": "BBYES",
+                "utf16le_hex": "42004200590045005300",
+                "location": {
+                  "offset": 397666,
+                  "bytes": 12
+                }
+              }
+            ],
+            "entry_locations": [
+              {
+                "offset": 395288,
+                "bytes": 8
+              },
+              {
+                "offset": 395504,
+                "bytes": 8
+              }
+            ],
+            "location": {
+              "offset": 396200,
+              "bytes": 24
+            },
+            "characteristics": 0,
+            "timestamp": 783902937,
+            "major_version": 0,
+            "minor_version": 0,
+            "named_entries": 0,
+            "id_entries": 1
+          },
+          {
+            "path": [
+              {
+                "kind": "id",
+                "id": 3
+              }
+            ],
+            "entry_locations": [
+              {
+                "offset": 395296,
+                "bytes": 8
+              }
+            ],
+            "location": {
+              "offset": 395512,
+              "bytes": 24
+            },
+            "characteristics": 0,
+            "timestamp": 783902937,
+            "major_version": 0,
+            "minor_version": 0,
+            "named_entries": 0,
+            "id_entries": 1
+          },
+          {
+            "path": [
+              {
+                "kind": "id",
+                "id": 3
+              },
+              {
+                "kind": "id",
+                "id": 1
+              }
+            ],
+            "entry_locations": [
+              {
+                "offset": 395296,
+                "bytes": 8
+              },
+              {
+                "offset": 395528,
+                "bytes": 8
+              }
+            ],
+            "location": {
+              "offset": 396224,
+              "bytes": 24
+            },
+            "characteristics": 0,
+            "timestamp": 783902937,
+            "major_version": 0,
+            "minor_version": 0,
+            "named_entries": 0,
+            "id_entries": 1
+          },
+          {
+            "path": [
+              {
+                "kind": "id",
+                "id": 6
+              }
+            ],
+            "entry_locations": [
+              {
+                "offset": 395304,
+                "bytes": 8
+              }
+            ],
+            "location": {
+              "offset": 395536,
+              "bytes": 120
+            },
+            "characteristics": 0,
+            "timestamp": 783902937,
+            "major_version": 0,
+            "minor_version": 0,
+            "named_entries": 0,
+            "id_entries": 13
+          },
+          {
+            "path": [
+              {
+                "kind": "id",
+                "id": 6
+              },
+              {
+                "kind": "id",
+                "id": 4084
+              }
+            ],
+            "entry_locations": [
+              {
+                "offset": 395304,
+                "bytes": 8
+              },
+              {
+                "offset": 395552,
+                "bytes": 8
+              }
+            ],
+            "location": {
+              "offset": 396248,
+              "bytes": 24
+            },
+            "characteristics": 0,
+            "timestamp": 783902937,
+            "major_version": 0,
+            "minor_version": 0,
+            "named_entries": 0,
+            "id_entries": 1
+          },
+          {
+            "path": [
+              {
+                "kind": "id",
+                "id": 6
+              },
+              {
+                "kind": "id",
+                "id": 4085
+              }
+            ],
+            "entry_locations": [
+              {
+                "offset": 395304,
+                "bytes": 8
+              },
+              {
+                "offset": 395560,
+                "bytes": 8
+              }
+            ],
+            "location": {
+              "offset": 396272,
+              "bytes": 24
+            },
+            "characteristics": 0,
+            "timestamp": 783902937,
+            "major_version": 0,
+            "minor_version": 0,
+            "named_entries": 0,
+            "id_entries": 1
+          },
+          {
+            "path": [
+              {
+                "kind": "id",
+                "id": 6
+              },
+              {
+                "kind": "id",
+                "id": 4086
+              }
+            ],
+            "entry_locations": [
+              {
+                "offset": 395304,
+                "bytes": 8
+              },
+              {
+                "offset": 395568,
+                "bytes": 8
+              }
+            ],
+            "location": {
+              "offset": 396296,
+              "bytes": 24
+            },
+            "characteristics": 0,
+            "timestamp": 783902937,
+            "major_version": 0,
+            "minor_version": 0,
+            "named_entries": 0,
+            "id_entries": 1
+          },
+          {
+            "path": [
+              {
+                "kind": "id",
+                "id": 6
+              },
+              {
+                "kind": "id",
+                "id": 4087
+              }
+            ],
+            "entry_locations": [
+              {
+                "offset": 395304,
+                "bytes": 8
+              },
+              {
+                "offset": 395576,
+                "bytes": 8
+              }
+            ],
+            "location": {
+              "offset": 396320,
+              "bytes": 24
+            },
+            "characteristics": 0,
+            "timestamp": 783902937,
+            "major_version": 0,
+            "minor_version": 0,
+            "named_entries": 0,
+            "id_entries": 1
+          },
+          {
+            "path": [
+              {
+                "kind": "id",
+                "id": 6
+              },
+              {
+                "kind": "id",
+                "id": 4088
+              }
+            ],
+            "entry_locations": [
+              {
+                "offset": 395304,
+                "bytes": 8
+              },
+              {
+                "offset": 395584,
+                "bytes": 8
+              }
+            ],
+            "location": {
+              "offset": 396344,
+              "bytes": 24
+            },
+            "characteristics": 0,
+            "timestamp": 783902937,
+            "major_version": 0,
+            "minor_version": 0,
+            "named_entries": 0,
+            "id_entries": 1
+          },
+          {
+            "path": [
+              {
+                "kind": "id",
+                "id": 6
+              },
+              {
+                "kind": "id",
+                "id": 4089
+              }
+            ],
+            "entry_locations": [
+              {
+                "offset": 395304,
+                "bytes": 8
+              },
+              {
+                "offset": 395592,
+                "bytes": 8
+              }
+            ],
+            "location": {
+              "offset": 396368,
+              "bytes": 24
+            },
+            "characteristics": 0,
+            "timestamp": 783902937,
+            "major_version": 0,
+            "minor_version": 0,
+            "named_entries": 0,
+            "id_entries": 1
+          },
+          {
+            "path": [
+              {
+                "kind": "id",
+                "id": 6
+              },
+              {
+                "kind": "id",
+                "id": 4090
+              }
+            ],
+            "entry_locations": [
+              {
+                "offset": 395304,
+                "bytes": 8
+              },
+              {
+                "offset": 395600,
+                "bytes": 8
+              }
+            ],
+            "location": {
+              "offset": 396392,
+              "bytes": 24
+            },
+            "characteristics": 0,
+            "timestamp": 783902937,
+            "major_version": 0,
+            "minor_version": 0,
+            "named_entries": 0,
+            "id_entries": 1
+          },
+          {
+            "path": [
+              {
+                "kind": "id",
+                "id": 6
+              },
+              {
+                "kind": "id",
+                "id": 4091
+              }
+            ],
+            "entry_locations": [
+              {
+                "offset": 395304,
+                "bytes": 8
+              },
+              {
+                "offset": 395608,
+                "bytes": 8
+              }
+            ],
+            "location": {
+              "offset": 396416,
+              "bytes": 24
+            },
+            "characteristics": 0,
+            "timestamp": 783902937,
+            "major_version": 0,
+            "minor_version": 0,
+            "named_entries": 0,
+            "id_entries": 1
+          },
+          {
+            "path": [
+              {
+                "kind": "id",
+                "id": 6
+              },
+              {
+                "kind": "id",
+                "id": 4092
+              }
+            ],
+            "entry_locations": [
+              {
+                "offset": 395304,
+                "bytes": 8
+              },
+              {
+                "offset": 395616,
+                "bytes": 8
+              }
+            ],
+            "location": {
+              "offset": 396440,
+              "bytes": 24
+            },
+            "characteristics": 0,
+            "timestamp": 783902937,
+            "major_version": 0,
+            "minor_version": 0,
+            "named_entries": 0,
+            "id_entries": 1
+          },
+          {
+            "path": [
+              {
+                "kind": "id",
+                "id": 6
+              },
+              {
+                "kind": "id",
+                "id": 4093
+              }
+            ],
+            "entry_locations": [
+              {
+                "offset": 395304,
+                "bytes": 8
+              },
+              {
+                "offset": 395624,
+                "bytes": 8
+              }
+            ],
+            "location": {
+              "offset": 396464,
+              "bytes": 24
+            },
+            "characteristics": 0,
+            "timestamp": 783902937,
+            "major_version": 0,
+            "minor_version": 0,
+            "named_entries": 0,
+            "id_entries": 1
+          },
+          {
+            "path": [
+              {
+                "kind": "id",
+                "id": 6
+              },
+              {
+                "kind": "id",
+                "id": 4094
+              }
+            ],
+            "entry_locations": [
+              {
+                "offset": 395304,
+                "bytes": 8
+              },
+              {
+                "offset": 395632,
+                "bytes": 8
+              }
+            ],
+            "location": {
+              "offset": 396488,
+              "bytes": 24
+            },
+            "characteristics": 0,
+            "timestamp": 783902937,
+            "major_version": 0,
+            "minor_version": 0,
+            "named_entries": 0,
+            "id_entries": 1
+          },
+          {
+            "path": [
+              {
+                "kind": "id",
+                "id": 6
+              },
+              {
+                "kind": "id",
+                "id": 4095
+              }
+            ],
+            "entry_locations": [
+              {
+                "offset": 395304,
+                "bytes": 8
+              },
+              {
+                "offset": 395640,
+                "bytes": 8
+              }
+            ],
+            "location": {
+              "offset": 396512,
+              "bytes": 24
+            },
+            "characteristics": 0,
+            "timestamp": 783902937,
+            "major_version": 0,
+            "minor_version": 0,
+            "named_entries": 0,
+            "id_entries": 1
+          },
+          {
+            "path": [
+              {
+                "kind": "id",
+                "id": 6
+              },
+              {
+                "kind": "id",
+                "id": 4096
+              }
+            ],
+            "entry_locations": [
+              {
+                "offset": 395304,
+                "bytes": 8
+              },
+              {
+                "offset": 395648,
+                "bytes": 8
+              }
+            ],
+            "location": {
+              "offset": 396536,
+              "bytes": 24
+            },
+            "characteristics": 0,
+            "timestamp": 783902937,
+            "major_version": 0,
+            "minor_version": 0,
+            "named_entries": 0,
+            "id_entries": 1
+          },
+          {
+            "path": [
+              {
+                "kind": "id",
+                "id": 10
+              }
+            ],
+            "entry_locations": [
+              {
+                "offset": 395312,
+                "bytes": 8
+              }
+            ],
+            "location": {
+              "offset": 395656,
+              "bytes": 40
+            },
+            "characteristics": 0,
+            "timestamp": 783902937,
+            "major_version": 0,
+            "minor_version": 0,
+            "named_entries": 3,
+            "id_entries": 0
+          },
+          {
+            "path": [
+              {
+                "kind": "id",
+                "id": 10
+              },
+              {
+                "kind": "name",
+                "name": "DVCLAL",
+                "utf16le_hex": "4400560043004c0041004c00",
+                "location": {
+                  "offset": 397678,
+                  "bytes": 14
+                }
+              }
+            ],
+            "entry_locations": [
+              {
+                "offset": 395312,
+                "bytes": 8
+              },
+              {
+                "offset": 395672,
+                "bytes": 8
+              }
+            ],
+            "location": {
+              "offset": 396560,
+              "bytes": 24
+            },
+            "characteristics": 0,
+            "timestamp": 783902937,
+            "major_version": 0,
+            "minor_version": 0,
+            "named_entries": 0,
+            "id_entries": 1
+          },
+          {
+            "path": [
+              {
+                "kind": "id",
+                "id": 10
+              },
+              {
+                "kind": "name",
+                "name": "PACKAGEINFO",
+                "utf16le_hex": "5000410043004b0041004700450049004e0046004f00",
+                "location": {
+                  "offset": 397692,
+                  "bytes": 24
+                }
+              }
+            ],
+            "entry_locations": [
+              {
+                "offset": 395312,
+                "bytes": 8
+              },
+              {
+                "offset": 395680,
+                "bytes": 8
+              }
+            ],
+            "location": {
+              "offset": 396584,
+              "bytes": 24
+            },
+            "characteristics": 0,
+            "timestamp": 783902937,
+            "major_version": 0,
+            "minor_version": 0,
+            "named_entries": 0,
+            "id_entries": 1
+          },
+          {
+            "path": [
+              {
+                "kind": "id",
+                "id": 10
+              },
+              {
+                "kind": "name",
+                "name": "TFORMMAIN",
+                "utf16le_hex": "540046004f0052004d004d00410049004e00",
+                "location": {
+                  "offset": 397716,
+                  "bytes": 20
+                }
+              }
+            ],
+            "entry_locations": [
+              {
+                "offset": 395312,
+                "bytes": 8
+              },
+              {
+                "offset": 395688,
+                "bytes": 8
+              }
+            ],
+            "location": {
+              "offset": 396608,
+              "bytes": 24
+            },
+            "characteristics": 0,
+            "timestamp": 783902937,
+            "major_version": 0,
+            "minor_version": 0,
+            "named_entries": 0,
+            "id_entries": 1
+          },
+          {
+            "path": [
+              {
+                "kind": "id",
+                "id": 12
+              }
+            ],
+            "entry_locations": [
+              {
+                "offset": 395320,
+                "bytes": 8
+              }
+            ],
+            "location": {
+              "offset": 395696,
+              "bytes": 72
+            },
+            "characteristics": 0,
+            "timestamp": 783902937,
+            "major_version": 0,
+            "minor_version": 0,
+            "named_entries": 0,
+            "id_entries": 7
+          },
+          {
+            "path": [
+              {
+                "kind": "id",
+                "id": 12
+              },
+              {
+                "kind": "id",
+                "id": 32761
+              }
+            ],
+            "entry_locations": [
+              {
+                "offset": 395320,
+                "bytes": 8
+              },
+              {
+                "offset": 395712,
+                "bytes": 8
+              }
+            ],
+            "location": {
+              "offset": 396632,
+              "bytes": 24
+            },
+            "characteristics": 0,
+            "timestamp": 783902937,
+            "major_version": 0,
+            "minor_version": 0,
+            "named_entries": 0,
+            "id_entries": 1
+          },
+          {
+            "path": [
+              {
+                "kind": "id",
+                "id": 12
+              },
+              {
+                "kind": "id",
+                "id": 32762
+              }
+            ],
+            "entry_locations": [
+              {
+                "offset": 395320,
+                "bytes": 8
+              },
+              {
+                "offset": 395720,
+                "bytes": 8
+              }
+            ],
+            "location": {
+              "offset": 396656,
+              "bytes": 24
+            },
+            "characteristics": 0,
+            "timestamp": 783902937,
+            "major_version": 0,
+            "minor_version": 0,
+            "named_entries": 0,
+            "id_entries": 1
+          },
+          {
+            "path": [
+              {
+                "kind": "id",
+                "id": 12
+              },
+              {
+                "kind": "id",
+                "id": 32763
+              }
+            ],
+            "entry_locations": [
+              {
+                "offset": 395320,
+                "bytes": 8
+              },
+              {
+                "offset": 395728,
+                "bytes": 8
+              }
+            ],
+            "location": {
+              "offset": 396680,
+              "bytes": 24
+            },
+            "characteristics": 0,
+            "timestamp": 783902937,
+            "major_version": 0,
+            "minor_version": 0,
+            "named_entries": 0,
+            "id_entries": 1
+          },
+          {
+            "path": [
+              {
+                "kind": "id",
+                "id": 12
+              },
+              {
+                "kind": "id",
+                "id": 32764
+              }
+            ],
+            "entry_locations": [
+              {
+                "offset": 395320,
+                "bytes": 8
+              },
+              {
+                "offset": 395736,
+                "bytes": 8
+              }
+            ],
+            "location": {
+              "offset": 396704,
+              "bytes": 24
+            },
+            "characteristics": 0,
+            "timestamp": 783902937,
+            "major_version": 0,
+            "minor_version": 0,
+            "named_entries": 0,
+            "id_entries": 1
+          },
+          {
+            "path": [
+              {
+                "kind": "id",
+                "id": 12
+              },
+              {
+                "kind": "id",
+                "id": 32765
+              }
+            ],
+            "entry_locations": [
+              {
+                "offset": 395320,
+                "bytes": 8
+              },
+              {
+                "offset": 395744,
+                "bytes": 8
+              }
+            ],
+            "location": {
+              "offset": 396728,
+              "bytes": 24
+            },
+            "characteristics": 0,
+            "timestamp": 783902937,
+            "major_version": 0,
+            "minor_version": 0,
+            "named_entries": 0,
+            "id_entries": 1
+          },
+          {
+            "path": [
+              {
+                "kind": "id",
+                "id": 12
+              },
+              {
+                "kind": "id",
+                "id": 32766
+              }
+            ],
+            "entry_locations": [
+              {
+                "offset": 395320,
+                "bytes": 8
+              },
+              {
+                "offset": 395752,
+                "bytes": 8
+              }
+            ],
+            "location": {
+              "offset": 396752,
+              "bytes": 24
+            },
+            "characteristics": 0,
+            "timestamp": 783902937,
+            "major_version": 0,
+            "minor_version": 0,
+            "named_entries": 0,
+            "id_entries": 1
+          },
+          {
+            "path": [
+              {
+                "kind": "id",
+                "id": 12
+              },
+              {
+                "kind": "id",
+                "id": 32767
+              }
+            ],
+            "entry_locations": [
+              {
+                "offset": 395320,
+                "bytes": 8
+              },
+              {
+                "offset": 395760,
+                "bytes": 8
+              }
+            ],
+            "location": {
+              "offset": 396776,
+              "bytes": 24
+            },
+            "characteristics": 0,
+            "timestamp": 783902937,
+            "major_version": 0,
+            "minor_version": 0,
+            "named_entries": 0,
+            "id_entries": 1
+          },
+          {
+            "path": [
+              {
+                "kind": "id",
+                "id": 14
+              }
+            ],
+            "entry_locations": [
+              {
+                "offset": 395328,
+                "bytes": 8
+              }
+            ],
+            "location": {
+              "offset": 395768,
+              "bytes": 24
+            },
+            "characteristics": 0,
+            "timestamp": 783902937,
+            "major_version": 0,
+            "minor_version": 0,
+            "named_entries": 1,
+            "id_entries": 0
+          },
+          {
+            "path": [
+              {
+                "kind": "id",
+                "id": 14
+              },
+              {
+                "kind": "name",
+                "name": "MAINICON",
+                "utf16le_hex": "4d00410049004e00490043004f004e00",
+                "location": {
+                  "offset": 397736,
+                  "bytes": 18
+                }
+              }
+            ],
+            "entry_locations": [
+              {
+                "offset": 395328,
+                "bytes": 8
+              },
+              {
+                "offset": 395784,
+                "bytes": 8
+              }
+            ],
+            "location": {
+              "offset": 396800,
+              "bytes": 24
+            },
+            "characteristics": 0,
+            "timestamp": 783902937,
+            "major_version": 0,
+            "minor_version": 0,
+            "named_entries": 0,
+            "id_entries": 1
+          },
+          {
+            "path": [
+              {
+                "kind": "id",
+                "id": 24
+              }
+            ],
+            "entry_locations": [
+              {
+                "offset": 395336,
+                "bytes": 8
+              }
+            ],
+            "location": {
+              "offset": 395792,
+              "bytes": 24
+            },
+            "characteristics": 0,
+            "timestamp": 783902937,
+            "major_version": 0,
+            "minor_version": 0,
+            "named_entries": 0,
+            "id_entries": 1
+          },
+          {
+            "path": [
+              {
+                "kind": "id",
+                "id": 24
+              },
+              {
+                "kind": "id",
+                "id": 1
+              }
+            ],
+            "entry_locations": [
+              {
+                "offset": 395336,
+                "bytes": 8
+              },
+              {
+                "offset": 395808,
+                "bytes": 8
+              }
+            ],
+            "location": {
+              "offset": 396824,
+              "bytes": 24
+            },
+            "characteristics": 0,
+            "timestamp": 783902937,
+            "major_version": 0,
+            "minor_version": 0,
+            "named_entries": 0,
+            "id_entries": 1
+          }
+        ],
+        "resources": [
+          {
+            "index": 0,
+            "type": {
+              "kind": "id",
+              "id": 1
+            },
+            "name": {
+              "kind": "id",
+              "id": 1
+            },
+            "language": {
+              "kind": "id",
+              "id": 0
+            },
+            "entry_locations": [
+              {
+                "offset": 395280,
+                "bytes": 8
+              },
+              {
+                "offset": 395360,
+                "bytes": 8
+              },
+              {
+                "offset": 395832,
+                "bytes": 8
+              }
+            ],
+            "data_entry_location": {
+              "offset": 396848,
+              "bytes": 16
+            },
+            "code_page": 0,
+            "reserved": 0,
+            "payload": {
+              "rva": 424380,
+              "location": {
+                "offset": 397756,
+                "bytes": 308
+              },
+              "sha256": "b8e6fc93d423931acbddae3c27dd3c4eb2a394005d746951a971cb700e0ee510"
+            }
+          },
+          {
+            "index": 1,
+            "type": {
+              "kind": "id",
+              "id": 1
+            },
+            "name": {
+              "kind": "id",
+              "id": 2
+            },
+            "language": {
+              "kind": "id",
+              "id": 0
+            },
+            "entry_locations": [
+              {
+                "offset": 395280,
+                "bytes": 8
+              },
+              {
+                "offset": 395368,
+                "bytes": 8
+              },
+              {
+                "offset": 395856,
+                "bytes": 8
+              }
+            ],
+            "data_entry_location": {
+              "offset": 396864,
+              "bytes": 16
+            },
+            "code_page": 0,
+            "reserved": 0,
+            "payload": {
+              "rva": 424688,
+              "location": {
+                "offset": 398064,
+                "bytes": 308
+              },
+              "sha256": "ce19ace18e87b572e6912306776226af5b8e63959c61cde70a8ff05b3bbdcc41"
+            }
+          },
+          {
+            "index": 2,
+            "type": {
+              "kind": "id",
+              "id": 1
+            },
+            "name": {
+              "kind": "id",
+              "id": 3
+            },
+            "language": {
+              "kind": "id",
+              "id": 0
+            },
+            "entry_locations": [
+              {
+                "offset": 395280,
+                "bytes": 8
+              },
+              {
+                "offset": 395376,
+                "bytes": 8
+              },
+              {
+                "offset": 395880,
+                "bytes": 8
+              }
+            ],
+            "data_entry_location": {
+              "offset": 396880,
+              "bytes": 16
+            },
+            "code_page": 0,
+            "reserved": 0,
+            "payload": {
+              "rva": 424996,
+              "location": {
+                "offset": 398372,
+                "bytes": 308
+              },
+              "sha256": "ee1c9c194199c320c893b367602ccc7ee7270bd4395d029f727e097634f47f8c"
+            }
+          },
+          {
+            "index": 3,
+            "type": {
+              "kind": "id",
+              "id": 1
+            },
+            "name": {
+              "kind": "id",
+              "id": 4
+            },
+            "language": {
+              "kind": "id",
+              "id": 0
+            },
+            "entry_locations": [
+              {
+                "offset": 395280,
+                "bytes": 8
+              },
+              {
+                "offset": 395384,
+                "bytes": 8
+              },
+              {
+                "offset": 395904,
+                "bytes": 8
+              }
+            ],
+            "data_entry_location": {
+              "offset": 396896,
+              "bytes": 16
+            },
+            "code_page": 0,
+            "reserved": 0,
+            "payload": {
+              "rva": 425304,
+              "location": {
+                "offset": 398680,
+                "bytes": 308
+              },
+              "sha256": "9d9edf87ca203ecc60b246cc783d54218dd0ce77d3a025d0bafc580995a4abd8"
+            }
+          },
+          {
+            "index": 4,
+            "type": {
+              "kind": "id",
+              "id": 1
+            },
+            "name": {
+              "kind": "id",
+              "id": 5
+            },
+            "language": {
+              "kind": "id",
+              "id": 0
+            },
+            "entry_locations": [
+              {
+                "offset": 395280,
+                "bytes": 8
+              },
+              {
+                "offset": 395392,
+                "bytes": 8
+              },
+              {
+                "offset": 395928,
+                "bytes": 8
+              }
+            ],
+            "data_entry_location": {
+              "offset": 396912,
+              "bytes": 16
+            },
+            "code_page": 0,
+            "reserved": 0,
+            "payload": {
+              "rva": 425612,
+              "location": {
+                "offset": 398988,
+                "bytes": 308
+              },
+              "sha256": "99676c52310db365580965ea646ece86c62951bfd97ec0aae9f738a202a90593"
+            }
+          },
+          {
+            "index": 5,
+            "type": {
+              "kind": "id",
+              "id": 1
+            },
+            "name": {
+              "kind": "id",
+              "id": 6
+            },
+            "language": {
+              "kind": "id",
+              "id": 0
+            },
+            "entry_locations": [
+              {
+                "offset": 395280,
+                "bytes": 8
+              },
+              {
+                "offset": 395400,
+                "bytes": 8
+              },
+              {
+                "offset": 395952,
+                "bytes": 8
+              }
+            ],
+            "data_entry_location": {
+              "offset": 396928,
+              "bytes": 16
+            },
+            "code_page": 0,
+            "reserved": 0,
+            "payload": {
+              "rva": 425920,
+              "location": {
+                "offset": 399296,
+                "bytes": 308
+              },
+              "sha256": "11726dcf1eebe23a1df5eb0ee2af39196b702eddd69083d646e4475335130b28"
+            }
+          },
+          {
+            "index": 6,
+            "type": {
+              "kind": "id",
+              "id": 1
+            },
+            "name": {
+              "kind": "id",
+              "id": 7
+            },
+            "language": {
+              "kind": "id",
+              "id": 0
+            },
+            "entry_locations": [
+              {
+                "offset": 395280,
+                "bytes": 8
+              },
+              {
+                "offset": 395408,
+                "bytes": 8
+              },
+              {
+                "offset": 395976,
+                "bytes": 8
+              }
+            ],
+            "data_entry_location": {
+              "offset": 396944,
+              "bytes": 16
+            },
+            "code_page": 0,
+            "reserved": 0,
+            "payload": {
+              "rva": 426228,
+              "location": {
+                "offset": 399604,
+                "bytes": 308
+              },
+              "sha256": "6f938aab0a03120de4ef8b27aff6ba5146226c92a056a6f04e5ec8d513ce5f9d"
+            }
+          },
+          {
+            "index": 7,
+            "type": {
+              "kind": "id",
+              "id": 2
+            },
+            "name": {
+              "kind": "name",
+              "name": "BBABORT",
+              "utf16le_hex": "42004200410042004f0052005400",
+              "location": {
+                "offset": 397536,
+                "bytes": 16
+              }
+            },
+            "language": {
+              "kind": "id",
+              "id": 0
+            },
+            "entry_locations": [
+              {
+                "offset": 395288,
+                "bytes": 8
+              },
+              {
+                "offset": 395432,
+                "bytes": 8
+              },
+              {
+                "offset": 396000,
+                "bytes": 8
+              }
+            ],
+            "data_entry_location": {
+              "offset": 396960,
+              "bytes": 16
+            },
+            "code_page": 0,
+            "reserved": 0,
+            "payload": {
+              "rva": 426536,
+              "location": {
+                "offset": 399912,
+                "bytes": 464
+              },
+              "sha256": "c0ede68a98bd2bc58c78564dfb42f1640dc29766d3ab2782ab8b5ed28c6fd414"
+            }
+          },
+          {
+            "index": 8,
+            "type": {
+              "kind": "id",
+              "id": 2
+            },
+            "name": {
+              "kind": "name",
+              "name": "BBALL",
+              "utf16le_hex": "4200420041004c004c00",
+              "location": {
+                "offset": 397552,
+                "bytes": 12
+              }
+            },
+            "language": {
+              "kind": "id",
+              "id": 0
+            },
+            "entry_locations": [
+              {
+                "offset": 395288,
+                "bytes": 8
+              },
+              {
+                "offset": 395440,
+                "bytes": 8
+              },
+              {
+                "offset": 396024,
+                "bytes": 8
+              }
+            ],
+            "data_entry_location": {
+              "offset": 396976,
+              "bytes": 16
+            },
+            "code_page": 0,
+            "reserved": 0,
+            "payload": {
+              "rva": 427000,
+              "location": {
+                "offset": 400376,
+                "bytes": 484
+              },
+              "sha256": "46cfc44afa8ab31ae3da35fa8346e4c085c441659d9992b09fc8ad517f2b289a"
+            }
+          },
+          {
+            "index": 9,
+            "type": {
+              "kind": "id",
+              "id": 2
+            },
+            "name": {
+              "kind": "name",
+              "name": "BBCANCEL",
+              "utf16le_hex": "42004200430041004e00430045004c00",
+              "location": {
+                "offset": 397564,
+                "bytes": 18
+              }
+            },
+            "language": {
+              "kind": "id",
+              "id": 0
+            },
+            "entry_locations": [
+              {
+                "offset": 395288,
+                "bytes": 8
+              },
+              {
+                "offset": 395448,
+                "bytes": 8
+              },
+              {
+                "offset": 396048,
+                "bytes": 8
+              }
+            ],
+            "data_entry_location": {
+              "offset": 396992,
+              "bytes": 16
+            },
+            "code_page": 0,
+            "reserved": 0,
+            "payload": {
+              "rva": 427484,
+              "location": {
+                "offset": 400860,
+                "bytes": 464
+              },
+              "sha256": "c0ede68a98bd2bc58c78564dfb42f1640dc29766d3ab2782ab8b5ed28c6fd414"
+            }
+          },
+          {
+            "index": 10,
+            "type": {
+              "kind": "id",
+              "id": 2
+            },
+            "name": {
+              "kind": "name",
+              "name": "BBCLOSE",
+              "utf16le_hex": "4200420043004c004f0053004500",
+              "location": {
+                "offset": 397582,
+                "bytes": 16
+              }
+            },
+            "language": {
+              "kind": "id",
+              "id": 0
+            },
+            "entry_locations": [
+              {
+                "offset": 395288,
+                "bytes": 8
+              },
+              {
+                "offset": 395456,
+                "bytes": 8
+              },
+              {
+                "offset": 396072,
+                "bytes": 8
+              }
+            ],
+            "data_entry_location": {
+              "offset": 397008,
+              "bytes": 16
+            },
+            "code_page": 0,
+            "reserved": 0,
+            "payload": {
+              "rva": 427948,
+              "location": {
+                "offset": 401324,
+                "bytes": 464
+              },
+              "sha256": "f8e1696801fe89b88936ac4226cea03bfa5aa345aa33ca982822ae7fbc6557e2"
+            }
+          },
+          {
+            "index": 11,
+            "type": {
+              "kind": "id",
+              "id": 2
+            },
+            "name": {
+              "kind": "name",
+              "name": "BBHELP",
+              "utf16le_hex": "42004200480045004c005000",
+              "location": {
+                "offset": 397598,
+                "bytes": 14
+              }
+            },
+            "language": {
+              "kind": "id",
+              "id": 0
+            },
+            "entry_locations": [
+              {
+                "offset": 395288,
+                "bytes": 8
+              },
+              {
+                "offset": 395464,
+                "bytes": 8
+              },
+              {
+                "offset": 396096,
+                "bytes": 8
+              }
+            ],
+            "data_entry_location": {
+              "offset": 397024,
+              "bytes": 16
+            },
+            "code_page": 0,
+            "reserved": 0,
+            "payload": {
+              "rva": 428412,
+              "location": {
+                "offset": 401788,
+                "bytes": 464
+              },
+              "sha256": "cb7421b5c6af74c3159c361f3bb78bba8a488d8979d1250e106fa96cbf928789"
+            }
+          },
+          {
+            "index": 12,
+            "type": {
+              "kind": "id",
+              "id": 2
+            },
+            "name": {
+              "kind": "name",
+              "name": "BBIGNORE",
+              "utf16le_hex": "42004200490047004e004f0052004500",
+              "location": {
+                "offset": 397612,
+                "bytes": 18
+              }
+            },
+            "language": {
+              "kind": "id",
+              "id": 0
+            },
+            "entry_locations": [
+              {
+                "offset": 395288,
+                "bytes": 8
+              },
+              {
+                "offset": 395472,
+                "bytes": 8
+              },
+              {
+                "offset": 396120,
+                "bytes": 8
+              }
+            ],
+            "data_entry_location": {
+              "offset": 397040,
+              "bytes": 16
+            },
+            "code_page": 0,
+            "reserved": 0,
+            "payload": {
+              "rva": 428876,
+              "location": {
+                "offset": 402252,
+                "bytes": 464
+              },
+              "sha256": "41f05a4df5f42d92b879493d51941de342d36460fe15c0f3b63b2b706b928fef"
+            }
+          },
+          {
+            "index": 13,
+            "type": {
+              "kind": "id",
+              "id": 2
+            },
+            "name": {
+              "kind": "name",
+              "name": "BBNO",
+              "utf16le_hex": "420042004e004f00",
+              "location": {
+                "offset": 397630,
+                "bytes": 10
+              }
+            },
+            "language": {
+              "kind": "id",
+              "id": 0
+            },
+            "entry_locations": [
+              {
+                "offset": 395288,
+                "bytes": 8
+              },
+              {
+                "offset": 395480,
+                "bytes": 8
+              },
+              {
+                "offset": 396144,
+                "bytes": 8
+              }
+            ],
+            "data_entry_location": {
+              "offset": 397056,
+              "bytes": 16
+            },
+            "code_page": 0,
+            "reserved": 0,
+            "payload": {
+              "rva": 429340,
+              "location": {
+                "offset": 402716,
+                "bytes": 464
+              },
+              "sha256": "81265e63c89ee5c2e5126452e22f84e9be9452449f3e5959ab6d346cb58b2bde"
+            }
+          },
+          {
+            "index": 14,
+            "type": {
+              "kind": "id",
+              "id": 2
+            },
+            "name": {
+              "kind": "name",
+              "name": "BBOK",
+              "utf16le_hex": "420042004f004b00",
+              "location": {
+                "offset": 397640,
+                "bytes": 10
+              }
+            },
+            "language": {
+              "kind": "id",
+              "id": 0
+            },
+            "entry_locations": [
+              {
+                "offset": 395288,
+                "bytes": 8
+              },
+              {
+                "offset": 395488,
+                "bytes": 8
+              },
+              {
+                "offset": 396168,
+                "bytes": 8
+              }
+            ],
+            "data_entry_location": {
+              "offset": 397072,
+              "bytes": 16
+            },
+            "code_page": 0,
+            "reserved": 0,
+            "payload": {
+              "rva": 429804,
+              "location": {
+                "offset": 403180,
+                "bytes": 464
+              },
+              "sha256": "6b97877cdd547e6ba6467f86055f1fc7b06660b034439f0da4c137538ef14a83"
+            }
+          },
+          {
+            "index": 15,
+            "type": {
+              "kind": "id",
+              "id": 2
+            },
+            "name": {
+              "kind": "name",
+              "name": "BBRETRY",
+              "utf16le_hex": "4200420052004500540052005900",
+              "location": {
+                "offset": 397650,
+                "bytes": 16
+              }
+            },
+            "language": {
+              "kind": "id",
+              "id": 0
+            },
+            "entry_locations": [
+              {
+                "offset": 395288,
+                "bytes": 8
+              },
+              {
+                "offset": 395496,
+                "bytes": 8
+              },
+              {
+                "offset": 396192,
+                "bytes": 8
+              }
+            ],
+            "data_entry_location": {
+              "offset": 397088,
+              "bytes": 16
+            },
+            "code_page": 0,
+            "reserved": 0,
+            "payload": {
+              "rva": 430268,
+              "location": {
+                "offset": 403644,
+                "bytes": 464
+              },
+              "sha256": "c925e4a8cbf6d42dbb1220a510614df725558f8d843338982bab8c4e020f6429"
+            }
+          },
+          {
+            "index": 16,
+            "type": {
+              "kind": "id",
+              "id": 2
+            },
+            "name": {
+              "kind": "name",
+              "name": "BBYES",
+              "utf16le_hex": "42004200590045005300",
+              "location": {
+                "offset": 397666,
+                "bytes": 12
+              }
+            },
+            "language": {
+              "kind": "id",
+              "id": 0
+            },
+            "entry_locations": [
+              {
+                "offset": 395288,
+                "bytes": 8
+              },
+              {
+                "offset": 395504,
+                "bytes": 8
+              },
+              {
+                "offset": 396216,
+                "bytes": 8
+              }
+            ],
+            "data_entry_location": {
+              "offset": 397104,
+              "bytes": 16
+            },
+            "code_page": 0,
+            "reserved": 0,
+            "payload": {
+              "rva": 430732,
+              "location": {
+                "offset": 404108,
+                "bytes": 464
+              },
+              "sha256": "6b97877cdd547e6ba6467f86055f1fc7b06660b034439f0da4c137538ef14a83"
+            }
+          },
+          {
+            "index": 17,
+            "type": {
+              "kind": "id",
+              "id": 3
+            },
+            "name": {
+              "kind": "id",
+              "id": 1
+            },
+            "language": {
+              "kind": "id",
+              "id": 1028
+            },
+            "entry_locations": [
+              {
+                "offset": 395296,
+                "bytes": 8
+              },
+              {
+                "offset": 395528,
+                "bytes": 8
+              },
+              {
+                "offset": 396240,
+                "bytes": 8
+              }
+            ],
+            "data_entry_location": {
+              "offset": 397120,
+              "bytes": 16
+            },
+            "code_page": 0,
+            "reserved": 0,
+            "payload": {
+              "rva": 431196,
+              "location": {
+                "offset": 404572,
+                "bytes": 744
+              },
+              "sha256": "033906f9bd86872478f3c7bcf26696726828ab4471b9f28e12c0b69cbf6d5ced"
+            }
+          },
+          {
+            "index": 18,
+            "type": {
+              "kind": "id",
+              "id": 6
+            },
+            "name": {
+              "kind": "id",
+              "id": 4084
+            },
+            "language": {
+              "kind": "id",
+              "id": 0
+            },
+            "entry_locations": [
+              {
+                "offset": 395304,
+                "bytes": 8
+              },
+              {
+                "offset": 395552,
+                "bytes": 8
+              },
+              {
+                "offset": 396264,
+                "bytes": 8
+              }
+            ],
+            "data_entry_location": {
+              "offset": 397136,
+              "bytes": 16
+            },
+            "code_page": 0,
+            "reserved": 0,
+            "payload": {
+              "rva": 431940,
+              "location": {
+                "offset": 405316,
+                "bytes": 392
+              },
+              "sha256": "1336b9ef6cd888c6a3221d476db25cafafe0de0f2e3c25fb24f81b0ce4b4a274"
+            }
+          },
+          {
+            "index": 19,
+            "type": {
+              "kind": "id",
+              "id": 6
+            },
+            "name": {
+              "kind": "id",
+              "id": 4085
+            },
+            "language": {
+              "kind": "id",
+              "id": 0
+            },
+            "entry_locations": [
+              {
+                "offset": 395304,
+                "bytes": 8
+              },
+              {
+                "offset": 395560,
+                "bytes": 8
+              },
+              {
+                "offset": 396288,
+                "bytes": 8
+              }
+            ],
+            "data_entry_location": {
+              "offset": 397152,
+              "bytes": 16
+            },
+            "code_page": 0,
+            "reserved": 0,
+            "payload": {
+              "rva": 432332,
+              "location": {
+                "offset": 405708,
+                "bytes": 488
+              },
+              "sha256": "7990fa7050579b8d36802e74265ce8dcf357c47e24e68407702ae83d32d91b83"
+            }
+          },
+          {
+            "index": 20,
+            "type": {
+              "kind": "id",
+              "id": 6
+            },
+            "name": {
+              "kind": "id",
+              "id": 4086
+            },
+            "language": {
+              "kind": "id",
+              "id": 0
+            },
+            "entry_locations": [
+              {
+                "offset": 395304,
+                "bytes": 8
+              },
+              {
+                "offset": 395568,
+                "bytes": 8
+              },
+              {
+                "offset": 396312,
+                "bytes": 8
+              }
+            ],
+            "data_entry_location": {
+              "offset": 397168,
+              "bytes": 16
+            },
+            "code_page": 0,
+            "reserved": 0,
+            "payload": {
+              "rva": 432820,
+              "location": {
+                "offset": 406196,
+                "bytes": 236
+              },
+              "sha256": "c63dd6c255093edbd8c304f5fa7ac25c6ea76766363ea569382e7f2ebd9eff24"
+            }
+          },
+          {
+            "index": 21,
+            "type": {
+              "kind": "id",
+              "id": 6
+            },
+            "name": {
+              "kind": "id",
+              "id": 4087
+            },
+            "language": {
+              "kind": "id",
+              "id": 0
+            },
+            "entry_locations": [
+              {
+                "offset": 395304,
+                "bytes": 8
+              },
+              {
+                "offset": 395576,
+                "bytes": 8
+              },
+              {
+                "offset": 396336,
+                "bytes": 8
+              }
+            ],
+            "data_entry_location": {
+              "offset": 397184,
+              "bytes": 16
+            },
+            "code_page": 0,
+            "reserved": 0,
+            "payload": {
+              "rva": 433056,
+              "location": {
+                "offset": 406432,
+                "bytes": 308
+              },
+              "sha256": "f51c56f89a43effd7330235cccac7fdc9750f500679d84d7beea20bf635686d3"
+            }
+          },
+          {
+            "index": 22,
+            "type": {
+              "kind": "id",
+              "id": 6
+            },
+            "name": {
+              "kind": "id",
+              "id": 4088
+            },
+            "language": {
+              "kind": "id",
+              "id": 0
+            },
+            "entry_locations": [
+              {
+                "offset": 395304,
+                "bytes": 8
+              },
+              {
+                "offset": 395584,
+                "bytes": 8
+              },
+              {
+                "offset": 396360,
+                "bytes": 8
+              }
+            ],
+            "data_entry_location": {
+              "offset": 397200,
+              "bytes": 16
+            },
+            "code_page": 0,
+            "reserved": 0,
+            "payload": {
+              "rva": 433364,
+              "location": {
+                "offset": 406740,
+                "bytes": 880
+              },
+              "sha256": "a8c25525c4d82d727b7bdca84904329dec26d510c52a35fae22cac4207bfcb74"
+            }
+          },
+          {
+            "index": 23,
+            "type": {
+              "kind": "id",
+              "id": 6
+            },
+            "name": {
+              "kind": "id",
+              "id": 4089
+            },
+            "language": {
+              "kind": "id",
+              "id": 0
+            },
+            "entry_locations": [
+              {
+                "offset": 395304,
+                "bytes": 8
+              },
+              {
+                "offset": 395592,
+                "bytes": 8
+              },
+              {
+                "offset": 396384,
+                "bytes": 8
+              }
+            ],
+            "data_entry_location": {
+              "offset": 397216,
+              "bytes": 16
+            },
+            "code_page": 0,
+            "reserved": 0,
+            "payload": {
+              "rva": 434244,
+              "location": {
+                "offset": 407620,
+                "bytes": 964
+              },
+              "sha256": "82d95550c1352c9ebdce76993e40af7880103d6c0acc29959f95d4c7e7ede007"
+            }
+          },
+          {
+            "index": 24,
+            "type": {
+              "kind": "id",
+              "id": 6
+            },
+            "name": {
+              "kind": "id",
+              "id": 4090
+            },
+            "language": {
+              "kind": "id",
+              "id": 0
+            },
+            "entry_locations": [
+              {
+                "offset": 395304,
+                "bytes": 8
+              },
+              {
+                "offset": 395600,
+                "bytes": 8
+              },
+              {
+                "offset": 396408,
+                "bytes": 8
+              }
+            ],
+            "data_entry_location": {
+              "offset": 397232,
+              "bytes": 16
+            },
+            "code_page": 0,
+            "reserved": 0,
+            "payload": {
+              "rva": 435208,
+              "location": {
+                "offset": 408584,
+                "bytes": 912
+              },
+              "sha256": "50e256ea0d5c6720a405763a3a2519df7a2a5c2c714d07ad5e6aba5c4df81fb9"
+            }
+          },
+          {
+            "index": 25,
+            "type": {
+              "kind": "id",
+              "id": 6
+            },
+            "name": {
+              "kind": "id",
+              "id": 4091
+            },
+            "language": {
+              "kind": "id",
+              "id": 0
+            },
+            "entry_locations": [
+              {
+                "offset": 395304,
+                "bytes": 8
+              },
+              {
+                "offset": 395608,
+                "bytes": 8
+              },
+              {
+                "offset": 396432,
+                "bytes": 8
+              }
+            ],
+            "data_entry_location": {
+              "offset": 397248,
+              "bytes": 16
+            },
+            "code_page": 0,
+            "reserved": 0,
+            "payload": {
+              "rva": 436120,
+              "location": {
+                "offset": 409496,
+                "bytes": 976
+              },
+              "sha256": "e6cfd5d9a1da418ce0d0887f35f9791ba31886529bff2a6d66881107b67801dc"
+            }
+          },
+          {
+            "index": 26,
+            "type": {
+              "kind": "id",
+              "id": 6
+            },
+            "name": {
+              "kind": "id",
+              "id": 4092
+            },
+            "language": {
+              "kind": "id",
+              "id": 0
+            },
+            "entry_locations": [
+              {
+                "offset": 395304,
+                "bytes": 8
+              },
+              {
+                "offset": 395616,
+                "bytes": 8
+              },
+              {
+                "offset": 396456,
+                "bytes": 8
+              }
+            ],
+            "data_entry_location": {
+              "offset": 397264,
+              "bytes": 16
+            },
+            "code_page": 0,
+            "reserved": 0,
+            "payload": {
+              "rva": 437096,
+              "location": {
+                "offset": 410472,
+                "bytes": 244
+              },
+              "sha256": "0bab6e5a1259540a8def510ea55891a64d06c7c40dbbe8eab251f5d60993aabe"
+            }
+          },
+          {
+            "index": 27,
+            "type": {
+              "kind": "id",
+              "id": 6
+            },
+            "name": {
+              "kind": "id",
+              "id": 4093
+            },
+            "language": {
+              "kind": "id",
+              "id": 0
+            },
+            "entry_locations": [
+              {
+                "offset": 395304,
+                "bytes": 8
+              },
+              {
+                "offset": 395624,
+                "bytes": 8
+              },
+              {
+                "offset": 396480,
+                "bytes": 8
+              }
+            ],
+            "data_entry_location": {
+              "offset": 397280,
+              "bytes": 16
+            },
+            "code_page": 0,
+            "reserved": 0,
+            "payload": {
+              "rva": 437340,
+              "location": {
+                "offset": 410716,
+                "bytes": 196
+              },
+              "sha256": "580d974dbf7953e0e47920170ddb9e8dba22e8f3561e059ce4f3774056c876a1"
+            }
+          },
+          {
+            "index": 28,
+            "type": {
+              "kind": "id",
+              "id": 6
+            },
+            "name": {
+              "kind": "id",
+              "id": 4094
+            },
+            "language": {
+              "kind": "id",
+              "id": 0
+            },
+            "entry_locations": [
+              {
+                "offset": 395304,
+                "bytes": 8
+              },
+              {
+                "offset": 395632,
+                "bytes": 8
+              },
+              {
+                "offset": 396504,
+                "bytes": 8
+              }
+            ],
+            "data_entry_location": {
+              "offset": 397296,
+              "bytes": 16
+            },
+            "code_page": 0,
+            "reserved": 0,
+            "payload": {
+              "rva": 437536,
+              "location": {
+                "offset": 410912,
+                "bytes": 736
+              },
+              "sha256": "189bbf82fe004b671309dec257b2f3f0aedf8ccb1c35fd52499c8600e61ba8a1"
+            }
+          },
+          {
+            "index": 29,
+            "type": {
+              "kind": "id",
+              "id": 6
+            },
+            "name": {
+              "kind": "id",
+              "id": 4095
+            },
+            "language": {
+              "kind": "id",
+              "id": 0
+            },
+            "entry_locations": [
+              {
+                "offset": 395304,
+                "bytes": 8
+              },
+              {
+                "offset": 395640,
+                "bytes": 8
+              },
+              {
+                "offset": 396528,
+                "bytes": 8
+              }
+            ],
+            "data_entry_location": {
+              "offset": 397312,
+              "bytes": 16
+            },
+            "code_page": 0,
+            "reserved": 0,
+            "payload": {
+              "rva": 438272,
+              "location": {
+                "offset": 411648,
+                "bytes": 860
+              },
+              "sha256": "f00071bb1b5f37d12500223b2e453a83710d906a00965283f873a3867fc02e32"
+            }
+          },
+          {
+            "index": 30,
+            "type": {
+              "kind": "id",
+              "id": 6
+            },
+            "name": {
+              "kind": "id",
+              "id": 4096
+            },
+            "language": {
+              "kind": "id",
+              "id": 0
+            },
+            "entry_locations": [
+              {
+                "offset": 395304,
+                "bytes": 8
+              },
+              {
+                "offset": 395648,
+                "bytes": 8
+              },
+              {
+                "offset": 396552,
+                "bytes": 8
+              }
+            ],
+            "data_entry_location": {
+              "offset": 397328,
+              "bytes": 16
+            },
+            "code_page": 0,
+            "reserved": 0,
+            "payload": {
+              "rva": 439132,
+              "location": {
+                "offset": 412508,
+                "bytes": 692
+              },
+              "sha256": "ce28bb03eda08a374750ce5be8f32f5739cfed85bf3b6d667be80938fd92615b"
+            }
+          },
+          {
+            "index": 31,
+            "type": {
+              "kind": "id",
+              "id": 10
+            },
+            "name": {
+              "kind": "name",
+              "name": "DVCLAL",
+              "utf16le_hex": "4400560043004c0041004c00",
+              "location": {
+                "offset": 397678,
+                "bytes": 14
+              }
+            },
+            "language": {
+              "kind": "id",
+              "id": 0
+            },
+            "entry_locations": [
+              {
+                "offset": 395312,
+                "bytes": 8
+              },
+              {
+                "offset": 395672,
+                "bytes": 8
+              },
+              {
+                "offset": 396576,
+                "bytes": 8
+              }
+            ],
+            "data_entry_location": {
+              "offset": 397344,
+              "bytes": 16
+            },
+            "code_page": 0,
+            "reserved": 0,
+            "payload": {
+              "rva": 439824,
+              "location": {
+                "offset": 413200,
+                "bytes": 16
+              },
+              "sha256": "88d14cc6638af8a0836f6d868dfab60df92907a2d7becaefbbd7e007acb75610"
+            }
+          },
+          {
+            "index": 32,
+            "type": {
+              "kind": "id",
+              "id": 10
+            },
+            "name": {
+              "kind": "name",
+              "name": "PACKAGEINFO",
+              "utf16le_hex": "5000410043004b0041004700450049004e0046004f00",
+              "location": {
+                "offset": 397692,
+                "bytes": 24
+              }
+            },
+            "language": {
+              "kind": "id",
+              "id": 0
+            },
+            "entry_locations": [
+              {
+                "offset": 395312,
+                "bytes": 8
+              },
+              {
+                "offset": 395680,
+                "bytes": 8
+              },
+              {
+                "offset": 396600,
+                "bytes": 8
+              }
+            ],
+            "data_entry_location": {
+              "offset": 397360,
+              "bytes": 16
+            },
+            "code_page": 0,
+            "reserved": 0,
+            "payload": {
+              "rva": 439840,
+              "location": {
+                "offset": 413216,
+                "bytes": 476
+              },
+              "sha256": "afcffcbd3c4874959d66bf561ce70f6a5393de83eea005ff6be87fc50865d47e"
+            }
+          },
+          {
+            "index": 33,
+            "type": {
+              "kind": "id",
+              "id": 10
+            },
+            "name": {
+              "kind": "name",
+              "name": "TFORMMAIN",
+              "utf16le_hex": "540046004f0052004d004d00410049004e00",
+              "location": {
+                "offset": 397716,
+                "bytes": 20
+              }
+            },
+            "language": {
+              "kind": "id",
+              "id": 0
+            },
+            "entry_locations": [
+              {
+                "offset": 395312,
+                "bytes": 8
+              },
+              {
+                "offset": 395688,
+                "bytes": 8
+              },
+              {
+                "offset": 396624,
+                "bytes": 8
+              }
+            ],
+            "data_entry_location": {
+              "offset": 397376,
+              "bytes": 16
+            },
+            "code_page": 0,
+            "reserved": 0,
+            "payload": {
+              "rva": 440316,
+              "location": {
+                "offset": 413692,
+                "bytes": 2238
+              },
+              "sha256": "d6c9d38466fd7c00a09047d021217a20d259c3a33aa6dfd6571017075721d739"
+            }
+          },
+          {
+            "index": 34,
+            "type": {
+              "kind": "id",
+              "id": 12
+            },
+            "name": {
+              "kind": "id",
+              "id": 32761
+            },
+            "language": {
+              "kind": "id",
+              "id": 0
+            },
+            "entry_locations": [
+              {
+                "offset": 395320,
+                "bytes": 8
+              },
+              {
+                "offset": 395712,
+                "bytes": 8
+              },
+              {
+                "offset": 396648,
+                "bytes": 8
+              }
+            ],
+            "data_entry_location": {
+              "offset": 397392,
+              "bytes": 16
+            },
+            "code_page": 0,
+            "reserved": 0,
+            "payload": {
+              "rva": 442556,
+              "location": {
+                "offset": 415932,
+                "bytes": 20
+              },
+              "sha256": "c53efa8085835ba129c1909beaff8a67b45f50837707f22dfff0f24d8cd26710"
+            }
+          },
+          {
+            "index": 35,
+            "type": {
+              "kind": "id",
+              "id": 12
+            },
+            "name": {
+              "kind": "id",
+              "id": 32762
+            },
+            "language": {
+              "kind": "id",
+              "id": 0
+            },
+            "entry_locations": [
+              {
+                "offset": 395320,
+                "bytes": 8
+              },
+              {
+                "offset": 395720,
+                "bytes": 8
+              },
+              {
+                "offset": 396672,
+                "bytes": 8
+              }
+            ],
+            "data_entry_location": {
+              "offset": 397408,
+              "bytes": 16
+            },
+            "code_page": 0,
+            "reserved": 0,
+            "payload": {
+              "rva": 442576,
+              "location": {
+                "offset": 415952,
+                "bytes": 20
+              },
+              "sha256": "b07e022f8ef0a8e5fd3f56986b2e5bf06df07054e9ea9177996b0a6c27d74d7c"
+            }
+          },
+          {
+            "index": 36,
+            "type": {
+              "kind": "id",
+              "id": 12
+            },
+            "name": {
+              "kind": "id",
+              "id": 32763
+            },
+            "language": {
+              "kind": "id",
+              "id": 0
+            },
+            "entry_locations": [
+              {
+                "offset": 395320,
+                "bytes": 8
+              },
+              {
+                "offset": 395728,
+                "bytes": 8
+              },
+              {
+                "offset": 396696,
+                "bytes": 8
+              }
+            ],
+            "data_entry_location": {
+              "offset": 397424,
+              "bytes": 16
+            },
+            "code_page": 0,
+            "reserved": 0,
+            "payload": {
+              "rva": 442596,
+              "location": {
+                "offset": 415972,
+                "bytes": 20
+              },
+              "sha256": "43f40dd5140804309a4c901ec3c85b54481316e67a6fe18beb9d5c0ce3a42c3a"
+            }
+          },
+          {
+            "index": 37,
+            "type": {
+              "kind": "id",
+              "id": 12
+            },
+            "name": {
+              "kind": "id",
+              "id": 32764
+            },
+            "language": {
+              "kind": "id",
+              "id": 0
+            },
+            "entry_locations": [
+              {
+                "offset": 395320,
+                "bytes": 8
+              },
+              {
+                "offset": 395736,
+                "bytes": 8
+              },
+              {
+                "offset": 396720,
+                "bytes": 8
+              }
+            ],
+            "data_entry_location": {
+              "offset": 397440,
+              "bytes": 16
+            },
+            "code_page": 0,
+            "reserved": 0,
+            "payload": {
+              "rva": 442616,
+              "location": {
+                "offset": 415992,
+                "bytes": 20
+              },
+              "sha256": "ff47a48c11c234903a7d625cb8b62101909f735ad84266c98dd4834549452c39"
+            }
+          },
+          {
+            "index": 38,
+            "type": {
+              "kind": "id",
+              "id": 12
+            },
+            "name": {
+              "kind": "id",
+              "id": 32765
+            },
+            "language": {
+              "kind": "id",
+              "id": 0
+            },
+            "entry_locations": [
+              {
+                "offset": 395320,
+                "bytes": 8
+              },
+              {
+                "offset": 395744,
+                "bytes": 8
+              },
+              {
+                "offset": 396744,
+                "bytes": 8
+              }
+            ],
+            "data_entry_location": {
+              "offset": 397456,
+              "bytes": 16
+            },
+            "code_page": 0,
+            "reserved": 0,
+            "payload": {
+              "rva": 442636,
+              "location": {
+                "offset": 416012,
+                "bytes": 20
+              },
+              "sha256": "a0adcedb82b57089f64e2857f97cefd6cf25f4d27eefc6648bda83fd5fef66bb"
+            }
+          },
+          {
+            "index": 39,
+            "type": {
+              "kind": "id",
+              "id": 12
+            },
+            "name": {
+              "kind": "id",
+              "id": 32766
+            },
+            "language": {
+              "kind": "id",
+              "id": 0
+            },
+            "entry_locations": [
+              {
+                "offset": 395320,
+                "bytes": 8
+              },
+              {
+                "offset": 395752,
+                "bytes": 8
+              },
+              {
+                "offset": 396768,
+                "bytes": 8
+              }
+            ],
+            "data_entry_location": {
+              "offset": 397472,
+              "bytes": 16
+            },
+            "code_page": 0,
+            "reserved": 0,
+            "payload": {
+              "rva": 442656,
+              "location": {
+                "offset": 416032,
+                "bytes": 20
+              },
+              "sha256": "6e1e7738a1b6373d8829f817915822ef415a1727bb5bb7cfe809e31b3c143ac5"
+            }
+          },
+          {
+            "index": 40,
+            "type": {
+              "kind": "id",
+              "id": 12
+            },
+            "name": {
+              "kind": "id",
+              "id": 32767
+            },
+            "language": {
+              "kind": "id",
+              "id": 0
+            },
+            "entry_locations": [
+              {
+                "offset": 395320,
+                "bytes": 8
+              },
+              {
+                "offset": 395760,
+                "bytes": 8
+              },
+              {
+                "offset": 396792,
+                "bytes": 8
+              }
+            ],
+            "data_entry_location": {
+              "offset": 397488,
+              "bytes": 16
+            },
+            "code_page": 0,
+            "reserved": 0,
+            "payload": {
+              "rva": 442676,
+              "location": {
+                "offset": 416052,
+                "bytes": 20
+              },
+              "sha256": "326c048595bbc72e3f989cb3b95fbf09dc83739ced3cb13eb6f03336f95d74f1"
+            }
+          },
+          {
+            "index": 41,
+            "type": {
+              "kind": "id",
+              "id": 14
+            },
+            "name": {
+              "kind": "name",
+              "name": "MAINICON",
+              "utf16le_hex": "4d00410049004e00490043004f004e00",
+              "location": {
+                "offset": 397736,
+                "bytes": 18
+              }
+            },
+            "language": {
+              "kind": "id",
+              "id": 1028
+            },
+            "entry_locations": [
+              {
+                "offset": 395328,
+                "bytes": 8
+              },
+              {
+                "offset": 395784,
+                "bytes": 8
+              },
+              {
+                "offset": 396816,
+                "bytes": 8
+              }
+            ],
+            "data_entry_location": {
+              "offset": 397504,
+              "bytes": 16
+            },
+            "code_page": 0,
+            "reserved": 0,
+            "payload": {
+              "rva": 442696,
+              "location": {
+                "offset": 416072,
+                "bytes": 20
+              },
+              "sha256": "a0c9d012e2bf6b2fe05c2d97cb5594d97cf2f539e97935c12abd7a3562f4d9bf"
+            }
+          },
+          {
+            "index": 42,
+            "type": {
+              "kind": "id",
+              "id": 24
+            },
+            "name": {
+              "kind": "id",
+              "id": 1
+            },
+            "language": {
+              "kind": "id",
+              "id": 1033
+            },
+            "entry_locations": [
+              {
+                "offset": 395336,
+                "bytes": 8
+              },
+              {
+                "offset": 395808,
+                "bytes": 8
+              },
+              {
+                "offset": 396840,
+                "bytes": 8
+              }
+            ],
+            "data_entry_location": {
+              "offset": 397520,
+              "bytes": 16
+            },
+            "code_page": 0,
+            "reserved": 0,
+            "payload": {
+              "rva": 442716,
+              "location": {
+                "offset": 416092,
+                "bytes": 671
+              },
+              "sha256": "ce20a69a0fa1b8adf02d1b888f697af74b428eefd1690f649151b039157bd332"
+            }
+          }
+        ],
+        "icon_groups": [
+          {
+            "resource_index": 41,
+            "images": [
+              {
+                "location": {
+                  "offset": 416078,
+                  "bytes": 14
+                },
+                "width": 32,
+                "height": 32,
+                "color_count": 16,
+                "reserved": 0,
+                "planes": 1,
+                "bit_count": 4,
+                "declared_bytes": 744,
+                "resource_id": 1,
+                "candidate_resource_indices": [
+                  17
+                ],
+                "same_language_resource_index": 17,
+                "size_matches": true
+              }
+            ]
+          }
+        ],
+        "coverage": {
+          "status": "complete",
+          "examined_entries": 94,
+          "resources": 43
+        },
+        "limitations": [
+          "Static PE32/PE32+ type/name/language resource inventory; payloads other than RT_GROUP_ICON remain opaque.",
+          "Icon candidates are resource-table relationships. Language fallback, image decoding and actual shell/window loading are not observed.",
+          "Exact shared byte ranges are retained; non-identical overlapping resource structures or payloads are rejected."
+        ]
+      },
+      "confidence": "observed",
+      "authority": "shipped-artifact",
+      "environment": null,
+      "limitations": [
+        "Static PE32/PE32+ type/name/language resource inventory; payloads other than RT_GROUP_ICON remain opaque.",
+        "Icon candidates are resource-table relationships. Language fallback, image decoding and actual shell/window loading are not observed.",
+        "Exact shared byte ranges are retained; non-identical overlapping resource structures or payloads are rejected."
+      ],
+      "relationship_coverage": null,
+      "locations": [
+        {
+          "kind": "artifact-path",
+          "path": "/Users/successslai/Git/REA/SPRViewer.exe"
+        }
+      ],
+      "evidence_links": []
+    },
+    {
+      "evidence_id": "ev_bbbb53416bb3e96ad38a59dd528e34a8a4eccf90b5b8dee47b3832a1c3d0680c",
+      "subject": {
+        "name": "SPRViewer.exe",
+        "digest": {
+          "sha256": "3dd6b55503f6a32b18be46945da2697624e0e27fc8928c0a09ad54d2cbc3664b"
+        },
+        "local_path": "/Users/successslai/Git/REA/SPRViewer.exe",
+        "format": "pe",
+        "architecture": "x86"
+      },
+      "provider": {
+        "id": "hopper",
+        "name": "Hopper Disassembler",
+        "version": "launcher-sha256:f75b6862bb729d7a5d75cdd5b3ab8e8bbbf98a95061b9174fdadffb1077fbf42"
+      },
+      "analysis_profile": {
+        "provider": {
+          "id": "hopper",
+          "name": "Hopper Disassembler",
+          "version": "launcher-sha256:f75b6862bb729d7a5d75cdd5b3ab8e8bbbf98a95061b9174fdadffb1077fbf42"
+        },
+        "parameters": {
+          "function_coordinate_context": {
+            "kind": "native-function-coordinate-context-v1",
+            "selected_image": null,
+            "mapping_sha256": "7470df566d7369342aa23bbad540dfc50c96b14c822b248c6112a1752cb0f4f2"
+          },
+          "target_kind": "executable",
+          "target_format": "pe",
+          "function_dossier_coverage": "observed-facets-and-call-relationships-v1",
+          "architecture": "x86",
+          "available_architectures": [
+            "x86"
+          ],
+          "loader": {
+            "source": "derived",
+            "arguments": [
+              "-l",
+              "WinPE",
+              "--intel-32"
+            ]
+          }
+        },
+        "digest": "82f25842f864a06f41582d04304cf0c152ab0bfb4071f7504b01dfd563ceef9a"
+      },
+      "predicate_type": "rea.analysis",
+      "operation": "procedure_pseudo_code",
+      "parameters": {
+        "procedure": "0x4569a4"
+      },
+      "raw_result": null,
+      "normalized_result": "    var_190 = 0x0;\n    var_188 = 0x0;\n    var_18C = 0x0;\n    var_180 = 0x0;\n    var_184 = 0x0;\n    var_8 = edx;\n    var_4 = eax;\n    sub_40496c();\n    decomp_var_1a0 = ebp;\n    decomp_var_1a4 = sub_457012;\n    esp = esp + 0xfffffe70 - 0x18;\n    decomp_var_1a8 = *0x0;\n    *0x0 = &decomp_var_1a8;\n    eax = sub_408a1c();\n    bool_1 = eax != 0x0;\n    if (eax != 0x0) {\n            sub_408b78();\n            sub_408508();\n            sub_4048c8();\n            if (!bool_1) {\n                    var_28 = 0x0;\n                    var_2C = 0x0;\n                    sub_402c20();\n                    sub_403078();\n                    sub_402870();\n                    sub_402f04();\n                    esi = sub_402870();\n                    if (esi < 0x40c) {\n                            sub_42f71c();\n                            sub_402d9c();\n                            sub_402870();\n                            *0x0 = decomp_var_1a8;\n                            sub_4044f0();\n                            eax = sub_4044cc();\n                    }\n                    else {\n                            var_C = sub_408448();\n                            if (var_C == 0x0) {\n                                    sub_42f71c();\n                                    sub_402d9c();\n                                    sub_402870();\n                                    *0x0 = decomp_var_1a8;\n                                    sub_4044f0();\n                                    eax = sub_4044cc();\n                            }\n                            else {\n                                    esp = esp - 0x4;\n                                    sub_402d7c(0x0);\n                                    sub_402870();\n                                    sub_402d9c();\n                                    sub_402870();\n                                    if (*(int8_t *)var_C == 0x53) {\n                                            if (var_C[0x1] != 0x50) {\n                                                    sub_42f71c();\n                                                    sub_402728();\n                                                    *0x0 = decomp_var_1a8;\n                                                    sub_4044f0();\n                                                    eax = sub_4044cc();\n                                            }\n                                            else {\n                                                    var_4[0xc9] = sub_407300() & 0xffff;\n                                                    var_18 = sub_407300() & 0xffff;\n                                                    ebx = var_4[0xc9];\n                                                    eax = ebx - 0x200;\n                                                    if (eax != 0x0) {\n                                                            if (eax != 0x1) {\n                                                                    sub_408780();\n                                                                    sub_4047d0();\n                                                                    sub_42f71c();\n                                                                    sub_402728();\n                                                                    *0x0 = decomp_var_1a8;\n                                                                    sub_4044f0();\n                                                                    eax = sub_4044cc();\n                                                            }\n                                                            else {\n                                                                    if (var_18 > 0x0) {\n                                                                            var_4[0xc9] = 0x2;\n                                                                    }\n                                                                    else {\n                                                                            var_4[0xc9] = 0x3;\n                                                                            var_18 = sub_407300() & 0xffff;\n                                                                    }\n                                                                    if (var_4[0xc9] != 0x3) {\n                                                                            ebx = sub_408448();\n                                                                            if (ebx == 0x0) {\n                                                                                    sub_42f71c();\n                                                                                    sub_402728();\n                                                                                    *0x0 = decomp_var_1a8;\n                                                                                    sub_4044f0();\n                                                                                    eax = sub_4044cc();\n                                                                            }\n                                                                            else {\n                                                                                    *(int16_t *)ebx = 0x300;\n                                                                                    ebx[0x1] = 0x100;\n                                                                                    edi = 0x0;\n                                                                                    do {\n                                                                                            *(int8_t *)(ebx + edi * 0x4 + 0x4) = *(int8_t *)(var_C + (esi - 0x400) + (edi << 0x2));\n                                                                                            *(int8_t *)(ebx + edi * 0x4 + 0x5) = *(int8_t *)(var_C + 0x1 + (esi - 0x400) + (edi << 0x2));\n                                                                                            esp = (((esp - 0x4) + 0x4 - 0x4) + 0x4 - 0x4) + 0x4;\n                                                                                            *(int8_t *)(ebx + edi * 0x4 + 0x6) = *(int8_t *)(var_C + 0x2 + (esi - 0x400) + (edi << 0x2));\n                                                                                            edi = edi + 0x1;\n                                                                                    } while (edi != 0x100);\n                                                                                    esp = esp - 0x4;\n                                                                                    var_28 = CreatePalette(ebx);\n                                                                                    if (var_28 != 0x0) {\n                                                                                            (*(*sub_421aa0() + 0x38))();\n                                                                                    }\n                                                                                    var_2C = sub_407378();\n                                                                                    sub_402728();\n                                                                                    eax = var_4[0xca];\n                                                                                    eax = eax[0x2];\n                                                                                    eax = eax - 0x1;\n                                                                                    if (eax >= 0x0) {\n                                                                                            var_30 = eax + 0x1;\n                                                                                            edi = 0x0;\n                                                                                            do {\n                                                                                                    sub_414144();\n                                                                                                    sub_403760();\n                                                                                                    edi = edi + 0x1;\n                                                                                                    var_30 = var_30 - 0x1;\n                                                                                            } while (var_30 != 0x0);\n                                                                                    }\n                                                                                    (*(*var_4[0xca] + 0x8))();\n                                                                                    edi = 0x8;\n                                                                                    eax = var_18 - 0x1;\n                                                                                    if (eax >= 0x0) {\n                                                                                            var_30 = eax + 0x1;\n                                                                                            do {\n                                                                                                    esi = sub_423994();\n                                                                                                    sub_407300() & 0xffff;\n                                                                                                    (*(*esi + 0x40))();\n                                                                                                    sub_407300() & 0xffff;\n                                                                                                    (*(*esi + 0x34))();\n                                                                                                    edi = edi + 0x4;\n                                                                                                    if (var_4[0xc9] != 0x3) {\n                                                                                                            sub_424f0c();\n                                                                                                            (*(*esi + 0x38))();\n                                                                                                            sub_425074();\n                                                                                                            sub_4250c4();\n                                                                                                            (*(*esi + 0x3c))();\n                                                                                                            if (var_4[0xc9] == 0x1) {\n                                                                                                                    var_1C = (*(*esi + 0x2c))() * (*(*esi + 0x20))();\n                                                                                                            }\n                                                                                                            else {\n                                                                                                                    var_1C = sub_407300() & 0xffff;\n                                                                                                            }\n                                                                                                            edi = edi + 0x2;\n                                                                                                    }\n                                                                                                    else {\n                                                                                                            sub_424f0c();\n                                                                                                            var_1C = (*(*esi + 0x2c))() * (*(*esi + 0x20))() << 0x2;\n                                                                                                    }\n                                                                                                    var_14 = 0x0;\n                                                                                                    ebx = 0x0;\n                                                                                                    var_10 = sub_4240cc();\n                                                                                                    if (var_1C > 0x0) {\n                                                                                                            eax = var_4[0xc9];\n                                                                                                            eax = eax - 0x1;\n                                                                                                            if (eax != 0x0) {\n                                                                                                                    eax = eax - 0x1;\n                                                                                                                    if (eax != 0x0) {\n                                                                                                                            if (eax == 0x1) {\n                                                                                                                                    *(int8_t *)(var_10 + (ebx << 0x2)) = *(int8_t *)(var_C + edi + 0x1);\n                                                                                                                                    *(int8_t *)(var_10 + (ebx << 0x2) + 0x1) = *(int8_t *)(var_C + edi);\n                                                                                                                                    *(int8_t *)(var_10 + (ebx << 0x2) + 0x2) = *(int8_t *)(var_C + edi + 0x3);\n                                                                                                                                    esp = ((((esp - 0x4) + 0x4 - 0x4) + 0x4 - 0x4) + 0x4 - 0x4) + 0x4;\n                                                                                                                                    *(int8_t *)(var_10 + (ebx << 0x2) + 0x3) = *(int8_t *)(var_C + edi + 0x2);\n                                                                                                                                    edi = edi + 0x4;\n                                                                                                                                    var_1C = var_1C - 0x4;\n                                                                                                                                    ebx = ebx + 0x1;\n                                                                                                                                    if (ebx == (*(*esi + 0x2c))()) {\n                                                                                                                                            ebx = 0x0;\n                                                                                                                                            var_14 = var_14 + 0x1;\n                                                                                                                                            if ((*(*esi + 0x20))() == var_14) {\n                                                                                                                                                    var_1C = 0x0;\n                                                                                                                                            }\n                                                                                                                                            else {\n                                                                                                                                                    var_10 = sub_4240cc();\n                                                                                                                                            }\n                                                                                                                                    }\n                                                                                                                            }\n                                                                                                                    }\n                                                                                                                    else {\n                                                                                                                            var_20 = *(int8_t *)(var_C + edi) & 0xff;\n                                                                                                                            edi = edi + 0x1;\n                                                                                                                            var_1C = var_1C - 0x1;\n                                                                                                                            if (var_20 == 0x0) {\n                                                                                                                                    var_24 = *(int8_t *)(var_C + edi) & 0xff;\n                                                                                                                                    edi = edi + 0x1;\n                                                                                                                                    var_1C = var_1C - 0x1;\n                                                                                                                            }\n                                                                                                                            else {\n                                                                                                                                    var_24 = 0x1;\n                                                                                                                            }\n                                                                                                                            if (var_24 > 0x0) {\n                                                                                                                                    *(int8_t *)(var_10 + ebx) = var_20;\n                                                                                                                                    ebx = ebx + 0x1;\n                                                                                                                                    if (ebx == (*(*esi + 0x2c))()) {\n                                                                                                                                            ebx = 0x0;\n                                                                                                                                            var_14 = var_14 + 0x1;\n                                                                                                                                            if ((*(*esi + 0x20))() == var_14) {\n                                                                                                                                                    var_24 = 0x0;\n                                                                                                                                                    var_1C = 0x0;\n                                                                                                                                            }\n                                                                                                                                            else {\n                                                                                                                                                    var_10 = sub_4240cc();\n                                                                                                                                            }\n                                                                                                                                    }\n                                                                                                                                    var_24 = var_24 - 0x1;\n                                                                                                                                    if (var_24 > 0x0) {\n                                                                                                                                            continue;\n                                                                                                                                    }\n                                                                                                                                    break;\n                                                                                                                            }\n                                                                                                                    }\n                                                                                                            }\n                                                                                                            else {\n                                                                                                                    eax = *(int8_t *)(var_C + edi) & 0xff;\n                                                                                                                    edi = edi + 0x1;\n                                                                                                                    var_1C = var_1C - 0x1;\n                                                                                                                    *(int8_t *)(var_10 + ebx) = eax;\n                                                                                                                    ebx = ebx + 0x1;\n                                                                                                                    if (ebx == (*(*esi + 0x2c))()) {\n                                                                                                                            ebx = 0x0;\n                                                                                                                            var_14 = var_14 + 0x1;\n                                                                                                                            if ((*(*esi + 0x20))() == var_14) {\n                                                                                                                                    var_1C = 0x0;\n                                                                                                                            }\n                                                                                                                            else {\n                                                                                                                                    var_10 = sub_4240cc();\n                                                                                                                            }\n                                                                                                                    }\n                                                                                                            }\n                                                                                                            if (var_1C > 0x0) {\n                                                                                                                    continue;\n                                                                                                            }\n                                                                                                            break;\n                                                                                                    }\n                                                                                                    sub_413fe8();\n                                                                                                    var_30 = var_30 - 0x1;\n                                                                                            } while (var_30 != 0x0);\n                                                                                    }\n                                                                                    sub_402728();\n                                                                                    sub_404520();\n                                                                                    sub_4047d0();\n                                                                                    sub_4358dc();\n                                                                                    var_4[0xcb] = 0x0;\n                                                                                    sub_45725c();\n                                                                                    *0x0 = decomp_var_1a8;\n                                                                                    sub_4044f0();\n                                                                                    eax = sub_4044cc();\n                                                                            }\n                                                                    }\n                                                                    else {\n                                                                            eax = var_4[0xca];\n                                                                            eax = eax[0x2];\n                                                                            eax = eax - 0x1;\n                                                                            if (eax >= 0x0) {\n                                                                                    var_30 = eax + 0x1;\n                                                                                    edi = 0x0;\n                                                                                    do {\n                                                                                            sub_414144();\n                                                                                            sub_403760();\n                                                                                            edi = edi + 0x1;\n                                                                                            var_30 = var_30 - 0x1;\n                                                                                    } while (var_30 != 0x0);\n                                                                            }\n                                                                            (*(*var_4[0xca] + 0x8))();\n                                                                            edi = 0x8;\n                                                                            eax = var_18 - 0x1;\n                                                                            if (eax >= 0x0) {\n                                                                                    var_30 = eax + 0x1;\n                                                                                    do {\n                                                                                            esi = sub_423994();\n                                                                                            sub_407300() & 0xffff;\n                                                                                            (*(*esi + 0x40))();\n                                                                                            sub_407300() & 0xffff;\n                                                                                            (*(*esi + 0x34))();\n                                                                                            edi = edi + 0x4;\n                                                                                            if (var_4[0xc9] != 0x3) {\n                                                                                                    sub_424f0c();\n                                                                                                    (*(*esi + 0x38))();\n                                                                                                    sub_425074();\n                                                                                                    sub_4250c4();\n                                                                                                    (*(*esi + 0x3c))();\n                                                                                                    if (var_4[0xc9] == 0x1) {\n                                                                                                            var_1C = (*(*esi + 0x2c))() * (*(*esi + 0x20))();\n                                                                                                    }\n                                                                                                    else {\n                                                                                                            var_1C = sub_407300() & 0xffff;\n                                                                                                    }\n                                                                                                    edi = edi + 0x2;\n                                                                                            }\n                                                                                            else {\n                                                                                                    sub_424f0c();\n                                                                                                    var_1C = (*(*esi + 0x2c))() * (*(*esi + 0x20))() << 0x2;\n                                                                                            }\n                                                                                            var_14 = 0x0;\n                                                                                            ebx = 0x0;\n                                                                                            var_10 = sub_4240cc();\n                                                                                            if (var_1C > 0x0) {\n                                                                                                    eax = var_4[0xc9];\n                                                                                                    eax = eax - 0x1;\n                                                                                                    if (eax != 0x0) {\n                                                                                                            eax = eax - 0x1;\n                                                                                                            if (eax != 0x0) {\n                                                                                                                    if (eax == 0x1) {\n                                                                                                                            *(int8_t *)(var_10 + (ebx << 0x2)) = *(int8_t *)(var_C + edi + 0x1);\n                                                                                                                            *(int8_t *)(var_10 + (ebx << 0x2) + 0x1) = *(int8_t *)(var_C + edi);\n                                                                                                                            *(int8_t *)(var_10 + (ebx << 0x2) + 0x2) = *(int8_t *)(var_C + edi + 0x3);\n                                                                                                                            esp = ((((esp - 0x4) + 0x4 - 0x4) + 0x4 - 0x4) + 0x4 - 0x4) + 0x4;\n                                                                                                                            *(int8_t *)(var_10 + (ebx << 0x2) + 0x3) = *(int8_t *)(var_C + edi + 0x2);\n                                                                                                                            edi = edi + 0x4;\n                                                                                                                            var_1C = var_1C - 0x4;\n                                                                                                                            ebx = ebx + 0x1;\n                                                                                                                            if (ebx == (*(*esi + 0x2c))()) {\n                                                                                                                                    ebx = 0x0;\n                                                                                                                                    var_14 = var_14 + 0x1;\n                                                                                                                                    if ((*(*esi + 0x20))() == var_14) {\n                                                                                                                                            var_1C = 0x0;\n                                                                                                                                    }\n                                                                                                                                    else {\n                                                                                                                                            var_10 = sub_4240cc();\n                                                                                                                                    }\n                                                                                                                            }\n                                                                                                                    }\n                                                                                                            }\n                                                                                                            else {\n                                                                                                                    var_20 = *(int8_t *)(var_C + edi) & 0xff;\n                                                                                                                    edi = edi + 0x1;\n                                                                                                                    var_1C = var_1C - 0x1;\n                                                                                                                    if (var_20 == 0x0) {\n                                                                                                                            var_24 = *(int8_t *)(var_C + edi) & 0xff;\n                                                                                                                            edi = edi + 0x1;\n                                                                                                                            var_1C = var_1C - 0x1;\n                                                                                                                    }\n                                                                                                                    else {\n                                                                                                                            var_24 = 0x1;\n                                                                                                                    }\n                                                                                                                    if (var_24 > 0x0) {\n                                                                                                                            *(int8_t *)(var_10 + ebx) = var_20;\n                                                                                                                            ebx = ebx + 0x1;\n                                                                                                                            if (ebx == (*(*esi + 0x2c))()) {\n                                                                                                                                    ebx = 0x0;\n                                                                                                                                    var_14 = var_14 + 0x1;\n                                                                                                                                    if ((*(*esi + 0x20))() == var_14) {\n                                                                                                                                            var_24 = 0x0;\n                                                                                                                                            var_1C = 0x0;\n                                                                                                                                    }\n                                                                                                                                    else {\n                                                                                                                                            var_10 = sub_4240cc();\n                                                                                                                                    }\n                                                                                                                            }\n                                                                                                                            var_24 = var_24 - 0x1;\n                                                                                                                            if (var_24 > 0x0) {\n                                                                                                                                    continue;\n                                                                                                                            }\n                                                                                                                            break;\n                                                                                                                    }\n                                                                                                            }\n                                                                                                    }\n                                                                                                    else {\n                                                                                                            eax = *(int8_t *)(var_C + edi) & 0xff;\n                                                                                                            edi = edi + 0x1;\n                                                                                                            var_1C = var_1C - 0x1;\n                                                                                                            *(int8_t *)(var_10 + ebx) = eax;\n                                                                                                            ebx = ebx + 0x1;\n                                                                                                            if (ebx == (*(*esi + 0x2c))()) {\n                                                                                                                    ebx = 0x0;\n                                                                                                                    var_14 = var_14 + 0x1;\n                                                                                                                    if ((*(*esi + 0x20))() == var_14) {\n                                                                                                                            var_1C = 0x0;\n                                                                                                                    }\n                                                                                                                    else {\n                                                                                                                            var_10 = sub_4240cc();\n                                                                                                                    }\n                                                                                                            }\n                                                                                                    }\n                                                                                                    if (var_1C > 0x0) {\n                                                                                                            continue;\n                                                                                                    }\n                                                                                                    break;\n                                                                                            }\n                                                                                            sub_413fe8();\n                                                                                            var_30 = var_30 - 0x1;\n                                                                                    } while (var_30 != 0x0);\n                                                                            }\n                                                                            sub_402728();\n                                                                            sub_404520();\n                                                                            sub_4047d0();\n                                                                            sub_4358dc();\n                                                                            var_4[0xcb] = 0x0;\n                                                                            sub_45725c();\n                                                                            *0x0 = decomp_var_1a8;\n                                                                            sub_4044f0();\n                                                                            eax = sub_4044cc();\n                                                                    }\n                                                            }\n                                                    }\n                                                    else {\n                                                            var_4[0xc9] = 0x1;\n                                                            if (var_4[0xc9] != 0x3) {\n                                                                    ebx = sub_408448();\n                                                                    if (ebx == 0x0) {\n                                                                            sub_42f71c();\n                                                                            sub_402728();\n                                                                            *0x0 = decomp_var_1a8;\n                                                                            sub_4044f0();\n                                                                            eax = sub_4044cc();\n                                                                    }\n                                                                    else {\n                                                                            *(int16_t *)ebx = 0x300;\n                                                                            ebx[0x1] = 0x100;\n                                                                            edi = 0x0;\n                                                                            do {\n                                                                                    *(int8_t *)(ebx + edi * 0x4 + 0x4) = *(int8_t *)(var_C + (esi - 0x400) + (edi << 0x2));\n                                                                                    *(int8_t *)(ebx + edi * 0x4 + 0x5) = *(int8_t *)(var_C + 0x1 + (esi - 0x400) + (edi << 0x2));\n                                                                                    esp = (((esp - 0x4) + 0x4 - 0x4) + 0x4 - 0x4) + 0x4;\n                                                                                    *(int8_t *)(ebx + edi * 0x4 + 0x6) = *(int8_t *)(var_C + 0x2 + (esi - 0x400) + (edi << 0x2));\n                                                                                    edi = edi + 0x1;\n                                                                            } while (edi != 0x100);\n                                                                            esp = esp - 0x4;\n                                                                            var_28 = CreatePalette(ebx);\n                                                                            if (var_28 != 0x0) {\n                                                                                    (*(*sub_421aa0() + 0x38))();\n                                                                            }\n                                                                            var_2C = sub_407378();\n                                                                            sub_402728();\n                                                                            eax = var_4[0xca];\n                                                                            eax = eax[0x2];\n                                                                            eax = eax - 0x1;\n                                                                            if (eax >= 0x0) {\n                                                                                    var_30 = eax + 0x1;\n                                                                                    edi = 0x0;\n                                                                                    do {\n                                                                                            sub_414144();\n                                                                                            sub_403760();\n                                                                                            edi = edi + 0x1;\n                                                                                            var_30 = var_30 - 0x1;\n                                                                                    } while (var_30 != 0x0);\n                                                                            }\n                                                                            (*(*var_4[0xca] + 0x8))();\n                                                                            edi = 0x8;\n                                                                            eax = var_18 - 0x1;\n                                                                            if (eax >= 0x0) {\n                                                                                    var_30 = eax + 0x1;\n                                                                                    do {\n                                                                                            esi = sub_423994();\n                                                                                            sub_407300() & 0xffff;\n                                                                                            (*(*esi + 0x40))();\n                                                                                            sub_407300() & 0xffff;\n                                                                                            (*(*esi + 0x34))();\n                                                                                            edi = edi + 0x4;\n                                                                                            if (var_4[0xc9] != 0x3) {\n                                                                                                    sub_424f0c();\n                                                                                                    (*(*esi + 0x38))();\n                                                                                                    sub_425074();\n                                                                                                    sub_4250c4();\n                                                                                                    (*(*esi + 0x3c))();\n                                                                                                    if (var_4[0xc9] == 0x1) {\n                                                                                                            var_1C = (*(*esi + 0x2c))() * (*(*esi + 0x20))();\n                                                                                                    }\n                                                                                                    else {\n                                                                                                            var_1C = sub_407300() & 0xffff;\n                                                                                                    }\n                                                                                                    edi = edi + 0x2;\n                                                                                            }\n                                                                                            else {\n                                                                                                    sub_424f0c();\n                                                                                                    var_1C = (*(*esi + 0x2c))() * (*(*esi + 0x20))() << 0x2;\n                                                                                            }\n                                                                                            var_14 = 0x0;\n                                                                                            ebx = 0x0;\n                                                                                            var_10 = sub_4240cc();\n                                                                                            if (var_1C > 0x0) {\n                                                                                                    eax = var_4[0xc9];\n                                                                                                    eax = eax - 0x1;\n                                                                                                    if (eax != 0x0) {\n                                                                                                            eax = eax - 0x1;\n                                                                                                            if (eax != 0x0) {\n                                                                                                                    if (eax == 0x1) {\n                                                                                                                            *(int8_t *)(var_10 + (ebx << 0x2)) = *(int8_t *)(var_C + edi + 0x1);\n                                                                                                                            *(int8_t *)(var_10 + (ebx << 0x2) + 0x1) = *(int8_t *)(var_C + edi);\n                                                                                                                            *(int8_t *)(var_10 + (ebx << 0x2) + 0x2) = *(int8_t *)(var_C + edi + 0x3);\n                                                                                                                            esp = ((((esp - 0x4) + 0x4 - 0x4) + 0x4 - 0x4) + 0x4 - 0x4) + 0x4;\n                                                                                                                            *(int8_t *)(var_10 + (ebx << 0x2) + 0x3) = *(int8_t *)(var_C + edi + 0x2);\n                                                                                                                            edi = edi + 0x4;\n                                                                                                                            var_1C = var_1C - 0x4;\n                                                                                                                            ebx = ebx + 0x1;\n                                                                                                                            if (ebx == (*(*esi + 0x2c))()) {\n                                                                                                                                    ebx = 0x0;\n                                                                                                                                    var_14 = var_14 + 0x1;\n                                                                                                                                    if ((*(*esi + 0x20))() == var_14) {\n                                                                                                                                            var_1C = 0x0;\n                                                                                                                                    }\n                                                                                                                                    else {\n                                                                                                                                            var_10 = sub_4240cc();\n                                                                                                                                    }\n                                                                                                                            }\n                                                                                                                    }\n                                                                                                            }\n                                                                                                            else {\n                                                                                                                    var_20 = *(int8_t *)(var_C + edi) & 0xff;\n                                                                                                                    edi = edi + 0x1;\n                                                                                                                    var_1C = var_1C - 0x1;\n                                                                                                                    if (var_20 == 0x0) {\n                                                                                                                            var_24 = *(int8_t *)(var_C + edi) & 0xff;\n                                                                                                                            edi = edi + 0x1;\n                                                                                                                            var_1C = var_1C - 0x1;\n                                                                                                                    }\n                                                                                                                    else {\n                                                                                                                            var_24 = 0x1;\n                                                                                                                    }\n                                                                                                                    if (var_24 > 0x0) {\n                                                                                                                            *(int8_t *)(var_10 + ebx) = var_20;\n                                                                                                                            ebx = ebx + 0x1;\n                                                                                                                            if (ebx == (*(*esi + 0x2c))()) {\n                                                                                                                                    ebx = 0x0;\n                                                                                                                                    var_14 = var_14 + 0x1;\n                                                                                                                                    if ((*(*esi + 0x20))() == var_14) {\n                                                                                                                                            var_24 = 0x0;\n                                                                                                                                            var_1C = 0x0;\n                                                                                                                                    }\n                                                                                                                                    else {\n                                                                                                                                            var_10 = sub_4240cc();\n                                                                                                                                    }\n                                                                                                                            }\n                                                                                                                            var_24 = var_24 - 0x1;\n                                                                                                                            if (var_24 > 0x0) {\n                                                                                                                                    continue;\n                                                                                                                            }\n                                                                                                                            break;\n                                                                                                                    }\n                                                                                                            }\n                                                                                                    }\n                                                                                                    else {\n                                                                                                            eax = *(int8_t *)(var_C + edi) & 0xff;\n                                                                                                            edi = edi + 0x1;\n                                                                                                            var_1C = var_1C - 0x1;\n                                                                                                            *(int8_t *)(var_10 + ebx) = eax;\n                                                                                                            ebx = ebx + 0x1;\n                                                                                                            if (ebx == (*(*esi + 0x2c))()) {\n                                                                                                                    ebx = 0x0;\n                                                                                                                    var_14 = var_14 + 0x1;\n                                                                                                                    if ((*(*esi + 0x20))() == var_14) {\n                                                                                                                            var_1C = 0x0;\n                                                                                                                    }\n                                                                                                                    else {\n                                                                                                                            var_10 = sub_4240cc();\n                                                                                                                    }\n                                                                                                            }\n                                                                                                    }\n                                                                                                    if (var_1C > 0x0) {\n                                                                                                            continue;\n                                                                                                    }\n                                                                                                    break;\n                                                                                            }\n                                                                                            sub_413fe8();\n                                                                                            var_30 = var_30 - 0x1;\n                                                                                    } while (var_30 != 0x0);\n                                                                            }\n                                                                            sub_402728();\n                                                                            sub_404520();\n                                                                            sub_4047d0();\n                                                                            sub_4358dc();\n                                                                            var_4[0xcb] = 0x0;\n                                                                            sub_45725c();\n                                                                            *0x0 = decomp_var_1a8;\n                                                                            sub_4044f0();\n                                                                            eax = sub_4044cc();\n                                                                    }\n                                                            }\n                                                            else {\n                                                                    eax = var_4[0xca];\n                                                                    eax = eax[0x2];\n                                                                    eax = eax - 0x1;\n                                                                    if (eax >= 0x0) {\n                                                                            var_30 = eax + 0x1;\n                                                                            edi = 0x0;\n                                                                            do {\n                                                                                    sub_414144();\n                                                                                    sub_403760();\n                                                                                    edi = edi + 0x1;\n                                                                                    var_30 = var_30 - 0x1;\n                                                                            } while (var_30 != 0x0);\n                                                                    }\n                                                                    (*(*var_4[0xca] + 0x8))();\n                                                                    edi = 0x8;\n                                                                    eax = var_18 - 0x1;\n                                                                    if (eax >= 0x0) {\n                                                                            var_30 = eax + 0x1;\n                                                                            do {\n                                                                                    esi = sub_423994();\n                                                                                    sub_407300() & 0xffff;\n                                                                                    (*(*esi + 0x40))();\n                                                                                    sub_407300() & 0xffff;\n                                                                                    (*(*esi + 0x34))();\n                                                                                    edi = edi + 0x4;\n                                                                                    if (var_4[0xc9] != 0x3) {\n                                                                                            sub_424f0c();\n                                                                                            (*(*esi + 0x38))();\n                                                                                            sub_425074();\n                                                                                            sub_4250c4();\n                                                                                            (*(*esi + 0x3c))();\n                                                                                            if (var_4[0xc9] == 0x1) {\n                                                                                                    var_1C = (*(*esi + 0x2c))() * (*(*esi + 0x20))();\n                                                                                            }\n                                                                                            else {\n                                                                                                    var_1C = sub_407300() & 0xffff;\n                                                                                            }\n                                                                                            edi = edi + 0x2;\n                                                                                    }\n                                                                                    else {\n                                                                                            sub_424f0c();\n                                                                                            var_1C = (*(*esi + 0x2c))() * (*(*esi + 0x20))() << 0x2;\n                                                                                    }\n                                                                                    var_14 = 0x0;\n                                                                                    ebx = 0x0;\n                                                                                    var_10 = sub_4240cc();\n                                                                                    if (var_1C > 0x0) {\n                                                                                            do {\n                                                                                                    eax = var_4[0xc9];\n                                                                                                    eax = eax - 0x1;\n                                                                                                    if (eax != 0x0) {\n                                                                                                            eax = eax - 0x1;\n                                                                                                            if (eax != 0x0) {\n                                                                                                                    if (eax == 0x1) {\n                                                                                                                            *(int8_t *)(var_10 + (ebx << 0x2)) = *(int8_t *)(var_C + edi + 0x1);\n                                                                                                                            *(int8_t *)(var_10 + (ebx << 0x2) + 0x1) = *(int8_t *)(var_C + edi);\n                                                                                                                            *(int8_t *)(var_10 + (ebx << 0x2) + 0x2) = *(int8_t *)(var_C + edi + 0x3);\n                                                                                                                            esp = ((((esp - 0x4) + 0x4 - 0x4) + 0x4 - 0x4) + 0x4 - 0x4) + 0x4;\n                                                                                                                            *(int8_t *)(var_10 + (ebx << 0x2) + 0x3) = *(int8_t *)(var_C + edi + 0x2);\n                                                                                                                            edi = edi + 0x4;\n                                                                                                                            var_1C = var_1C - 0x4;\n                                                                                                                            ebx = ebx + 0x1;\n                                                                                                                            if (ebx == (*(*esi + 0x2c))()) {\n                                                                                                                                    ebx = 0x0;\n                                                                                                                                    var_14 = var_14 + 0x1;\n                                                                                                                                    if ((*(*esi + 0x20))() == var_14) {\n                                                                                                                                            var_1C = 0x0;\n                                                                                                                                    }\n                                                                                                                                    else {\n                                                                                                                                            var_10 = sub_4240cc();\n                                                                                                                                    }\n                                                                                                                            }\n                                                                                                                    }\n                                                                                                            }\n                                                                                                            else {\n                                                                                                                    var_20 = *(int8_t *)(var_C + edi) & 0xff;\n                                                                                                                    edi = edi + 0x1;\n                                                                                                                    var_1C = var_1C - 0x1;\n                                                                                                                    if (var_20 == 0x0) {\n                                                                                                                            var_24 = *(int8_t *)(var_C + edi) & 0xff;\n                                                                                                                            edi = edi + 0x1;\n                                                                                                                            var_1C = var_1C - 0x1;\n                                                                                                                    }\n                                                                                                                    else {\n                                                                                                                            var_24 = 0x1;\n                                                                                                                    }\n                                                                                                                    if (var_24 > 0x0) {\n                                                                                                                            *(int8_t *)(var_10 + ebx) = var_20;\n                                                                                                                            ebx = ebx + 0x1;\n                                                                                                                            if (ebx == (*(*esi + 0x2c))()) {\n                                                                                                                                    ebx = 0x0;\n                                                                                                                                    var_14 = var_14 + 0x1;\n                                                                                                                                    if ((*(*esi + 0x20))() == var_14) {\n                                                                                                                                            var_24 = 0x0;\n                                                                                                                                            var_1C = 0x0;\n                                                                                                                                    }\n                                                                                                                                    else {\n                                                                                                                                            var_10 = sub_4240cc();\n                                                                                                                                    }\n                                                                                                                            }\n                                                                                                                            var_24 = var_24 - 0x1;\n                                                                                                                            if (var_24 > 0x0) {\n                                                                                                                                    continue;\n                                                                                                                            }\n                                                                                                                            break;\n                                                                                                                    }\n                                                                                                            }\n                                                                                                    }\n                                                                                                    else {\n                                                                                                            eax = *(int8_t *)(var_C + edi) & 0xff;\n                                                                                                            edi = edi + 0x1;\n                                                                                                            var_1C = var_1C - 0x1;\n                                                                                                            *(int8_t *)(var_10 + ebx) = eax;\n                                                                                                            ebx = ebx + 0x1;\n                                                                                                            if (ebx == (*(*esi + 0x2c))()) {\n                                                                                                                    ebx = 0x0;\n                                                                                                                    var_14 = var_14 + 0x1;\n                                                                                                                    if ((*(*esi + 0x20))() == var_14) {\n                                                                                                                            var_1C = 0x0;\n                                                                                                                    }\n                                                                                                                    else {\n                                                                                                                            var_10 = sub_4240cc();\n                                                                                                                    }\n                                                                                                            }\n                                                                                                    }\n                                                                                            } while (var_1C > 0x0);\n                                                                                    }\n                                                                                    sub_413fe8();\n                                                                                    var_30 = var_30 - 0x1;\n                                                                            } while (var_30 != 0x0);\n                                                                    }\n                                                                    sub_402728();\n                                                                    sub_404520();\n                                                                    sub_4047d0();\n                                                                    sub_4358dc();\n                                                                    var_4[0xcb] = 0x0;\n                                                                    sub_45725c();\n                                                                    *0x0 = decomp_var_1a8;\n                                                                    sub_4044f0();\n                                                                    eax = sub_4044cc();\n                                                            }\n                                                    }\n                                            }\n                                    }\n                                    else {\n                                            sub_42f71c();\n                                            sub_402728();\n                                            *0x0 = decomp_var_1a8;\n                                            sub_4044f0();\n                                            eax = sub_4044cc();\n                                    }\n                            }\n                    }\n            }\n            else {\n                    *0x0 = decomp_var_1a8;\n                    sub_4044f0();\n                    eax = sub_4044cc();\n            }\n    }\n    else {\n            *0x0 = decomp_var_1a8;\n            sub_4044f0();\n            eax = sub_4044cc();\n    }\n    return eax;\n",
+      "confidence": "observed",
+      "authority": "shipped-artifact",
+      "environment": null,
+      "limitations": [
+        "REA loaded a digest-verified private executable copy. Evidence identifies the selected original source; Hopper document names describe the private image. The owned image and its Hopper document close together.",
+        "Results depend on Hopper's completed static analysis."
+      ],
+      "relationship_coverage": null,
+      "locations": [],
+      "evidence_links": []
+    },
+    {
+      "evidence_id": "ev_d12e0763aa1ccdb1acec3f1ddb423df580b320bfcf6457be0eca0e1ab5ad0905",
+      "subject": {
+        "name": "SPRViewer.exe",
+        "digest": {
+          "sha256": "3dd6b55503f6a32b18be46945da2697624e0e27fc8928c0a09ad54d2cbc3664b"
+        },
+        "local_path": "/Users/successslai/Git/REA/SPRViewer.exe",
+        "format": "pe",
+        "architecture": "x86"
+      },
+      "provider": {
+        "id": "hopper",
+        "name": "Hopper Disassembler",
+        "version": "launcher-sha256:f75b6862bb729d7a5d75cdd5b3ab8e8bbbf98a95061b9174fdadffb1077fbf42"
+      },
+      "analysis_profile": {
+        "provider": {
+          "id": "hopper",
+          "name": "Hopper Disassembler",
+          "version": "launcher-sha256:f75b6862bb729d7a5d75cdd5b3ab8e8bbbf98a95061b9174fdadffb1077fbf42"
+        },
+        "parameters": {
+          "function_coordinate_context": {
+            "kind": "native-function-coordinate-context-v1",
+            "selected_image": null,
+            "mapping_sha256": "7470df566d7369342aa23bbad540dfc50c96b14c822b248c6112a1752cb0f4f2"
+          },
+          "target_kind": "executable",
+          "target_format": "pe",
+          "function_dossier_coverage": "observed-facets-and-call-relationships-v1",
+          "architecture": "x86",
+          "available_architectures": [
+            "x86"
+          ],
+          "loader": {
+            "source": "derived",
+            "arguments": [
+              "-l",
+              "WinPE",
+              "--intel-32"
+            ]
+          }
+        },
+        "digest": "82f25842f864a06f41582d04304cf0c152ab0bfb4071f7504b01dfd563ceef9a"
+      },
+      "predicate_type": "rea.analysis",
+      "operation": "procedure_pseudo_code",
+      "parameters": {
+        "procedure": "0x457124"
+      },
+      "raw_result": null,
+      "normalized_result": "    var_1C = 0x0;\n    var_10 = 0x0;\n    var_C = 0x0;\n    var_8 = edx;\n    var_4 = eax;\n    sub_40496c();\n    decomp_var_2c = ebp;\n    decomp_var_30 = sub_45722c;\n    esp = esp - 0x34;\n    decomp_var_34 = *0x0;\n    *0x0 = &decomp_var_34;\n    eax = var_4[0xca];\n    eax = eax[0x2];\n    if (eax != 0x0) {\n            esi = eax - 0x1;\n            if (esi >= 0x0) {\n                    esi = esi + 0x1;\n                    ebx = 0x0;\n                    do {\n                            edi = sub_414144();\n                            sub_408aac();\n                            sub_404564();\n                            esp = esp - 0x4;\n                            eax = sub_4093a8(&var_C);\n                            while (sub_404ac0() > 0x0) {\n                                    esp = (esp - 0x4) + 0x4;\n                                    *(int8_t *)(sub_4049d4() + (sub_404ac0() - 0x1)) = 0x30;\n                            }\n                            sub_4047d0();\n                            (*(*edi + 0x50))();\n                            ebx = ebx + 0x1;\n                            esi = esi - 0x1;\n                    } while (esi != 0x0);\n            }\n    }\n    *0x0 = decomp_var_34;\n    sub_4044cc();\n    eax = sub_4044f0();\n    return eax;\n",
+      "confidence": "observed",
+      "authority": "shipped-artifact",
+      "environment": null,
+      "limitations": [
+        "REA loaded a digest-verified private executable copy. Evidence identifies the selected original source; Hopper document names describe the private image. The owned image and its Hopper document close together.",
+        "Results depend on Hopper's completed static analysis."
+      ],
+      "relationship_coverage": null,
+      "locations": [],
+      "evidence_links": []
+    }
+  ],
+  "observed": {
+    "uiResource": "TFORMMAIN",
+    "uiFileOffset": 413692,
+    "uiBytes": 2238,
+    "loadSPRAddress": "0x4569a4",
+    "saveFramesAddress": "0x457124"
+  },
+  "inferences": [
+    "LoadSPR directly checks SP signature bytes 0x53/0x50 and SPR versions 0x200 and 0x201. It does not establish a GRF decryption pathway.",
+    "LoadSPR contains 256-entry palette setup and indexed/raw/RLE pixel branches.",
+    "SaveFrames iterates through the in-memory frame list; UI caption inspection separately identifies Save One/Save All."
+  ],
+  "limitations": [
+    "Pseudocode is static provider output, not original source or observed execution.",
+    "No claim that standalone SPRViewer opens GRF archives or bypasses custom encryption.",
+    "PAL and ACT workflows are additions to the macOS app, not capabilities established for this reference."
+  ]
+}

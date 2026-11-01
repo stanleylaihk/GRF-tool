@@ -1,0 +1,1038 @@
+[
+  {
+    "evidence_id": "ev_ce224a12f9f9cdeff130d2ad0c1221b9f44663b17ae49fa39107cf86f2f52328",
+    "subject": {
+      "name": "grfbuilder.exe",
+      "digest": {
+        "sha256": "9d8c1d5f3c67dd1d2f4cec62ba7887fade5864782063bc03459a71366ba5cb80"
+      },
+      "local_path": "/Users/successslai/Git/REA/grfbuilder-0.1.30/grfbuilder.exe",
+      "format": "pe",
+      "architecture": "x86"
+    },
+    "provider": {
+      "id": "hopper",
+      "name": "Hopper Disassembler",
+      "version": "launcher-sha256:f75b6862bb729d7a5d75cdd5b3ab8e8bbbf98a95061b9174fdadffb1077fbf42"
+    },
+    "analysis_profile": {
+      "provider": {
+        "id": "hopper",
+        "name": "Hopper Disassembler",
+        "version": "launcher-sha256:f75b6862bb729d7a5d75cdd5b3ab8e8bbbf98a95061b9174fdadffb1077fbf42"
+      },
+      "parameters": {
+        "function_coordinate_context": {
+          "kind": "native-function-coordinate-context-v1",
+          "selected_image": null,
+          "mapping_sha256": "7470df566d7369342aa23bbad540dfc50c96b14c822b248c6112a1752cb0f4f2"
+        },
+        "target_kind": "executable",
+        "target_format": "pe",
+        "function_dossier_coverage": "observed-facets-and-call-relationships-v1",
+        "architecture": "x86",
+        "available_architectures": [
+          "x86"
+        ],
+        "loader": {
+          "source": "derived",
+          "arguments": [
+            "-l",
+            "WinPE",
+            "--intel-32"
+          ]
+        }
+      },
+      "digest": "82f25842f864a06f41582d04304cf0c152ab0bfb4071f7504b01dfd563ceef9a"
+    },
+    "predicate_type": "rea.analysis",
+    "operation": "search_strings",
+    "parameters": {
+      "pattern": "repack|merge|extract|preview|compression|add files|remove|\\.spr|\\.act|\\.lua|\\.lub|\\.pal|New GRF|Save",
+      "mode": "regex",
+      "case_sensitive": false
+    },
+    "raw_result": null,
+    "normalized_result": [
+      {
+        "address": "0x42a0a0",
+        "value": "grf/compression",
+        "provider_value": "grf/compression",
+        "string": {
+          "encoding": "utf-8",
+          "encoding_status": "inferred",
+          "termination": "present_or_not_required",
+          "byte_length": 16
+        }
+      },
+      {
+        "address": "0x42a0b0",
+        "value": "grf/repack",
+        "provider_value": "grf/repack",
+        "string": {
+          "encoding": "utf-8",
+          "encoding_status": "inferred",
+          "termination": "present_or_not_required",
+          "byte_length": 11
+        }
+      },
+      {
+        "address": "0x42a15e",
+        "value": "Image Preview",
+        "provider_value": "Image Preview",
+        "string": {
+          "encoding": "utf-8",
+          "encoding_status": "inferred",
+          "termination": "present_or_not_required",
+          "byte_length": 14
+        }
+      },
+      {
+        "address": "0x42a195",
+        "value": "Extraction in progress...",
+        "provider_value": "Extraction in progress...",
+        "string": {
+          "encoding": "utf-8",
+          "encoding_status": "inferred",
+          "termination": "present_or_not_required",
+          "byte_length": 26
+        }
+      },
+      {
+        "address": "0x42a1af",
+        "value": "Extracting file %1...",
+        "provider_value": "Extracting file %1...",
+        "string": {
+          "encoding": "utf-8",
+          "encoding_status": "inferred",
+          "termination": "present_or_not_required",
+          "byte_length": 22
+        }
+      },
+      {
+        "address": "0x42a1db",
+        "value": "Extract file as...",
+        "provider_value": "Extract file as...",
+        "string": {
+          "encoding": "utf-8",
+          "encoding_status": "inferred",
+          "termination": "present_or_not_required",
+          "byte_length": 19
+        }
+      },
+      {
+        "address": "0x42a218",
+        "value": "Could not write data to %1 while extracting a file.",
+        "provider_value": "Could not write data to %1 while extracting a file.",
+        "string": {
+          "encoding": "utf-8",
+          "encoding_status": "inferred",
+          "termination": "present_or_not_required",
+          "byte_length": 52
+        }
+      },
+      {
+        "address": "0x42a481",
+        "value": "Repack in progress...",
+        "provider_value": "Repack in progress...",
+        "string": {
+          "encoding": "utf-8",
+          "encoding_status": "inferred",
+          "termination": "present_or_not_required",
+          "byte_length": 22
+        }
+      },
+      {
+        "address": "0x42a58a",
+        "value": "Merge in progress...",
+        "provider_value": "Merge in progress...",
+        "string": {
+          "encoding": "utf-8",
+          "encoding_status": "inferred",
+          "termination": "present_or_not_required",
+          "byte_length": 21
+        }
+      },
+      {
+        "address": "0x42a5b7",
+        "value": "&Extract",
+        "provider_value": "&Extract",
+        "string": {
+          "encoding": "utf-8",
+          "encoding_status": "inferred",
+          "termination": "present_or_not_required",
+          "byte_length": 9
+        }
+      },
+      {
+        "address": "0x42a5c7",
+        "value": "Extract &All",
+        "provider_value": "Extract &All",
+        "string": {
+          "encoding": "utf-8",
+          "encoding_status": "inferred",
+          "termination": "present_or_not_required",
+          "byte_length": 13
+        }
+      },
+      {
+        "address": "0x42a5e9",
+        "value": "&Merge GRF",
+        "provider_value": "&Merge GRF",
+        "string": {
+          "encoding": "utf-8",
+          "encoding_status": "inferred",
+          "termination": "present_or_not_required",
+          "byte_length": 11
+        }
+      },
+      {
+        "address": "0x42a5fb",
+        "value": "Merge &Dir",
+        "provider_value": "Merge &Dir",
+        "string": {
+          "encoding": "utf-8",
+          "encoding_status": "inferred",
+          "termination": "present_or_not_required",
+          "byte_length": 11
+        }
+      },
+      {
+        "address": "0x42a628",
+        "value": "&Unicode extraction",
+        "provider_value": "&Unicode extraction",
+        "string": {
+          "encoding": "utf-8",
+          "encoding_status": "inferred",
+          "termination": "present_or_not_required",
+          "byte_length": 20
+        }
+      },
+      {
+        "address": "0x42a63c",
+        "value": "&ANSI extraction",
+        "provider_value": "&ANSI extraction",
+        "string": {
+          "encoding": "utf-8",
+          "encoding_status": "inferred",
+          "termination": "present_or_not_required",
+          "byte_length": 17
+        }
+      },
+      {
+        "address": "0x42a6db",
+        "value": "Repack",
+        "provider_value": "Repack",
+        "string": {
+          "encoding": "utf-8",
+          "encoding_status": "inferred",
+          "termination": "present_or_not_required",
+          "byte_length": 7
+        }
+      },
+      {
+        "address": "0x42a8e3",
+        "value": "Extract",
+        "provider_value": "Extract",
+        "string": {
+          "encoding": "utf-8",
+          "encoding_status": "inferred",
+          "termination": "present_or_not_required",
+          "byte_length": 8
+        }
+      },
+      {
+        "address": "0x42a8f2",
+        "value": "Extract All",
+        "provider_value": "Extract All",
+        "string": {
+          "encoding": "utf-8",
+          "encoding_status": "inferred",
+          "termination": "present_or_not_required",
+          "byte_length": 12
+        }
+      },
+      {
+        "address": "0x42a8fe",
+        "value": "Merge GRF",
+        "provider_value": "Merge GRF",
+        "string": {
+          "encoding": "utf-8",
+          "encoding_status": "inferred",
+          "termination": "present_or_not_required",
+          "byte_length": 10
+        }
+      },
+      {
+        "address": "0x42a908",
+        "value": "Merge dir",
+        "provider_value": "Merge dir",
+        "string": {
+          "encoding": "utf-8",
+          "encoding_status": "inferred",
+          "termination": "present_or_not_required",
+          "byte_length": 10
+        }
+      },
+      {
+        "address": "0x42a927",
+        "value": "Compression level",
+        "provider_value": "Compression level",
+        "string": {
+          "encoding": "utf-8",
+          "encoding_status": "inferred",
+          "termination": "present_or_not_required",
+          "byte_length": 18
+        }
+      },
+      {
+        "address": "0x42a939",
+        "value": "Repack type",
+        "provider_value": "Repack type",
+        "string": {
+          "encoding": "utf-8",
+          "encoding_status": "inferred",
+          "termination": "present_or_not_required",
+          "byte_length": 12
+        }
+      },
+      {
+        "address": "0x42a98e",
+        "value": "action_Extract",
+        "provider_value": "action_Extract",
+        "string": {
+          "encoding": "utf-8",
+          "encoding_status": "inferred",
+          "termination": "present_or_not_required",
+          "byte_length": 15
+        }
+      },
+      {
+        "address": "0x42a99d",
+        "value": "action_Extract_All",
+        "provider_value": "action_Extract_All",
+        "string": {
+          "encoding": "utf-8",
+          "encoding_status": "inferred",
+          "termination": "present_or_not_required",
+          "byte_length": 19
+        }
+      },
+      {
+        "address": "0x42a9bd",
+        "value": "action_Merge_GRF",
+        "provider_value": "action_Merge_GRF",
+        "string": {
+          "encoding": "utf-8",
+          "encoding_status": "inferred",
+          "termination": "present_or_not_required",
+          "byte_length": 17
+        }
+      },
+      {
+        "address": "0x42a9ce",
+        "value": "actionMerge_Dir",
+        "provider_value": "actionMerge_Dir",
+        "string": {
+          "encoding": "utf-8",
+          "encoding_status": "inferred",
+          "termination": "present_or_not_required",
+          "byte_length": 16
+        }
+      },
+      {
+        "address": "0x42aab7",
+        "value": "actionRepack",
+        "provider_value": "actionRepack",
+        "string": {
+          "encoding": "utf-8",
+          "encoding_status": "inferred",
+          "termination": "present_or_not_required",
+          "byte_length": 13
+        }
+      },
+      {
+        "address": "0x42abc1",
+        "value": "btn_extract",
+        "provider_value": "btn_extract",
+        "string": {
+          "encoding": "utf-8",
+          "encoding_status": "inferred",
+          "termination": "present_or_not_required",
+          "byte_length": 12
+        }
+      },
+      {
+        "address": "0x42abd8",
+        "value": "btn_extractall",
+        "provider_value": "btn_extractall",
+        "string": {
+          "encoding": "utf-8",
+          "encoding_status": "inferred",
+          "termination": "present_or_not_required",
+          "byte_length": 15
+        }
+      },
+      {
+        "address": "0x42abe7",
+        "value": "btn_repack",
+        "provider_value": "btn_repack",
+        "string": {
+          "encoding": "utf-8",
+          "encoding_status": "inferred",
+          "termination": "present_or_not_required",
+          "byte_length": 11
+        }
+      },
+      {
+        "address": "0x42abfc",
+        "value": "btn_mergegrf",
+        "provider_value": "btn_mergegrf",
+        "string": {
+          "encoding": "utf-8",
+          "encoding_status": "inferred",
+          "termination": "present_or_not_required",
+          "byte_length": 13
+        }
+      },
+      {
+        "address": "0x42ac09",
+        "value": "btn_mergedir",
+        "provider_value": "btn_mergedir",
+        "string": {
+          "encoding": "utf-8",
+          "encoding_status": "inferred",
+          "termination": "present_or_not_required",
+          "byte_length": 13
+        }
+      },
+      {
+        "address": "0x42ac3c",
+        "value": "menuCompression_level",
+        "provider_value": "menuCompression_level",
+        "string": {
+          "encoding": "utf-8",
+          "encoding_status": "inferred",
+          "termination": "present_or_not_required",
+          "byte_length": 22
+        }
+      },
+      {
+        "address": "0x42ac52",
+        "value": "menuRepack_type",
+        "provider_value": "menuRepack_type",
+        "string": {
+          "encoding": "utf-8",
+          "encoding_status": "inferred",
+          "termination": "present_or_not_required",
+          "byte_length": 16
+        }
+      },
+      {
+        "address": "0x42ad6d",
+        "value": "Create new GRF as...",
+        "provider_value": "Create new GRF as...",
+        "string": {
+          "encoding": "utf-8",
+          "encoding_status": "inferred",
+          "termination": "present_or_not_required",
+          "byte_length": 21
+        }
+      },
+      {
+        "address": "0x42addc",
+        "value": "Preparing to merge directory...",
+        "provider_value": "Preparing to merge directory...",
+        "string": {
+          "encoding": "utf-8",
+          "encoding_status": "inferred",
+          "termination": "present_or_not_required",
+          "byte_length": 32
+        }
+      }
+    ],
+    "confidence": "observed",
+    "authority": "shipped-artifact",
+    "environment": null,
+    "limitations": [
+      "REA loaded a digest-verified private executable copy. Evidence identifies the selected original source; Hopper document names describe the private image. The owned image and its Hopper document close together.",
+      "Results depend on Hopper's completed static analysis.",
+      "Regex mode uses ECMAScript Unicode semantics in a cancellable worker with a 5000 ms matching deadline (source default). The effective REA_REGEX_MATCHING_DEADLINE_MS value is 5000 ms (source default; default 5000 ms, floor 1 ms, maximum 2147483647 ms). Set REA_REGEX_MATCHING_DEADLINE_MS in the environment that starts REA to a positive decimal integer from 1 to 2147483647, then restart REA. In a running MCP server, use update_analysis_settings with setting regex.matching_deadline_ms and action set instead; the new value applies to new work without a REA restart. The worker old-generation heap does not raise this deadline. The worker requests 128 MiB. The effective old-generation heap was not established from the launch flags. --max-old-space-size, --max-old-space-size-percentage, --max-heap-size, --env-file, --env-file-if-exists, --experimental-config-file, and --experimental-default-config-file can change that request. The effective REA_REGEX_WORKER_HEAP_REQUEST_MIB value is 128 MiB (source default; default 128 MiB, floor 7 MiB, maximum 16384 MiB). Set REA_REGEX_WORKER_HEAP_REQUEST_MIB in the environment that starts REA to a decimal integer from 7 to 16384, then restart REA. In a running MCP server, use update_analysis_settings with setting regex.worker_heap_request_mib and action set instead; the new value applies to new work without a REA restart. A positive Node --max-old-space-size, including NODE_OPTIONS, overrides this request and sets the effective heap. That flag is not limited by this setting's floor or maximum. Raising host memory alone does not raise the request. Matching failure leaves the service available. Literal mode retains native casefold semantics.",
+      "String values cover native typed objects. Hopper may split long literals into adjacent unterminated fragments; string searches match each object independently.",
+      "Undecodable typed objects retain native display text with an explicit decoding unknown; these values do not establish decoded source literals.",
+      "Reported string encodings are inferred from typed bytes and native display; the original source's intended encoding is unknown."
+    ],
+    "relationship_coverage": null,
+    "locations": [],
+    "evidence_links": []
+  },
+  {
+    "evidence_id": "ev_81764196a75996c20d8b55d0b981c1259779c0c2a96ba39ae0ecaf463357aa10",
+    "subject": {
+      "name": "grfbuilder.exe",
+      "digest": {
+        "sha256": "9d8c1d5f3c67dd1d2f4cec62ba7887fade5864782063bc03459a71366ba5cb80"
+      },
+      "local_path": "/Users/successslai/Git/REA/grfbuilder-0.1.30/grfbuilder.exe",
+      "format": "pe",
+      "architecture": "x86"
+    },
+    "provider": {
+      "id": "hopper",
+      "name": "Hopper Disassembler",
+      "version": "launcher-sha256:f75b6862bb729d7a5d75cdd5b3ab8e8bbbf98a95061b9174fdadffb1077fbf42"
+    },
+    "analysis_profile": {
+      "provider": {
+        "id": "hopper",
+        "name": "Hopper Disassembler",
+        "version": "launcher-sha256:f75b6862bb729d7a5d75cdd5b3ab8e8bbbf98a95061b9174fdadffb1077fbf42"
+      },
+      "parameters": {
+        "function_coordinate_context": {
+          "kind": "native-function-coordinate-context-v1",
+          "selected_image": null,
+          "mapping_sha256": "7470df566d7369342aa23bbad540dfc50c96b14c822b248c6112a1752cb0f4f2"
+        },
+        "target_kind": "executable",
+        "target_format": "pe",
+        "function_dossier_coverage": "observed-facets-and-call-relationships-v1",
+        "architecture": "x86",
+        "available_architectures": [
+          "x86"
+        ],
+        "loader": {
+          "source": "derived",
+          "arguments": [
+            "-l",
+            "WinPE",
+            "--intel-32"
+          ]
+        }
+      },
+      "digest": "82f25842f864a06f41582d04304cf0c152ab0bfb4071f7504b01dfd563ceef9a"
+    },
+    "predicate_type": "rea.analysis",
+    "operation": "search_procedures",
+    "parameters": {
+      "pattern": "merge|repack|preview|grf_new|grf_create|grf_delete|grf_open|grf_read",
+      "mode": "regex",
+      "case_sensitive": false
+    },
+    "raw_result": null,
+    "normalized_result": [
+      {
+        "address": "0x41db80",
+        "value": "j_grf_create_tree"
+      },
+      {
+        "address": "0x41dca0",
+        "value": "j_grf_merge"
+      },
+      {
+        "address": "0x41dcb0",
+        "value": "j_grf_new_by_fd"
+      },
+      {
+        "address": "0x41dcd0",
+        "value": "j_grf_repack"
+      }
+    ],
+    "confidence": "observed",
+    "authority": "shipped-artifact",
+    "environment": null,
+    "limitations": [
+      "REA loaded a digest-verified private executable copy. Evidence identifies the selected original source; Hopper document names describe the private image. The owned image and its Hopper document close together.",
+      "Results depend on Hopper's completed static analysis.",
+      "Regex mode uses ECMAScript Unicode semantics in a cancellable worker with a 5000 ms matching deadline (source default). The effective REA_REGEX_MATCHING_DEADLINE_MS value is 5000 ms (source default; default 5000 ms, floor 1 ms, maximum 2147483647 ms). Set REA_REGEX_MATCHING_DEADLINE_MS in the environment that starts REA to a positive decimal integer from 1 to 2147483647, then restart REA. In a running MCP server, use update_analysis_settings with setting regex.matching_deadline_ms and action set instead; the new value applies to new work without a REA restart. The worker old-generation heap does not raise this deadline. The worker requests 128 MiB. The effective old-generation heap was not established from the launch flags. --max-old-space-size, --max-old-space-size-percentage, --max-heap-size, --env-file, --env-file-if-exists, --experimental-config-file, and --experimental-default-config-file can change that request. The effective REA_REGEX_WORKER_HEAP_REQUEST_MIB value is 128 MiB (source default; default 128 MiB, floor 7 MiB, maximum 16384 MiB). Set REA_REGEX_WORKER_HEAP_REQUEST_MIB in the environment that starts REA to a decimal integer from 7 to 16384, then restart REA. In a running MCP server, use update_analysis_settings with setting regex.worker_heap_request_mib and action set instead; the new value applies to new work without a REA restart. A positive Node --max-old-space-size, including NODE_OPTIONS, overrides this request and sets the effective heap. That flag is not limited by this setting's floor or maximum. Raising host memory alone does not raise the request. Matching failure leaves the service available. Literal mode retains native casefold semantics."
+    ],
+    "relationship_coverage": null,
+    "locations": [],
+    "evidence_links": []
+  },
+  {
+    "evidence_id": "ev_2590eab1da8db7805d309d022fdb2856871cdfeb1df115504e282ca90b70109f",
+    "subject": {
+      "name": "grfbuilder.exe",
+      "digest": {
+        "sha256": "9d8c1d5f3c67dd1d2f4cec62ba7887fade5864782063bc03459a71366ba5cb80"
+      },
+      "local_path": "/Users/successslai/Git/REA/grfbuilder-0.1.30/grfbuilder.exe",
+      "format": "pe",
+      "architecture": "x86"
+    },
+    "provider": {
+      "id": "hopper",
+      "name": "Hopper Disassembler",
+      "version": "launcher-sha256:f75b6862bb729d7a5d75cdd5b3ab8e8bbbf98a95061b9174fdadffb1077fbf42"
+    },
+    "analysis_profile": {
+      "provider": {
+        "id": "hopper",
+        "name": "Hopper Disassembler",
+        "version": "launcher-sha256:f75b6862bb729d7a5d75cdd5b3ab8e8bbbf98a95061b9174fdadffb1077fbf42"
+      },
+      "parameters": {
+        "function_coordinate_context": {
+          "kind": "native-function-coordinate-context-v1",
+          "selected_image": null,
+          "mapping_sha256": "7470df566d7369342aa23bbad540dfc50c96b14c822b248c6112a1752cb0f4f2"
+        },
+        "target_kind": "executable",
+        "target_format": "pe",
+        "function_dossier_coverage": "observed-facets-and-call-relationships-v1",
+        "architecture": "x86",
+        "available_architectures": [
+          "x86"
+        ],
+        "loader": {
+          "source": "derived",
+          "arguments": [
+            "-l",
+            "WinPE",
+            "--intel-32"
+          ]
+        }
+      },
+      "digest": "82f25842f864a06f41582d04304cf0c152ab0bfb4071f7504b01dfd563ceef9a"
+    },
+    "predicate_type": "rea.analysis",
+    "operation": "xrefs",
+    "parameters": {
+      "address": "0x41dca0"
+    },
+    "raw_result": null,
+    "normalized_result": [
+      "0x40b4cf"
+    ],
+    "confidence": "observed",
+    "authority": "shipped-artifact",
+    "environment": null,
+    "limitations": [
+      "REA loaded a digest-verified private executable copy. Evidence identifies the selected original source; Hopper document names describe the private image. The owned image and its Hopper document close together.",
+      "Results depend on Hopper's completed static analysis."
+    ],
+    "relationship_coverage": null,
+    "locations": [],
+    "evidence_links": []
+  },
+  {
+    "evidence_id": "ev_cdb33a2302ac14495483f8c18c5d8be0610f3eff308bf99b3b0c2e3142113169",
+    "subject": {
+      "name": "grfbuilder.exe",
+      "digest": {
+        "sha256": "9d8c1d5f3c67dd1d2f4cec62ba7887fade5864782063bc03459a71366ba5cb80"
+      },
+      "local_path": "/Users/successslai/Git/REA/grfbuilder-0.1.30/grfbuilder.exe",
+      "format": "pe",
+      "architecture": "x86"
+    },
+    "provider": {
+      "id": "hopper",
+      "name": "Hopper Disassembler",
+      "version": "launcher-sha256:f75b6862bb729d7a5d75cdd5b3ab8e8bbbf98a95061b9174fdadffb1077fbf42"
+    },
+    "analysis_profile": {
+      "provider": {
+        "id": "hopper",
+        "name": "Hopper Disassembler",
+        "version": "launcher-sha256:f75b6862bb729d7a5d75cdd5b3ab8e8bbbf98a95061b9174fdadffb1077fbf42"
+      },
+      "parameters": {
+        "function_coordinate_context": {
+          "kind": "native-function-coordinate-context-v1",
+          "selected_image": null,
+          "mapping_sha256": "7470df566d7369342aa23bbad540dfc50c96b14c822b248c6112a1752cb0f4f2"
+        },
+        "target_kind": "executable",
+        "target_format": "pe",
+        "function_dossier_coverage": "observed-facets-and-call-relationships-v1",
+        "architecture": "x86",
+        "available_architectures": [
+          "x86"
+        ],
+        "loader": {
+          "source": "derived",
+          "arguments": [
+            "-l",
+            "WinPE",
+            "--intel-32"
+          ]
+        }
+      },
+      "digest": "82f25842f864a06f41582d04304cf0c152ab0bfb4071f7504b01dfd563ceef9a"
+    },
+    "predicate_type": "rea.analysis",
+    "operation": "xrefs",
+    "parameters": {
+      "address": "0x41dcd0"
+    },
+    "raw_result": null,
+    "normalized_result": [
+      "0x4095d7"
+    ],
+    "confidence": "observed",
+    "authority": "shipped-artifact",
+    "environment": null,
+    "limitations": [
+      "REA loaded a digest-verified private executable copy. Evidence identifies the selected original source; Hopper document names describe the private image. The owned image and its Hopper document close together.",
+      "Results depend on Hopper's completed static analysis."
+    ],
+    "relationship_coverage": null,
+    "locations": [],
+    "evidence_links": []
+  },
+  {
+    "evidence_id": "ev_abf5c473a2c275d39d5e368d4ef2e9d01907611c6174e77e0b7b6d473450d85e",
+    "subject": {
+      "name": "grfbuilder.exe",
+      "digest": {
+        "sha256": "9d8c1d5f3c67dd1d2f4cec62ba7887fade5864782063bc03459a71366ba5cb80"
+      },
+      "local_path": "/Users/successslai/Git/REA/grfbuilder-0.1.30/grfbuilder.exe",
+      "format": "pe",
+      "architecture": "x86"
+    },
+    "provider": {
+      "id": "hopper",
+      "name": "Hopper Disassembler",
+      "version": "launcher-sha256:f75b6862bb729d7a5d75cdd5b3ab8e8bbbf98a95061b9174fdadffb1077fbf42"
+    },
+    "analysis_profile": {
+      "provider": {
+        "id": "hopper",
+        "name": "Hopper Disassembler",
+        "version": "launcher-sha256:f75b6862bb729d7a5d75cdd5b3ab8e8bbbf98a95061b9174fdadffb1077fbf42"
+      },
+      "parameters": {
+        "function_coordinate_context": {
+          "kind": "native-function-coordinate-context-v1",
+          "selected_image": null,
+          "mapping_sha256": "7470df566d7369342aa23bbad540dfc50c96b14c822b248c6112a1752cb0f4f2"
+        },
+        "target_kind": "executable",
+        "target_format": "pe",
+        "function_dossier_coverage": "observed-facets-and-call-relationships-v1",
+        "architecture": "x86",
+        "available_architectures": [
+          "x86"
+        ],
+        "loader": {
+          "source": "derived",
+          "arguments": [
+            "-l",
+            "WinPE",
+            "--intel-32"
+          ]
+        }
+      },
+      "digest": "82f25842f864a06f41582d04304cf0c152ab0bfb4071f7504b01dfd563ceef9a"
+    },
+    "predicate_type": "rea.analysis",
+    "operation": "search_strings",
+    "parameters": {
+      "pattern": "Text|Sound|WAV|Delete|Remove|Search|Find|Full|Quick",
+      "mode": "regex",
+      "case_sensitive": false
+    },
+    "raw_result": null,
+    "normalized_result": [
+      {
+        "address": "0x42a0bb",
+        "value": "%1_tmp.wav",
+        "provider_value": "%1_tmp.wav",
+        "string": {
+          "encoding": "utf-8",
+          "encoding_status": "inferred",
+          "termination": "present_or_not_required",
+          "byte_length": 11
+        }
+      },
+      {
+        "address": "0x42a0c6",
+        "value": ".wav",
+        "provider_value": ".wav",
+        "string": {
+          "encoding": "utf-8",
+          "encoding_status": "inferred",
+          "termination": "present_or_not_required",
+          "byte_length": 5
+        }
+      },
+      {
+        "address": "0x42a49c",
+        "value": "Are you sure you want to delete the file `%1'?",
+        "provider_value": "Are you sure you want to delete the file `%1'?",
+        "string": {
+          "encoding": "utf-8",
+          "encoding_status": "inferred",
+          "termination": "present_or_not_required",
+          "byte_length": 47
+        }
+      },
+      {
+        "address": "0x42a4cc",
+        "value": "Are you sure you want to delete the %1 selected files?",
+        "provider_value": "Are you sure you want to delete the %1 selected files?",
+        "string": {
+          "encoding": "utf-8",
+          "encoding_status": "inferred",
+          "termination": "present_or_not_required",
+          "byte_length": 55
+        }
+      },
+      {
+        "address": "0x42a6e9",
+        "value": "Delete selected",
+        "provider_value": "Delete selected",
+        "string": {
+          "encoding": "utf-8",
+          "encoding_status": "inferred",
+          "termination": "present_or_not_required",
+          "byte_length": 16
+        }
+      },
+      {
+        "address": "0x42a74b",
+        "value": "Search result",
+        "provider_value": "Search result",
+        "string": {
+          "encoding": "utf-8",
+          "encoding_status": "inferred",
+          "termination": "present_or_not_required",
+          "byte_length": 14
+        }
+      },
+      {
+        "address": "0x42a760",
+        "value": "<html><head><meta name=\"qrichtext\" content=\"1\" /></head><body style=\" white-space: pre-wrap; font-family:Sans Serif; font-size:9pt; font-weight:400; font-style:normal; text-decoration:none;\"><p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; ma",
+        "provider_value": "<html><head><meta name=\\\"qrichtext\\\" content=\\\"1\\\" /></head><body style=\\\" white-space: pre-wrap; font-family:Sans Serif; font-size:9pt; font-weight:400; font-style:normal; text-decoration:none;\\\"><p style=\\\" margin-top:0px; margin-bottom:0px; margin-left:0px; ma…",
+        "string": {
+          "encoding": "utf-8",
+          "encoding_status": "inferred",
+          "termination": "missing",
+          "byte_length": 256
+        }
+      },
+      {
+        "address": "0x42a860",
+        "value": "rgin-right:0px; -qt-block-indent:0; text-indent:0px;\">Using this button, you can open an existing GRF file.</p></body></html>",
+        "provider_value": "rgin-right:0px; -qt-block-indent:0; text-indent:0px;\\\">Using this button, you can open an existing GRF file.</p></body></html>",
+        "string": {
+          "encoding": "utf-8",
+          "encoding_status": "inferred",
+          "termination": "present_or_not_required",
+          "byte_length": 126
+        }
+      },
+      {
+        "address": "0x42a8eb",
+        "value": "Delete",
+        "provider_value": "Delete",
+        "string": {
+          "encoding": "utf-8",
+          "encoding_status": "inferred",
+          "termination": "present_or_not_required",
+          "byte_length": 7
+        }
+      },
+      {
+        "address": "0x42aac4",
+        "value": "actionDelete",
+        "provider_value": "actionDelete",
+        "string": {
+          "encoding": "utf-8",
+          "encoding_status": "inferred",
+          "termination": "present_or_not_required",
+          "byte_length": 13
+        }
+      },
+      {
+        "address": "0x42ab92",
+        "value": "viewSearch",
+        "provider_value": "viewSearch",
+        "string": {
+          "encoding": "utf-8",
+          "encoding_status": "inferred",
+          "termination": "present_or_not_required",
+          "byte_length": 11
+        }
+      },
+      {
+        "address": "0x42abcd",
+        "value": "btn_delete",
+        "provider_value": "btn_delete",
+        "string": {
+          "encoding": "utf-8",
+          "encoding_status": "inferred",
+          "termination": "present_or_not_required",
+          "byte_length": 11
+        }
+      },
+      {
+        "address": "0x42c1d6",
+        "value": "delete[]",
+        "provider_value": "delete[]",
+        "string": {
+          "encoding": "utf-8",
+          "encoding_status": "inferred",
+          "termination": "present_or_not_required",
+          "byte_length": 9
+        }
+      },
+      {
+        "address": "0x42c1e7",
+        "value": "delete",
+        "provider_value": "delete",
+        "string": {
+          "encoding": "utf-8",
+          "encoding_status": "inferred",
+          "termination": "present_or_not_required",
+          "byte_length": 7
+        }
+      }
+    ],
+    "confidence": "observed",
+    "authority": "shipped-artifact",
+    "environment": null,
+    "limitations": [
+      "REA loaded a digest-verified private executable copy. Evidence identifies the selected original source; Hopper document names describe the private image. The owned image and its Hopper document close together.",
+      "Results depend on Hopper's completed static analysis.",
+      "Regex mode uses ECMAScript Unicode semantics in a cancellable worker with a 5000 ms matching deadline (source default). The effective REA_REGEX_MATCHING_DEADLINE_MS value is 5000 ms (source default; default 5000 ms, floor 1 ms, maximum 2147483647 ms). Set REA_REGEX_MATCHING_DEADLINE_MS in the environment that starts REA to a positive decimal integer from 1 to 2147483647, then restart REA. In a running MCP server, use update_analysis_settings with setting regex.matching_deadline_ms and action set instead; the new value applies to new work without a REA restart. The worker old-generation heap does not raise this deadline. The worker requests 128 MiB. The effective old-generation heap was not established from the launch flags. --max-old-space-size, --max-old-space-size-percentage, --max-heap-size, --env-file, --env-file-if-exists, --experimental-config-file, and --experimental-default-config-file can change that request. The effective REA_REGEX_WORKER_HEAP_REQUEST_MIB value is 128 MiB (source default; default 128 MiB, floor 7 MiB, maximum 16384 MiB). Set REA_REGEX_WORKER_HEAP_REQUEST_MIB in the environment that starts REA to a decimal integer from 7 to 16384, then restart REA. In a running MCP server, use update_analysis_settings with setting regex.worker_heap_request_mib and action set instead; the new value applies to new work without a REA restart. A positive Node --max-old-space-size, including NODE_OPTIONS, overrides this request and sets the effective heap. That flag is not limited by this setting's floor or maximum. Raising host memory alone does not raise the request. Matching failure leaves the service available. Literal mode retains native casefold semantics.",
+      "String values cover native typed objects. Hopper may split long literals into adjacent unterminated fragments; string searches match each object independently.",
+      "Undecodable typed objects retain native display text with an explicit decoding unknown; these values do not establish decoded source literals.",
+      "Reported string encodings are inferred from typed bytes and native display; the original source's intended encoding is unknown."
+    ],
+    "relationship_coverage": null,
+    "locations": [],
+    "evidence_links": []
+  },
+  {
+    "evidence_id": "ev_c0d4a24a9fa2c93f7171315deaf0e1f4f0622b5b2b86e2411529baee4c33d6ab",
+    "subject": {
+      "name": "grfbuilder.exe",
+      "digest": {
+        "sha256": "9d8c1d5f3c67dd1d2f4cec62ba7887fade5864782063bc03459a71366ba5cb80"
+      },
+      "local_path": "/Users/successslai/Git/REA/grfbuilder-0.1.30/grfbuilder.exe",
+      "format": "pe",
+      "architecture": "x86"
+    },
+    "provider": {
+      "id": "hopper",
+      "name": "Hopper Disassembler",
+      "version": "launcher-sha256:f75b6862bb729d7a5d75cdd5b3ab8e8bbbf98a95061b9174fdadffb1077fbf42"
+    },
+    "analysis_profile": {
+      "provider": {
+        "id": "hopper",
+        "name": "Hopper Disassembler",
+        "version": "launcher-sha256:f75b6862bb729d7a5d75cdd5b3ab8e8bbbf98a95061b9174fdadffb1077fbf42"
+      },
+      "parameters": {
+        "function_coordinate_context": {
+          "kind": "native-function-coordinate-context-v1",
+          "selected_image": null,
+          "mapping_sha256": "7470df566d7369342aa23bbad540dfc50c96b14c822b248c6112a1752cb0f4f2"
+        },
+        "target_kind": "executable",
+        "target_format": "pe",
+        "function_dossier_coverage": "observed-facets-and-call-relationships-v1",
+        "architecture": "x86",
+        "available_architectures": [
+          "x86"
+        ],
+        "loader": {
+          "source": "derived",
+          "arguments": [
+            "-l",
+            "WinPE",
+            "--intel-32"
+          ]
+        }
+      },
+      "digest": "82f25842f864a06f41582d04304cf0c152ab0bfb4071f7504b01dfd563ceef9a"
+    },
+    "predicate_type": "rea.analysis",
+    "operation": "procedure_pseudo_code",
+    "parameters": {
+      "procedure": "0x4095d7"
+    },
+    "raw_result": null,
+    "normalized_result": "    eax = sub_41d12c(&var_84);\n    esp = (esp - 0x10) + 0x10;\n    edx = arg_0;\n    eax = edx[0x50];\n    if (eax != 0x0) {\n            var_A0 = grf_wasted_space(eax);\n            var_B8 = arg_0 + 0x124;\n            esp = (esp - 0x20) + 0x10 - 0x8;\n            asm { fild       qword [esp+0xc0+var_C0] };\n            asm { fstp       qword [ebp+var_90] };\n            var_38 = 0x400400;\n            var_14 = 0x20;\n            sub_408efc(&var_30, arg_0, grf_wasted_space(arg_0[0x50]));\n            var_12 = 0x20;\n            QMetaObject::tr(&var_28, dword_429000, 0x42a438, 0x0);\n            eax = QString::arg(&var_2C, &var_28, var_90, var_8C, 0x0, 0x66, 0x1, &var_12);\n            esp = ((((esp + 0xc - 0x4) + 0xc - 0xc) + 0xc - 0x10) + 0xc - 0x20) + 0x10 - 0xc;\n            eax = QString::arg(&var_34, &var_2C, &var_30, 0x0, &var_14);\n            QMetaObject::tr(&var_24, dword_429000, \"GrfBuilder\", 0x0);\n            var_9C = arg_0;\n            eax = QMessageBox::question(arg_0, &var_24, &var_34, &var_38, 0x400);\n            var_98 = eax;\n            esp = (((esp - 0x8) + 0x1c - 0x24) + 0x14 - 0x4) + 0xc;\n            if (InterlockedDecrement(var_24) == 0x0) {\n                    (*QString::free(QString::Data*))(var_24);\n                    esp = (esp - 0x10) + 0x10;\n            }\n            esp = (esp - 0x10) + 0xc;\n            if (InterlockedDecrement(var_34) == 0x0) {\n                    (*QString::free(QString::Data*))(var_34);\n                    esp = (esp - 0x10) + 0x10;\n            }\n            esp = (esp - 0x10) + 0xc;\n            if (InterlockedDecrement(var_2C) == 0x0) {\n                    (*QString::free(QString::Data*))(var_2C);\n                    esp = (esp - 0x10) + 0x10;\n            }\n            esp = (esp - 0x10) + 0xc;\n            if (InterlockedDecrement(var_28) == 0x0) {\n                    (*QString::free(QString::Data*))(var_28);\n                    esp = (esp - 0x10) + 0x10;\n            }\n            esp = (esp - 0x10) + 0xc;\n            if (InterlockedDecrement(var_30) == 0x0) {\n                    (*QString::free(QString::Data*))(var_30);\n                    esp = (esp - 0x10) + 0x10;\n            }\n            if (var_98 != 0x400000) {\n                    var_20 = 0x0;\n                    var_94 = grf_filecount(arg_0[0x50]);\n                    (*QMetaObject::tr(char const*, char const*) const)(&var_1C, dword_429000, \"Cancel\", 0x0);\n                    QMetaObject::tr(&var_18, dword_429000, \"Repack in progress...\", 0x0);\n                    eax = QProgressDialog::QProgressDialog(&var_4C, &var_18, &var_1C, 0x0, var_94, var_9C, &var_20);\n                    esp = (((((esp - 0x10) + 0x10 - 0x10) + 0xc - 0x10) + 0x8 - 0x1c) + 0x14 - 0x4) + 0xc;\n                    if (InterlockedDecrement(var_18) == 0x0) {\n                            (*QString::free(QString::Data*))(var_18);\n                            esp = (esp - 0x10) + 0x10;\n                    }\n                    esp = (esp - 0x10) + 0xc;\n                    if (InterlockedDecrement(var_1C) == 0x0) {\n                            (*QString::free(QString::Data*))(var_1C);\n                            esp = (esp - 0x10) + 0x10;\n                    }\n                    QWidget::setWindowModality(&var_4C, 0x1);\n                    grf_set_callback(arg_0[0x50], 0x408ed4, &var_4C);\n                    grf_repack(arg_0[0x50], arg_0[0x138] & 0xff);\n                    grf_set_callback(arg_0[0x50], 0x4021ac, arg_0);\n                    (*QProgressDialog::reset())(&var_4C);\n                    (*QWidget::close())(&var_4C);\n                    QProgressDialog::~QProgressDialog();\n                    esp = ((((esp - 0x10) + 0xc - 0xc) + 0x8 - 0x8) + 0xc - 0xc) + 0x10;\n            }\n    }\n    eax = sub_41cf40(&var_84);\n    &var_80 = &var_C;\n    return eax;\n",
+    "confidence": "observed",
+    "authority": "shipped-artifact",
+    "environment": null,
+    "limitations": [
+      "REA loaded a digest-verified private executable copy. Evidence identifies the selected original source; Hopper document names describe the private image. The owned image and its Hopper document close together.",
+      "Results depend on Hopper's completed static analysis."
+    ],
+    "relationship_coverage": null,
+    "locations": [],
+    "evidence_links": []
+  },
+  {
+    "evidence_id": "ev_79c9fde3ab1b2ba6d010804a1751d4d21fa372018453293439b09993c148d107",
+    "subject": {
+      "name": "grfbuilder.exe",
+      "digest": {
+        "sha256": "9d8c1d5f3c67dd1d2f4cec62ba7887fade5864782063bc03459a71366ba5cb80"
+      },
+      "local_path": "/Users/successslai/Git/REA/grfbuilder-0.1.30/grfbuilder.exe",
+      "format": "pe",
+      "architecture": "x86"
+    },
+    "provider": {
+      "id": "hopper",
+      "name": "Hopper Disassembler",
+      "version": "launcher-sha256:f75b6862bb729d7a5d75cdd5b3ab8e8bbbf98a95061b9174fdadffb1077fbf42"
+    },
+    "analysis_profile": {
+      "provider": {
+        "id": "hopper",
+        "name": "Hopper Disassembler",
+        "version": "launcher-sha256:f75b6862bb729d7a5d75cdd5b3ab8e8bbbf98a95061b9174fdadffb1077fbf42"
+      },
+      "parameters": {
+        "function_coordinate_context": {
+          "kind": "native-function-coordinate-context-v1",
+          "selected_image": null,
+          "mapping_sha256": "7470df566d7369342aa23bbad540dfc50c96b14c822b248c6112a1752cb0f4f2"
+        },
+        "target_kind": "executable",
+        "target_format": "pe",
+        "function_dossier_coverage": "observed-facets-and-call-relationships-v1",
+        "architecture": "x86",
+        "available_architectures": [
+          "x86"
+        ],
+        "loader": {
+          "source": "derived",
+          "arguments": [
+            "-l",
+            "WinPE",
+            "--intel-32"
+          ]
+        }
+      },
+      "digest": "82f25842f864a06f41582d04304cf0c152ab0bfb4071f7504b01dfd563ceef9a"
+    },
+    "predicate_type": "rea.analysis",
+    "operation": "procedure_pseudo_code",
+    "parameters": {
+      "procedure": "0x40b4cf"
+    },
+    "raw_result": null,
+    "normalized_result": "    eax = sub_41d12c(&var_A0);\n    esp = (esp - 0x10) + 0x10;\n    if (arg_0[0x50] != 0x0) {\n            var_4C = 0x0;\n            QMetaObject::tr(&var_48, dword_429000, \"GRF Files (*.grf *.gpf)\", 0x0);\n            var_44 = QString::fromAscii_helper(0x0, 0xffffffff);\n            QMetaObject::tr(&var_40, dword_429000, \"Open File\", 0x0);\n            eax = QFileDialog::getOpenFileName(&var_50, arg_0, &var_40, &var_44, &var_48, 0x0, &var_4C, arg_0);\n            esp = ((((esp - 0x14) + 0x10 - 0x10) + 0x8 - 0x1c) + 0x10 - 0x4) + 0xc;\n            if (InterlockedDecrement(var_40) == 0x0) {\n                    (*QString::free(QString::Data*))(var_40);\n                    esp = (esp - 0x10) + 0x10;\n            }\n            var_B0 = var_44;\n            esp = (esp - 0x10) + 0xc;\n            if (InterlockedDecrement(var_B0) == 0x0) {\n                    (*QString::free(QString::Data*))(var_44);\n                    esp = (esp - 0x10) + 0x10;\n            }\n            esp = (esp - 0x10) + 0xc;\n            if (InterlockedDecrement(var_48) == 0x0) {\n                    (*QString::free(QString::Data*))(var_48);\n                    esp = (esp - 0x10) + 0x10;\n            }\n            if (var_50 != *QString::shared_null) {\n                    eax = QFile::QFile(&var_58, &var_50);\n                    eax = QFile::open(&var_58);\n                    esp = ((esp - 0x10) + 0x8 - 0x8) + 0x10;\n                    if (eax != 0x0) {\n                            eax = QFile::handle(&var_58);\n                            eax = grf_new_by_fd(eax, 0x0);\n                            var_A8 = eax;\n                            grf_set_callback(eax, 0x4021ac, arg_0);\n                            eax = grf_load_from_new(var_A8);\n                            var_A4 = eax;\n                            esp = ((((esp - 0x10) + 0x8 - 0x8) + 0xc - 0xc) + 0x4 - 0x4) + 0x10;\n                            if (eax != 0x0) {\n                                    var_24 = 0x0;\n                                    grf_filecount(var_A4);\n                                    eax = (*QMetaObject::tr(char const*, char const*) const)(&var_20, dword_429000, \"Cancel\", 0x0);\n                                    QMetaObject::tr(0x3, dword_429000, \"Merge in progress...\", 0x0);\n                                    var_A0 = 0x0;\n                                    var_A4 = &var_20;\n                                    eax = QProgressDialog::QProgressDialog(&var_6C, &var_1C, var_A4, 0x0, 0x2, var_B0, &var_24);\n                                    esp = (((((esp - 0x10) + 0x10 - 0x10) + 0xc - 0x10) + 0x8 - 0x1c) + 0x14 - 0x4) + 0xc;\n                                    if (InterlockedDecrement(var_1C) == 0x0) {\n                                            (*QString::free(QString::Data*))(var_1C);\n                                            esp = (esp - 0x10) + 0x10;\n                                    }\n                                    esp = (esp - 0x10) + 0xc;\n                                    if (InterlockedDecrement(var_20) == 0x0) {\n                                            (*QString::free(QString::Data*))(var_20);\n                                            esp = (esp - 0x10) + 0x10;\n                                    }\n                                    var_6C = 0x1;\n                                    QWidget::setWindowModality(&var_6C, var_6C);\n                                    grf_set_callback(arg_0[0x50], 0x408c78, &var_6C);\n                                    grf_merge(arg_0[0x50], var_A4, arg_0[0x138] & 0xff);\n                                    grf_free(var_A4);\n                                    var_58 = arg_0;\n                                    grf_set_callback(arg_0[0x50], 0x4021ac, var_58);\n                                    grf_save(arg_0[0x50]);\n                                    (*QProgressDialog::reset())(&var_6C);\n                                    (*QWidget::close())(&var_6C);\n                                    esp = ((((((esp - 0x10) + 0xc - 0xc) + 0xc - 0xc) + 0x4 - 0x4) + 0xc - 0xc) + 0x4 - 0x4) + 0x4 - 0x4;\n                                    sub_40985c(arg_0);\n                                    QProgressDialog::~QProgressDialog();\n                                    esp = esp + 0x10;\n                            }\n                            else {\n                                    (*QMetaObject::tr(char const*, char const*) const)(&var_2C, dword_429000, \"The selected file doesn't look like a valid GRF file.\", 0x0);\n                                    QMetaObject::tr(&var_28, dword_429000, \"GrfBuilder\", 0x0);\n                                    var_14 = 0x400000;\n                                    eax = QMessageBox::warning(0x4, &var_28, &var_2C, &var_14, 0x400000);\n                                    esp = (((esp - 0x10) + 0xc - 0x24) + 0x14 - 0x4) + 0xc;\n                                    if (InterlockedDecrement(var_28) == 0x0) {\n                                            QString::free(var_28);\n                                            esp = (esp - 0x10) + 0x10;\n                                    }\n                                    esp = (esp - 0x10) + 0xc;\n                                    if (InterlockedDecrement(var_2C) == 0x0) {\n                                            esp = esp - 0x10;\n                                            (*QString::free(QString::Data*))(var_2C);\n                                            esp = esp + 0x10;\n                                    }\n                            }\n                    }\n                    else {\n                            (*QMetaObject::tr(char const*, char const*) const)(&var_34, dword_429000, \"Could not open file %1 in read-only mode.\", 0x0);\n                            eax = QString::arg(&var_38, &var_34, &var_50, 0x0, 0x8);\n                            QMetaObject::tr(&var_30, dword_429000, \"GrfBuilder\", 0x0);\n                            var_18 = 0x400000;\n                            var_A0 = &var_18;\n                            eax = QMessageBox::warning(var_B0, &var_30, &var_38, var_A0, 0x6);\n                            esp = (((esp - 0x24) + 0x1c - 0x24) + 0x14 - 0x4) + 0xc;\n                            if (InterlockedDecrement(var_30) == 0x0) {\n                                    QString::free(var_30);\n                                    esp = (esp - 0x10) + 0x10;\n                            }\n                            esp = (esp - 0x10) + 0xc;\n                            if (InterlockedDecrement(var_38) == 0x0) {\n                                    (*QString::free(QString::Data*))(var_38);\n                                    esp = (esp - 0x10) + 0x10;\n                            }\n                            esp = (esp - 0x10) + 0xc;\n                            if (InterlockedDecrement(var_34) == 0x0) {\n                                    esp = esp - 0x10;\n                                    (*QString::free(QString::Data*))(var_34);\n                                    esp = esp + 0x10;\n                            }\n                    }\n                    QFile::~QFile();\n                    esp = (esp - 0x10) + 0x10;\n            }\n            esp = (esp - 0x10) + 0xc;\n            if (InterlockedDecrement(var_50) == 0x0) {\n                    (*QString::free(QString::Data*))(var_50);\n                    esp = (esp - 0x10) + 0x10;\n            }\n    }\n    eax = sub_41cf40(&var_A0);\n    &decomp_var_54 = &var_C;\n    return eax;\n",
+    "confidence": "observed",
+    "authority": "shipped-artifact",
+    "environment": null,
+    "limitations": [
+      "REA loaded a digest-verified private executable copy. Evidence identifies the selected original source; Hopper document names describe the private image. The owned image and its Hopper document close together.",
+      "Results depend on Hopper's completed static analysis."
+    ],
+    "relationship_coverage": null,
+    "locations": [],
+    "evidence_links": []
+  }
+]
