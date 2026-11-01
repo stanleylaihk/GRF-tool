@@ -18,6 +18,9 @@ cp "$project_dir/Assets/AppIcon.icns" "$output/Contents/Resources/AppIcon.icns"
 if [[ -d "$binary_dir/GRFToolMac_GRFCore.bundle" ]]; then
     ditto "$binary_dir/GRFToolMac_GRFCore.bundle" "$output/Contents/Resources/GRFToolMac_GRFCore.bundle"
 fi
-cp "$project_dir/LICENSE" "$project_dir/THIRD_PARTY_NOTICES.md" "$output/Contents/Resources/"
+if [[ -d "$binary_dir/GRFToolMac_GRFDesktop.bundle" ]]; then
+    ditto "$binary_dir/GRFToolMac_GRFDesktop.bundle" "$output/Contents/Resources/GRFToolMac_GRFDesktop.bundle"
+fi
+cp "$project_dir/LICENSE" "$project_dir/THIRD_PARTY_NOTICES.md" "$project_dir/credit.md" "$output/Contents/Resources/"
 codesign --force --sign - "$output"
 echo "Built: $output"

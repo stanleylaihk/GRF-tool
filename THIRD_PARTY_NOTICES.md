@@ -93,3 +93,12 @@ https://github.com/Rasetsuu/blendergranny (commit on `main` as of
   TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
   SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
+
+## Credits and build tooling
+
+For the complete author/source inventory, original supplied Windows tools, and the distinction between included code, system libraries, references and development tools, see [credit.md](credit.md).
+
+The optional GR2 reader regeneration script uses esbuild 0.25.0, by Evan Wallace and contributors, under the MIT license. Normal app builds use the checked-in reader and do not run esbuild or require Node.js/npm. No esbuild executable or Node.js runtime is distributed with the application.
+
+- Project: https://github.com/evanw/esbuild
+- License: https://github.com/evanw/esbuild/blob/v0.25.0/LICENSE.md

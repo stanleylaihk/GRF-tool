@@ -12,6 +12,7 @@ private struct Credit: Identifiable {
 struct CreditsView: View {
     @State private var tab = "Credits"
     private let sources: [Credit] = [
+        .init(name: "GRF Tool for macOS", author: "stanleylaihk and contributors", purpose: "Native macOS application, archive workspace, previews, interface translations and tests.", url: "https://github.com/stanleylaihk/GRF-tool", license: "GPL-2.0-or-later · this project"),
         .init(name: "OpenKore / grftool", author: "Faithful, Hongli Lai, Rasqual and contributors", purpose: "GRF cryptography implementation; archive and sprite format reference.", url: "https://github.com/OpenKore/grftool", license: "GPL-2.0-or-later · code included with preserved notices"),
         .init(name: "Ragnarok Research Lab", author: "Ragnarok Research Lab authors and contributors", purpose: "SPR, ACT, PAL, GAT, GND, RSW, RSM, IMF and GR2 format research.", url: "https://ragnarokresearchlab.github.io/", license: "Documentation reference; site retains its own copyright"),
         .init(name: "RagnarokFileFormats", author: "rdw / Ragnarok Research Lab contributors", purpose: "Historical format specifications and coordinate research.", url: "https://github.com/rdw-archive/RagnarokFileFormats", license: "Reference only"),
@@ -23,7 +24,8 @@ struct CreditsView: View {
         .init(name: "noclip.website", author: "noclip.website contributors", purpose: "Historical Granny DLL API reference used during decompressor research.", url: "https://github.com/magcius/noclip.website", license: "MIT · research reference only"),
         .init(name: "OpenGR2", author: "arves100 and contributors", purpose: "GR2 physical format reference and compatibility research.", url: "https://github.com/arves100/opengr2", license: "Reference only"),
         .init(name: "zlib", author: "Jean-loup Gailly and Mark Adler", purpose: "System compression / decompression library.", url: "https://zlib.net", license: "zlib license · system library"),
-        .init(name: "Apple frameworks", author: "Apple Inc.", purpose: "SwiftUI, AppKit, SceneKit, JavaScriptCore, AVFoundation and system image decoding.", url: "https://developer.apple.com/documentation/", license: "System frameworks"),
+        .init(name: "Apple frameworks", author: "Apple Inc.", purpose: "SwiftUI, AppKit, Foundation, SceneKit, JavaScriptCore, Observation, AVFoundation and system image decoding.", url: "https://developer.apple.com/documentation/", license: "System frameworks"),
+        .init(name: "esbuild", author: "Evan Wallace and contributors", purpose: "Build-time bundling of the checked-in GR2 reader; version 0.25.0 is pinned in the regeneration script.", url: "https://github.com/evanw/esbuild", license: "MIT · development tool; no esbuild executable or Node.js runtime bundled"),
         .init(name: "REA", author: "REA contributors", purpose: "Static inspection of the supplied Windows reference tools and Granny runtime.", url: "https://github.com/morluto/rea", license: "Development tool; not bundled"),
         .init(name: "Unicorn", author: "Unicorn Engine contributors", purpose: "Isolated x86 replay for original-DLL / Swift decompressor parity tests.", url: "https://github.com/unicorn-engine/unicorn", license: "Development tool; not bundled")
     ]
@@ -35,11 +37,11 @@ struct CreditsView: View {
     var body: some View {
         VStack(alignment: .leading, spacing: 0) {
             VStack(alignment: .leading, spacing: 6) {
-                Text("GRF Tool").font(.largeTitle.weight(.semibold))
-                Text("Credits, original tools & open-source acknowledgements").foregroundStyle(.secondary)
+                Text(L10n.text("GRF Tool")).font(.largeTitle.weight(.semibold))
+                Text(L10n.text("Credits, original tools & open-source acknowledgements")).foregroundStyle(.secondary)
             }.padding(22)
-            Picker("Credits view", selection: $tab) {
-                Text("Credits").tag("Credits"); Text("Original Tools").tag("Tools"); Text("Licenses").tag("Licenses")
+            Picker(L10n.text("Credits view"), selection: $tab) {
+                Text(L10n.text("Credits")).tag("Credits"); Text(L10n.text("Original Tools")).tag("Tools"); Text(L10n.text("Licenses")).tag("Licenses")
             }.pickerStyle(.segmented).padding(.horizontal, 22).padding(.bottom, 14)
             Divider()
             if tab == "Licenses" {
@@ -51,7 +53,7 @@ struct CreditsView: View {
                             VStack(alignment: .leading, spacing: 5) {
                                 Text(credit.name).font(.headline)
                                 Text(credit.author).font(.callout)
-                                Text(credit.purpose).font(.callout).foregroundStyle(.secondary)
+                                Text(L10n.value(credit.purpose)).font(.callout).foregroundStyle(.secondary)
                                 Text(credit.license).font(.caption).foregroundStyle(.secondary)
                                 if let url = credit.url, let target = URL(string: url) { Link(url, destination: target).font(.caption) }
                             }.textSelection(.enabled)

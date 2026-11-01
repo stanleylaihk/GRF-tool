@@ -22,9 +22,9 @@ extension ArchiveModel {
     }
     func confirmLeavingDraft() -> Bool {
         guard pendingCount > 0 else { return true }
-        let alert = NSAlert(); alert.messageText = "Keep your unsaved changes?"
-        alert.informativeText = "Save a GRF copy before opening another archive, or discard the pending changes. Your source file is unchanged."
-        alert.addButton(withTitle: "Keep Working"); alert.addButton(withTitle: "Discard Changes")
+        let alert = NSAlert(); alert.messageText = L10n.value("Keep your unsaved changes?")
+        alert.informativeText = L10n.value("Save a GRF copy before opening another archive, or discard the pending changes. Your source file is unchanged.")
+        alert.addButton(withTitle: L10n.value("Keep Working")); alert.addButton(withTitle: L10n.value("Discard Changes"))
         return alert.runModal() == .alertSecondButtonReturn
     }
     func switchSource(local: Bool) {
@@ -58,7 +58,7 @@ extension ArchiveModel {
     func statusForEntry(_ id: Int) -> String { browsingLocal ? "" : draft?.resource(id)?.status ?? "" }
     func addResources(folderOnly: Bool = false) {
         guard !busy, !browsingLocal, draft != nil else { return }
-        let panel = NSOpenPanel(); panel.title = folderOnly ? "Import Folder" : "Add Resources"
+        let panel = NSOpenPanel(); panel.title = L10n.value(folderOnly ? "Import Folder" : "Add Resources")
         panel.canChooseFiles = !folderOnly; panel.canChooseDirectories = true; panel.allowsMultipleSelection = true
         guard panel.runModal() == .OK else { return }
         let urls = panel.urls, prefix = folder
@@ -78,7 +78,7 @@ extension ArchiveModel {
     }
     func mergeResources() {
         guard !busy, !browsingLocal, draft != nil else { return }
-        let panel = NSOpenPanel(); panel.title = "Merge GRF"; panel.allowedContentTypes = ["grf", "gpf"].compactMap { UTType(filenameExtension: $0) }; panel.allowsMultipleSelection = true
+        let panel = NSOpenPanel(); panel.title = L10n.value("Merge GRF"); panel.allowedContentTypes = ["grf", "gpf"].compactMap { UTType(filenameExtension: $0) }; panel.allowsMultipleSelection = true
         guard panel.runModal() == .OK else { return }
         let urls = panel.urls, names = encoding
         busy = true
@@ -91,9 +91,9 @@ extension ArchiveModel {
                 let duplicates = files.filter { existing[$0.path.precomposedStringWithCanonicalMapping.lowercased()] != nil }.count
                 var replacing = false
                 if duplicates > 0 {
-                    let alert = NSAlert(); alert.messageText = "\(duplicates) duplicate paths"
-                    alert.informativeText = "Choose how to merge these resources into the pending draft."
-                    alert.addButton(withTitle: "Keep Existing"); alert.addButton(withTitle: "Replace Existing"); alert.addButton(withTitle: "Cancel")
+                    let alert = NSAlert(); alert.messageText = L10n.value("\(duplicates) duplicate paths")
+                    alert.informativeText = L10n.value("Choose how to merge these resources into the pending draft.")
+                    alert.addButton(withTitle: L10n.value("Keep Existing")); alert.addButton(withTitle: L10n.value("Replace Existing")); alert.addButton(withTitle: L10n.value("Cancel"))
                     let response = alert.runModal()
                     if response == .alertThirdButtonReturn { busy = false; return }
                     replacing = response == .alertSecondButtonReturn
@@ -112,17 +112,17 @@ extension ArchiveModel {
     }
     func replaceSelected() {
         guard !busy, !browsingLocal, let id = currentEntry?.id else { return }
-        let panel = NSOpenPanel(); panel.title = "Replace Resource"; panel.message = "The archive path stays the same. Preview updates immediately; save a new GRF to publish."
+        let panel = NSOpenPanel(); panel.title = L10n.value("Replace Resource"); panel.message = L10n.value("The archive path stays the same. Preview updates immediately; save a new GRF to publish.")
         guard panel.runModal() == .OK, let url = panel.url else { return }
         do { try draft?.replace(id, with: GRFBuildFile.importingFile(url)); changedWorkspace() }
         catch { self.error = error.localizedDescription }
     }
     func renameSelected() {
         guard !busy, !browsingLocal, let entry = currentEntry else { return }
-        let alert = NSAlert(); alert.messageText = "Rename Resource"
-        alert.informativeText = "Enter the full archive path. References inside other files are not rewritten."
+        let alert = NSAlert(); alert.messageText = L10n.value("Rename Resource")
+        alert.informativeText = L10n.value("Enter the full archive path. References inside other files are not rewritten.")
         let field = NSTextField(string: entry.path); field.frame = NSRect(x: 0, y: 0, width: 420, height: 26)
-        alert.accessoryView = field; alert.addButton(withTitle: "Rename"); alert.addButton(withTitle: "Cancel")
+        alert.accessoryView = field; alert.addButton(withTitle: L10n.value("Rename")); alert.addButton(withTitle: L10n.value("Cancel"))
         alert.window.initialFirstResponder = field
         guard alert.runModal() == .alertFirstButtonReturn else { return }
         do { try draft?.rename(entry.id, to: field.stringValue); changedWorkspace() }
@@ -138,7 +138,7 @@ extension ArchiveModel {
     func revertAllChanges() { guard !busy else { return }; draft?.revertAll(); changedWorkspace() }
     func saveWorkspace() {
         guard !busy, !browsingLocal, let draft else { return }
-        let panel = NSSavePanel(); panel.title = "Save GRF Copy As"; panel.allowedContentTypes = [UTType(filenameExtension: "grf") ?? .data]
+        let panel = NSSavePanel(); panel.title = L10n.value("Save GRF Copy As"); panel.allowedContentTypes = [UTType(filenameExtension: "grf") ?? .data]
         panel.nameFieldStringValue = (archive?.url.deletingPathExtension().lastPathComponent ?? "new") + "-edited.grf"
         guard panel.runModal() == .OK, let url = panel.url else { return }
         if protectedSourceURLs.contains(url.resolvingSymlinksInPath().standardizedFileURL) {
@@ -168,7 +168,7 @@ extension ArchiveModel {
             return resourceFile(id)
         }
         guard !files.isEmpty else { return }
-        let panel = NSOpenPanel(); panel.title = "Choose Extraction Folder"; panel.canChooseDirectories = true; panel.canChooseFiles = false; panel.canCreateDirectories = true
+        let panel = NSOpenPanel(); panel.title = L10n.value("Choose Extraction Folder"); panel.canChooseDirectories = true; panel.canChooseFiles = false; panel.canCreateDirectories = true
         guard panel.runModal() == .OK, let destination = panel.url else { return }
         cancellation = CancellationFlag(); let flag = cancellation
         busy = true; extracting = true; completed = 0; total = files.count

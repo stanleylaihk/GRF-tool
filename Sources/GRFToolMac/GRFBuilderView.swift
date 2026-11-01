@@ -1,4 +1,5 @@
 import SwiftUI
+import GRFDesktop
 import AppKit
 import UniformTypeIdentifiers
 import GRFCore
@@ -83,8 +84,8 @@ private final class GRFBuilderModel: ObservableObject {
     func importSources(archives: Bool) {
         guard !busy, ready else { return }
         let panel = NSOpenPanel()
-        panel.title = archives ? "Merge GRF / GPF" : "Import Folders"
-        panel.message = archives ? "Duplicate paths use the policy selected in the working copy." : "Choosing data imports data/… into the archive."
+        panel.title = L10n.value(archives ? "Merge GRF / GPF" : "Import Folders")
+        panel.message = L10n.value(archives ? "Duplicate paths use the policy selected in the working copy." : "Choosing data imports data/… into the archive.")
         panel.canChooseDirectories = !archives; panel.canChooseFiles = archives; panel.allowsMultipleSelection = true
         if archives { panel.allowedContentTypes = ["grf", "gpf"].compactMap { UTType(filenameExtension: $0) } }
         guard panel.runModal() == .OK else { return }
@@ -122,7 +123,7 @@ private final class GRFBuilderModel: ObservableObject {
     func save(protecting original: URL?, suggestedName: String, level: Int, completion: @escaping (URL, FilenameEncoding) -> Void) {
         guard !busy, ready else { return }
         let panel = NSSavePanel()
-        panel.title = "Save GRF Copy As"
+        panel.title = L10n.value("Save GRF Copy As")
         panel.allowedContentTypes = [UTType(filenameExtension: "grf") ?? .data]
         panel.nameFieldStringValue = suggestedName
         panel.canCreateDirectories = true
@@ -186,49 +187,49 @@ struct GRFBuilderView: View {
         VStack(alignment: .leading, spacing: 12) {
             HStack {
                 VStack(alignment: .leading, spacing: 4) {
-                    Text(mode.title).font(.title2.bold())
-                    Text("Edit a working copy, then save a new GRF 2.0. Source archives stay unchanged.")
+                    Text(L10n.value(mode.title)).font(.title2.bold())
+                    Text(L10n.text("Edit a working copy, then save a new GRF 2.0. Source archives stay unchanged."))
                         .foregroundStyle(.secondary)
                 }
                 Spacer()
-                Text("\(model.files.count.formatted()) files").foregroundStyle(.secondary)
+                Text(L10n.text("\(model.files.count.formatted()) files")).foregroundStyle(.secondary)
             }
             HStack {
-                Button("Merge GRF…", systemImage: "square.stack.3d.up") { model.importSources(archives: true) }
-                Button("Import Folder…", systemImage: "folder.badge.plus") { model.importSources(archives: false) }
+                Button(L10n.text("Merge GRF…"), systemImage: "square.stack.3d.up") { model.importSources(archives: true) }
+                Button(L10n.text("Import Folder…"), systemImage: "folder.badge.plus") { model.importSources(archives: false) }
                 Spacer()
-                Button("Delete Selected", systemImage: "trash", action: model.removeSelected).disabled(model.selection.isEmpty)
-                Button("Undo Delete", action: model.undoDelete).disabled(!model.canUndoDelete)
+                Button(L10n.text("Delete Selected"), systemImage: "trash", action: model.removeSelected).disabled(model.selection.isEmpty)
+                Button(L10n.text("Undo Delete"), action: model.undoDelete).disabled(!model.canUndoDelete)
             }.disabled(model.busy || !model.ready)
             HStack {
-                Picker("Duplicate Paths", selection: $model.policy) {
-                    ForEach(GRFMergePolicy.allCases, id: \.self) { Text($0.label).tag($0) }
+                Picker(L10n.text("Duplicate Paths"), selection: $model.policy) {
+                    ForEach(GRFMergePolicy.allCases, id: \.self) { Text(L10n.value($0.label)).tag($0) }
                 }
-                Picker("Import GRF Names", selection: $model.importEncoding) {
-                    ForEach(FilenameEncoding.allCases, id: \.self) { Text($0.label).tag($0) }
+                Picker(L10n.text("Import GRF Names"), selection: $model.importEncoding) {
+                    ForEach(FilenameEncoding.allCases, id: \.self) { Text(L10n.value($0.label)).tag($0) }
                 }
             }.disabled(model.busy)
             HStack {
-                Picker("Output Filenames", selection: $model.encoding) {
-                    ForEach(FilenameEncoding.allCases, id: \.self) { Text($0.label).tag($0) }
+                Picker(L10n.text("Output Filenames"), selection: $model.encoding) {
+                    ForEach(FilenameEncoding.allCases, id: \.self) { Text(L10n.value($0.label)).tag($0) }
                 }
                 Spacer()
-                Text("Compression: \(GRFPreferences.label(compressionLevel))").font(.caption).foregroundStyle(.secondary)
-                SettingsLink { Image(systemName: "gearshape") }.help("Compression settings")
+                Text(L10n.text("Compression: \(GRFPreferences.label(compressionLevel))")).font(.caption).foregroundStyle(.secondary)
+                SettingsLink { Image(systemName: "gearshape") }.help(L10n.text("Compression settings"))
             }.disabled(model.busy)
             List(selection: $model.selection) {
                 ForEach(model.files) { file in
                     HStack(spacing: 6) {
                         Image(systemName: "doc").frame(width: 22, height: 20).foregroundStyle(.secondary)
-                        Text(file.path).lineLimit(1).truncationMode(.middle).help(file.source.path)
+                        Text(L10n.value(file.path)).lineLimit(1).truncationMode(.middle).help(L10n.value(file.source.path))
                         Spacer()
-                        Text(ByteCountFormatter.string(fromByteCount: file.size, countStyle: .file)).font(.caption).foregroundStyle(.secondary)
+                        Text(L10n.value(ByteCountFormatter.string(fromByteCount: file.size, countStyle: .file))).font(.caption).foregroundStyle(.secondary)
                     }.tag(file.path)
                 }
             }.disabled(model.busy || !model.ready)
             .overlay {
                 if model.files.isEmpty && !model.busy {
-                    ContentUnavailableView("No Resources", systemImage: "archivebox", description: Text("Import folders or GRFs, or save an empty archive."))
+                    ContentUnavailableView(L10n.text("No Resources"), systemImage: "archivebox", description: Text(L10n.text("Import folders or GRFs, or save an empty archive.")))
                 }
             }
             HStack {
@@ -236,16 +237,16 @@ struct GRFBuilderView: View {
                     if let fraction = model.fraction { ProgressView(value: fraction).frame(width: 120) }
                     else { ProgressView().controlSize(.small) }
                 }
-                Text(model.status).font(.caption).lineLimit(2).help(model.status)
+                Text(L10n.value(model.status)).font(.caption).lineLimit(2).help(L10n.value(model.status))
                 Spacer()
-                if model.busy { Button("Cancel Operation", action: model.cancel) }
+                if model.busy { Button(L10n.text("Cancel Operation"), action: model.cancel) }
             }.frame(minHeight: 30)
             HStack {
-                Button("Close") {
+                Button(L10n.text("Close")) {
                     if model.dirty { confirmDiscard = true } else { dismiss() }
                 }.disabled(model.busy).keyboardShortcut(.cancelAction)
                 Spacer()
-                Button(mode == .repack ? "Repack As…" : "Save GRF As…") {
+                Button(L10n.value(mode == .repack ? "Repack As…" : "Save GRF As…")) {
                     model.save(protecting: protectedArchive, suggestedName: suggestedName, level: compressionLevel) { url, encoding in
                         dismiss(); saved(url, encoding)
                     }
@@ -253,12 +254,12 @@ struct GRFBuilderView: View {
             }
         }.padding(20).frame(width: 900, height: 620)
         .interactiveDismissDisabled(model.dirty || model.busy)
-        .alert("Could Not Complete Operation", isPresented: Binding(get: { model.error != nil }, set: { if !$0 { model.error = nil } })) {
-            Button("OK", role: .cancel) { model.error = nil }
-        } message: { Text(model.error ?? "") }
+        .alert(L10n.text("Could Not Complete Operation"), isPresented: Binding(get: { model.error != nil }, set: { if !$0 { model.error = nil } })) {
+            Button(L10n.text("OK"), role: .cancel) { model.error = nil }
+        } message: { Text(L10n.value(model.error ?? "")) }
         .confirmationDialog("Discard unsaved changes? Source archives and files will be kept.", isPresented: $confirmDiscard) {
-            Button("Discard Draft", role: .destructive) { dismiss() }
-            Button("Keep Draft", role: .cancel) {}
+            Button(L10n.text("Discard Draft"), role: .destructive) { dismiss() }
+            Button(L10n.text("Keep Draft"), role: .cancel) {}
         }
     }
 }

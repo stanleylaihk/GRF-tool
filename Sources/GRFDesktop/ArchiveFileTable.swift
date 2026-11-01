@@ -43,7 +43,8 @@ public struct ArchiveFileTable: NSViewRepresentable {
                                  ("Replace…", #selector(Coordinator.replace)),
                                  ("Rename…", #selector(Coordinator.rename)),
                                  ("Delete", #selector(Coordinator.delete))] {
-            let item = NSMenuItem(title: title, action: action, keyEquivalent: "")
+            let item = NSMenuItem(title: L10n.value(title), action: action, keyEquivalent: "")
+            item.identifier = NSUserInterfaceItemIdentifier(title)
             item.target = context.coordinator
             menu.addItem(item)
         }
@@ -54,7 +55,7 @@ public struct ArchiveFileTable: NSViewRepresentable {
         table.columnAutoresizingStyle = .noColumnAutoresizing
         for (key, title, width) in [("name", "Name", 300.0), ("size", "Size", 85.0), ("packed", "Packed", 85.0)] {
             let column = NSTableColumn(identifier: NSUserInterfaceItemIdentifier(key))
-            column.title = title; column.width = width
+            column.title = L10n.value(title); column.width = width
             column.minWidth = key == "name" ? 180 : 85
             column.resizingMask = key == "name" ? [.autoresizingMask, .userResizingMask] : []
             column.sortDescriptorPrototype = NSSortDescriptor(key: key, ascending: true)
@@ -68,6 +69,13 @@ public struct ArchiveFileTable: NSViewRepresentable {
     }
     public func updateNSView(_ view: NSScrollView, context: Context) {
         let coordinator = context.coordinator
+        for column in coordinator.table?.tableColumns ?? [] {
+            let title = ["name": "Name", "size": "Size", "packed": "Packed"][column.identifier.rawValue] ?? column.title
+            column.title = L10n.value(title)
+        }
+        for item in coordinator.table?.menu?.items ?? [] {
+            if let title = item.identifier?.rawValue { item.title = L10n.value(title) }
+        }
         coordinator.parent = self
         if coordinator.table?.isEnabled != context.environment.isEnabled {
             coordinator.table?.isEnabled = context.environment.isEnabled
@@ -83,6 +91,7 @@ public struct ArchiveFileTable: NSViewRepresentable {
         var parent: ArchiveFileTable
         weak var table: NSTableView?
         private var revision: UUID?
+        private var language: InterfaceLanguage?
         private var rows: [GRFEntry] = []
         private var indexByID: [Int: Int] = [:]
         private var synchronizing = false
@@ -92,7 +101,8 @@ public struct ArchiveFileTable: NSViewRepresentable {
             guard let table else { return }
             synchronizing = true
             defer { synchronizing = false }
-            if revision != parent.revision {
+            if revision != parent.revision || language != InterfaceLocalization.shared.language {
+                language = InterfaceLocalization.shared.language
                 rows = parent.entries
                 indexByID = Dictionary(uniqueKeysWithValues: rows.enumerated().map { ($0.element.id, $0.offset) })
                 revision = parent.revision
@@ -124,9 +134,10 @@ public struct ArchiveFileTable: NSViewRepresentable {
             let entry = rows[row]
             if column.identifier.rawValue == "name" {
                 let cell = (tableView.makeView(withIdentifier: column.identifier, owner: self) as? FileIconCell) ?? FileIconCell(identifier: column.identifier)
-                let status = parent.resourceStatus(entry.id)
+                let rawStatus = parent.resourceStatus(entry.id)
+                let status = rawStatus.components(separatedBy: " · ").map(L10n.value).joined(separator: " · ")
                 cell.label.stringValue = entry.name + (status.isEmpty ? "" : "  · " + status)
-                cell.label.textColor = status == "Deleted" ? .tertiaryLabelColor : .labelColor
+                cell.label.textColor = rawStatus == "Deleted" ? .tertiaryLabelColor : .labelColor
                 cell.symbol.image = NSImage(systemSymbolName: parent.icon(entry.path), accessibilityDescription: nil)
                 cell.toolTip = entry.path
                 return cell

@@ -1,4 +1,5 @@
 import SwiftUI
+import GRFDesktop
 
 // Shared by Settings and all archive-writing workflows.
 enum GRFPreferences {
@@ -16,19 +17,27 @@ enum GRFPreferences {
 }
 
 struct GRFSettingsView: View {
+    @Bindable private var localization = InterfaceLocalization.shared
     @AppStorage(GRFPreferences.compressionKey) private var level = -1
     var body: some View {
         VStack(alignment: .leading, spacing: 18) {
-            Text("Archive Settings").font(.title2.bold())
-            Picker("Compression Level", selection: $level) {
-                ForEach(GRFPreferences.levels, id: \.self) { Text(GRFPreferences.label($0)).tag($0) }
+            Text(L10n.text("Settings")).font(.title2.bold())
+            Picker(L10n.text("Interface Language"), selection: $localization.language) {
+                ForEach(InterfaceLanguage.allCases) { language in Text(language.nativeName).tag(language) }
             }
-            Text("Higher levels may produce smaller archives but take longer. Level 0 stores data without compression.")
-                .foregroundStyle(.secondary)
-            Text("Applies to the next Save or Repack, including new archives and merged or edited copies. Changing this setting does not modify existing archives.")
+            Text(L10n.text("Applies immediately. Archive filenames and file contents are not translated."))
                 .font(.caption).foregroundStyle(.secondary)
-            Button("Restore Default") { level = -1 }
-        }.padding(24).frame(width: 460)
+            Divider()
+            Text(L10n.text("Archive Settings")).font(.headline)
+            Picker(L10n.text("Compression Level"), selection: $level) {
+                ForEach(GRFPreferences.levels, id: \.self) { Text(L10n.value(GRFPreferences.label($0))).tag($0) }
+            }
+            Text(L10n.text("Higher levels may produce smaller archives but take longer. Level 0 stores data without compression."))
+                .foregroundStyle(.secondary)
+            Text(L10n.text("Applies to the next Save or Repack, including new archives and merged or edited copies. Changing this setting does not modify existing archives."))
+                .font(.caption).foregroundStyle(.secondary)
+            Button(L10n.text("Restore Default")) { level = -1 }
+        }.padding(24).frame(width: 520)
         .onAppear { if !(-1...9).contains(level) { level = -1 } }
     }
 }

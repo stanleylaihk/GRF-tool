@@ -8,7 +8,7 @@ let package = Package(
     targets: [
         .target(name: "CGRFCrypto", publicHeadersPath: "include", linkerSettings: [.linkedLibrary("z")]),
         .target(name: "GRFCore", dependencies: ["CGRFCrypto"], resources: [.process("Resources")], swiftSettings: [.swiftLanguageMode(.v5)]),
-        .target(name: "GRFDesktop", dependencies: ["GRFCore"], swiftSettings: [.swiftLanguageMode(.v5)]),
+        .target(name: "GRFDesktop", dependencies: ["GRFCore"], resources: [.process("Resources")], swiftSettings: [.swiftLanguageMode(.v5)]),
         .executableTarget(name: "GRFToolMac", dependencies: ["GRFCore", "GRFDesktop"], swiftSettings: [.swiftLanguageMode(.v5)]),
         .testTarget(name: "GRFCoreTests", dependencies: ["GRFCore", "GRFDesktop", "CGRFCrypto"], swiftSettings: [.swiftLanguageMode(.v5)])
     ]

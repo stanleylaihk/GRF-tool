@@ -55,6 +55,7 @@ public final class GRFApplicationDelegate: NSObject, NSApplicationDelegate {
         guard registeredWindow !== window else { return }
         if let closeObserver { NotificationCenter.default.removeObserver(closeObserver) }
         registeredWindow = window
+        window.isMovableByWindowBackground = true
         recovery.window = window
         closeObserver = NotificationCenter.default.addObserver(forName: NSWindow.willCloseNotification, object: window, queue: .main) { [weak self] _ in
             MainActor.assumeIsolated {
@@ -89,4 +90,17 @@ private final class WindowCaptureView: NSView {
         super.viewDidMoveToWindow()
         if let window { register?(window) }
     }
+}
+
+/// A native drag surface behind toolbar controls. Interactive SwiftUI controls
+/// receive their own events; otherwise empty toolbar space moves the window.
+public struct WindowDragRegion: NSViewRepresentable {
+    public init() {}
+    public func makeNSView(context: Context) -> NSView { WindowDragView() }
+    public func updateNSView(_ view: NSView, context: Context) {}
+}
+
+final class WindowDragView: NSView {
+    override var mouseDownCanMoveWindow: Bool { true }
+    override func mouseDown(with event: NSEvent) { window?.performDrag(with: event) }
 }

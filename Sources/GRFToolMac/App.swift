@@ -9,25 +9,27 @@ import GRFDesktop
 struct GRFToolMacApp: App {
     @NSApplicationDelegateAdaptor(GRFApplicationDelegate.self) private var appDelegate
     @StateObject private var model = ArchiveModel()
+    @AppStorage(InterfaceLocalization.preferenceKey) private var interfaceLanguage = "en"
     var body: some Scene {
-        Window("GRF Tool", id: "main") {
+        Window(L10n.text("GRF Tool"), id: "main") {
             MainArchiveWindow(model: model, appDelegate: appDelegate)
+                .environment(\.locale, InterfaceLanguage(rawValue: interfaceLanguage)?.locale ?? Locale(identifier: "en"))
         }
-        .windowToolbarStyle(.unified)
+        .windowStyle(.hiddenTitleBar)
         .commands {
             CommandGroup(replacing: .newItem) {
-                Button("New GRF…", action: model.newArchive).keyboardShortcut("n")
+                Button(L10n.text("New GRF…"), action: model.newArchive).keyboardShortcut("n")
                     .disabled(model.busy || model.showBuilder)
-                Button("Open…", action: model.chooseArchive).keyboardShortcut("o")
+                Button(L10n.text("Open…"), action: model.chooseArchive).keyboardShortcut("o")
                     .disabled(model.busy || model.showBuilder)
             }
             CommandGroup(after: .textEditing) {
-                Button("Find…") { model.searchFocusRequest += 1 }.keyboardShortcut("f")
+                Button(L10n.text("Find…")) { model.searchFocusRequest += 1 }.keyboardShortcut("f")
                     .disabled(model.showBuilder)
             }
         }
-        Window("Credits & Sources", id: "credits") { CreditsView().frame(minWidth: 640, minHeight: 520) }
-        Settings { GRFSettingsView() }
+        Window(L10n.text("Credits & Sources"), id: "credits") { CreditsView().environment(\.locale, InterfaceLanguage(rawValue: interfaceLanguage)?.locale ?? Locale(identifier: "en")).frame(minWidth: 640, minHeight: 520) }
+        Settings { GRFSettingsView().environment(\.locale, InterfaceLanguage(rawValue: interfaceLanguage)?.locale ?? Locale(identifier: "en")) }
     }
 }
 
@@ -38,6 +40,7 @@ private struct MainArchiveWindow: View {
 
     var body: some View {
         ArchiveView(model: model)
+            .buttonStyle(HoverButtonStyle())
             .frame(minWidth: 1100, minHeight: 680)
             .background(MainWindowCapture(delegate: appDelegate).allowsHitTesting(false))
             .onAppear {
@@ -202,7 +205,7 @@ final class ArchiveModel: ObservableObject {
 
     func chooseArchive() {
         let panel = NSOpenPanel()
-        panel.title = "Open Archive or Resource"
+        panel.title = L10n.value("Open Archive or Resource")
         panel.canChooseFiles = true
         panel.canChooseDirectories = false
         panel.allowsMultipleSelection = false
@@ -396,7 +399,7 @@ final class ArchiveModel: ObservableObject {
     func choosePreviewFile() {
         guard !busy else { return }
         let panel = NSOpenPanel()
-        panel.title = "Preview Resource"
+        panel.title = L10n.value("Preview Resource")
         panel.canChooseFiles = true; panel.canChooseDirectories = false
         guard panel.runModal() == .OK, let url = panel.url else { return }
         openPreview(url)
@@ -412,8 +415,8 @@ final class ArchiveModel: ObservableObject {
 
     func chooseCompanion() {
         let panel = NSOpenPanel()
-        panel.title = "Choose Matching SPR"
-        panel.message = "Choose \((actionCompanionName as NSString).lastPathComponent), or the matching sprite from another location."
+        panel.title = L10n.value("Choose Matching SPR")
+        panel.message = L10n.value("Choose \((actionCompanionName as NSString).lastPathComponent), or the matching sprite from another location.")
         panel.allowedContentTypes = [UTType(filenameExtension: "spr")].compactMap { $0 }
         guard panel.runModal() == .OK, let url = panel.url else { return }
         let id = previewID
@@ -436,7 +439,7 @@ final class ArchiveModel: ObservableObject {
         guard let palette = viewedPalette else { return }
         let name = previewName
         let panel = NSOpenPanel()
-        panel.title = "Choose Sprite for This Palette"
+        panel.title = L10n.value("Choose Sprite for This Palette")
         panel.allowedContentTypes = [UTType(filenameExtension: "spr")].compactMap { $0 }
         guard panel.runModal() == .OK, let url = panel.url else { return }
         let id = previewID
@@ -499,7 +502,7 @@ final class ArchiveModel: ObservableObject {
 
     func choosePalette() {
         let panel = NSOpenPanel()
-        panel.title = "Apply Palette to Sprite"
+        panel.title = L10n.value("Apply Palette to Sprite")
         panel.allowedContentTypes = [UTType(filenameExtension: "pal")].compactMap { $0 }
         guard panel.runModal() == .OK, let url = panel.url else { return }
         let id = previewID
@@ -551,8 +554,8 @@ final class ArchiveModel: ObservableObject {
         let destination: URL
         if all {
             let panel = NSOpenPanel()
-            panel.title = "Save All Frames as BMP"
-            panel.message = "Frames are numbered 00000.bmp, 00001.bmp, and so on. Existing files are not overwritten."
+            panel.title = L10n.value("Save All Frames as BMP")
+            panel.message = L10n.value("Frames are numbered 00000.bmp, 00001.bmp, and so on. Existing files are not overwritten.")
             panel.canChooseDirectories = true
             panel.canChooseFiles = false
             panel.canCreateDirectories = true
@@ -560,7 +563,7 @@ final class ArchiveModel: ObservableObject {
             destination = url
         } else {
             let panel = NSSavePanel()
-            panel.title = "Save Current Frame as BMP"
+            panel.title = L10n.value("Save Current Frame as BMP")
             panel.allowedContentTypes = [.bmp]
             panel.nameFieldStringValue = "\(name)_\(String(format: "%05d", frameIndex)).bmp"
             guard panel.runModal() == .OK, let url = panel.url else { return }
@@ -640,7 +643,7 @@ final class ArchiveModel: ObservableObject {
     func saveSelectedAs() {
         guard !busy, let entry = currentEntry, let file = resourceFile(entry.id) else { return }
         let panel = NSSavePanel()
-        panel.title = "Extract File As"
+        panel.title = L10n.value("Extract File As")
         panel.nameFieldStringValue = (entry.path as NSString).lastPathComponent
         panel.canCreateDirectories = true
         guard panel.runModal() == .OK, let destination = panel.url else { return }
@@ -687,8 +690,8 @@ private struct PalettePreview: View {
     @State private var selected = 0
     var body: some View {
         VStack(alignment: .leading, spacing: 12) {
-            Text("256-color palette").font(.headline)
-            Text("Index 0 is transparent when applied to indexed SPR frames.")
+            Text(L10n.text("256-color palette")).font(.headline)
+            Text(L10n.text("Index 0 is transparent when applied to indexed SPR frames."))
                 .font(.caption).foregroundStyle(.secondary)
             ScrollView {
                 LazyVGrid(columns: Array(repeating: GridItem(.flexible(), spacing: 2), count: 16), spacing: 2) {
@@ -699,17 +702,17 @@ private struct PalettePreview: View {
                             .overlay { if selected == index { Rectangle().stroke(.white, lineWidth: 2).padding(1) } }
                             .contentShape(Rectangle())
                             .onTapGesture { selected = index }
-                            .help("Index \(index): RGB \(color.red), \(color.green), \(color.blue); alpha \(color.alpha)")
-                            .accessibilityLabel("Palette color \(index)")
+                            .help(L10n.text("Index \(index): RGB \(color.red), \(color.green), \(color.blue); alpha \(color.alpha)"))
+                            .accessibilityLabel(L10n.text("Palette color \(index)"))
                     }
                 }
             }
             if colors.indices.contains(selected) {
                 let color = colors[selected]
-                Text("Index \(selected) · RGB \(color.red), \(color.green), \(color.blue) · A \(color.alpha)")
+                Text(L10n.text("Index \(selected) · RGB \(color.red), \(color.green), \(color.blue) · A \(color.alpha)"))
                     .font(.system(.caption, design: .monospaced)).textSelection(.enabled)
             }
-            Button("Try Palette on SPR…", action: chooseSprite).buttonStyle(.bordered)
+            Button(L10n.text("Try Palette on SPR…"), action: chooseSprite).buttonStyle(.bordered)
         }.padding(14)
     }
 }
@@ -724,17 +727,17 @@ private struct ArchivePalettePicker: View {
     }
     var body: some View {
         VStack(alignment: .leading, spacing: 12) {
-            Text("Choose Palette from Archive").font(.title3.bold())
-            TextField("Search PAL filenames", text: $search).textFieldStyle(.roundedBorder)
+            Text(L10n.text("Choose Palette from Archive")).font(.title3.bold())
+            TextField(L10n.text("Search PAL filenames"), text: $search).textFieldStyle(.roundedBorder)
             List(matches) { entry in
                 Button { select(entry) } label: {
                     FileNameLabel(text: entry.path, icon: "paintpalette").frame(maxWidth: .infinity, alignment: .leading)
                 }.buttonStyle(.plain).help(entry.path)
             }
             HStack {
-                Text("Showing up to 300 matches of \(entries.count.formatted()) palettes.").font(.caption).foregroundStyle(.secondary)
+                Text(L10n.text("Showing up to 300 matches of \(entries.count.formatted()) palettes.")).font(.caption).foregroundStyle(.secondary)
                 Spacer()
-                Button("Cancel") { dismiss() }.keyboardShortcut(.cancelAction)
+                Button(L10n.text("Cancel")) { dismiss() }.keyboardShortcut(.cancelAction)
             }
         }.padding(20).frame(width: 650, height: 480)
     }
@@ -762,13 +765,13 @@ private struct FileNameLabel: View {
 private struct ToolbarCaption: View {
     let title: String
     let systemImage: String
-    init(_ title: String, systemImage: String) { self.title = title; self.systemImage = systemImage }
+    init(_ title: String, systemImage: String) { self.title = L10n.value(title); self.systemImage = systemImage }
     var body: some View {
         VStack(spacing: 3) {
             Image(systemName: systemImage).font(.system(size: 18)).frame(height: 32)
-            Text(title).font(.system(size: 10)).frame(height: 14).fixedSize()
+            Text(L10n.value(title)).font(.system(size: 10)).frame(height: 14).fixedSize()
         }.frame(minWidth: 44).padding(.horizontal, 2)
-        .accessibilityElement(children: .ignore).accessibilityLabel(title)
+        .accessibilityElement(children: .ignore).accessibilityLabel(L10n.value(title))
     }
 }
 
@@ -783,26 +786,26 @@ private struct ArchiveView: View {
     private var navigation: some View {
         NavigationSplitView(columnVisibility: $columnVisibility) {
             List(selection: $model.folder) {
-                Section("Sources") {
+                Section(L10n.text("Sources")) {
                     if model.draft != nil {
-                        Label((model.archive?.url.lastPathComponent ?? "New GRF") + (model.pendingCount > 0 ? " · \(model.pendingCount) changes" : ""), systemImage: model.browsingLocal ? "archivebox" : "archivebox.fill")
-                            .tag("source:archive")
+                        Label((model.archive?.url.lastPathComponent ?? L10n.text("New GRF")) + (model.pendingCount > 0 ? L10n.text(" · \(model.pendingCount) changes") : ""), systemImage: model.browsingLocal ? "archivebox" : "archivebox.fill")
+                            .modifier(NavigationHoverEffect()).tag("source:archive")
                     }
                     if let directory = model.localDirectory {
-                        Label(directory.lastPathComponent, systemImage: model.browsingLocal ? "folder.fill" : "folder").tag("source:local").help(directory.path)
+                        Label(directory.lastPathComponent, systemImage: model.browsingLocal ? "folder.fill" : "folder").modifier(NavigationHoverEffect()).tag("source:local").help(directory.path)
                     }
                 }
-                FileNameLabel(text: "All Files", icon: "tray.full").tag("")
-                Section("Folders") {
+                FileNameLabel(text: L10n.text("All Files"), icon: "tray.full").modifier(NavigationHoverEffect()).tag("")
+                Section(L10n.text("Folders")) {
                     OutlineGroup(model.folders, children: \.children) { folder in
                         HStack(alignment: .center, spacing: 6) {
                             Image(systemName: "folder").frame(width: 22, height: 20, alignment: .center).accessibilityHidden(true)
                             Text(folder.name).font(.callout).lineLimit(1).layoutPriority(1)
                             if let english = FolderGlossary.english(for: folder.name) {
-                                Text(english).font(.caption2).foregroundStyle(.secondary).lineLimit(1)
+                                Text(L10n.value(english)).font(.caption2).foregroundStyle(.secondary).lineLimit(1)
                             }
-                        }.tag(folder.path)
-                            .help(folder.path + (FolderGlossary.english(for: folder.name).map { "\n" + $0 } ?? ""))
+                        }.modifier(NavigationHoverEffect()).tag(folder.path)
+                            .help(L10n.value(folder.path + (FolderGlossary.english(for: folder.name).map { "\n" + $0 } ?? "")))
                     }
                 }
             }
@@ -813,10 +816,12 @@ private struct ArchiveView: View {
             .disabled(model.loading)
             .navigationSplitViewColumnWidth(min: 180, ideal: 280, max: 420)
             .overlay {
-                if !model.hasSource { ContentUnavailableView("Choose a Source", systemImage: "archivebox", description: Text("Open a GRF or any local resource.")) }
+                if !model.hasSource { ContentUnavailableView(L10n.text("Choose a Source"), systemImage: "archivebox", description: Text(L10n.text("Open a GRF or any local resource."))) }
             }
         } detail: {
             VStack(spacing: 0) {
+                archiveToolbar.fixedSize(horizontal: false, vertical: true)
+                Divider()
                 HSplitView {
                     GeometryReader { bounds in
                         fileList.frame(width: bounds.size.width, height: bounds.size.height)
@@ -831,15 +836,13 @@ private struct ArchiveView: View {
                 Divider()
                 statusBar
             }
+            .ignoresSafeArea(.container, edges: .top)
         }
     }
 
     private var selectionAwareNavigation: some View {
-        VStack(spacing: 0) {
-            archiveToolbar.fixedSize(horizontal: false, vertical: true)
-            navigation.frame(maxWidth: .infinity, maxHeight: .infinity)
-        }
-        .navigationTitle(model.hasSource ? model.sourceLabel : "GRF Tool")
+        navigation.frame(maxWidth: .infinity, maxHeight: .infinity)
+        .navigationTitle("")
         .toolbar(removing: .sidebarToggle)
         .toolbar(.hidden, for: .windowToolbar)
         .onChange(of: model.searchFocusRequest) { _, _ in searchFocused = true }
@@ -875,9 +878,9 @@ private struct ArchiveView: View {
             model.open(url)
             return true
         }
-        .alert(model.extractionNotice == nil ? "Could Not Complete Operation" : "Extraction Report", isPresented: Binding(get: { model.error != nil || model.extractionNotice != nil }, set: { if !$0 { model.error = nil; model.extractionNotice = nil } })) {
-            Button("OK", role: .cancel) { model.error = nil }
-        } message: { Text(model.extractionNotice ?? model.error ?? "") }
+        .alert(L10n.value(model.extractionNotice == nil ? "Could Not Complete Operation" : "Extraction Report"), isPresented: Binding(get: { model.error != nil || model.extractionNotice != nil }, set: { if !$0 { model.error = nil; model.extractionNotice = nil } })) {
+            Button(L10n.text("OK"), role: .cancel) { model.error = nil }
+        } message: { Text(L10n.value(model.extractionNotice ?? model.error ?? "")) }
         .sheet(isPresented: $model.showBuilder) {
             GRFBuilderView(protectedArchive: model.archive?.url,
                            source: model.builderMode == .new ? nil : model.archive,
@@ -899,57 +902,69 @@ private struct ArchiveView: View {
     private var archiveToolbar: some View {
         VStack(spacing: 0) {
             HStack(spacing: 14) {
-                Button { columnVisibility = columnVisibility == .detailOnly ? .all : .detailOnly } label: { Image(systemName: "sidebar.left") }.help("Toggle sidebar")
-                Button(action: model.chooseArchive) { Label("Open", systemImage: "folder") }.disabled(model.busy)
-                Button(action: model.choosePreviewFile) { Label("Local File", systemImage: "doc.viewfinder") }.disabled(model.busy)
+                Button { columnVisibility = columnVisibility == .detailOnly ? .all : .detailOnly } label: { Image(systemName: "sidebar.left") }.help(L10n.text("Toggle sidebar"))
+                Button(action: model.chooseArchive) { Label(L10n.text("Open"), systemImage: "folder") }.disabled(model.busy)
+                Button(action: model.choosePreviewFile) { Label(L10n.text("Local File"), systemImage: "doc.viewfinder") }.disabled(model.busy)
                 Menu {
-                    Button("New GRF…", action: model.newArchive)
-                    Button("Add Files / Folders…") { model.addResources() }
-                    Button("Replace Selected…", action: model.replaceSelected).disabled(model.selection.count != 1)
-                    Button("Rename Selected…", action: model.renameSelected).disabled(model.selection.count != 1)
-                    Button("Delete Selected", action: model.deleteSelected).disabled(model.selection.isEmpty)
+                    Button(L10n.text("New GRF…"), action: model.newArchive)
+                    Button(L10n.text("Add Files / Folders…")) { model.addResources() }
+                    Button(L10n.text("Replace Selected…"), action: model.replaceSelected).disabled(model.selection.count != 1)
+                    Button(L10n.text("Rename Selected…"), action: model.renameSelected).disabled(model.selection.count != 1)
+                    Button(L10n.text("Delete Selected"), action: model.deleteSelected).disabled(model.selection.isEmpty)
                     Divider()
-                    Button("Merge GRF…", action: model.mergeResources)
-                    Button("Import Folder…") { model.addResources(folderOnly: true) }
-                    Button("Repack As…", action: model.saveWorkspace)
-                } label: { Label("Manage", systemImage: "square.stack.3d.up") }.disabled(model.busy || model.browsingLocal)
-                Button { model.extract(all: false) } label: { Label("Extract", systemImage: "square.and.arrow.down") }.disabled(model.busy || model.selection.isEmpty)
+                    Button(L10n.text("Merge GRF…"), action: model.mergeResources)
+                    Button(L10n.text("Import Folder…")) { model.addResources(folderOnly: true) }
+                    Button(L10n.text("Repack As…"), action: model.saveWorkspace)
+                } label: { Label(L10n.text("Manage"), systemImage: "square.stack.3d.up") }.disabled(model.busy || model.browsingLocal)
+                Button { model.extract(all: false) } label: { Label(L10n.text("Extract"), systemImage: "square.and.arrow.down") }.disabled(model.busy || model.selection.isEmpty)
                 Menu {
-                    Button("Extract All…") { model.extract(all: true) }
-                    Button("Extract File As…", action: model.saveSelectedAs).disabled(model.selection.count != 1)
-                } label: { Image(systemName: "chevron.down") }.disabled(model.busy || !model.hasSource)
-                Button(action: model.saveWorkspace) { Label("Save GRF As…", systemImage: "square.and.arrow.up") }.disabled(model.busy || model.browsingLocal || model.draft == nil)
+                    Button(L10n.text("Extract All…")) { model.extract(all: true) }
+                    Button(L10n.text("Extract File As…"), action: model.saveSelectedAs).disabled(model.selection.count != 1)
+                } label: { Image(systemName: "chevron.down") }
+                .menuIndicator(.hidden)
+                .accessibilityLabel(L10n.text("Extraction options"))
+                .disabled(model.busy || !model.hasSource)
+                Button(action: model.saveWorkspace) { Label(L10n.text("Save GRF As…"), systemImage: "square.and.arrow.up") }.disabled(model.busy || model.browsingLocal || model.draft == nil)
                 Spacer()
-                Button { model.showPreview.toggle() } label: { Image(systemName: "sidebar.right") }.help("Toggle preview")
+                Button { model.showPreview.toggle() } label: { Image(systemName: "sidebar.right") }.help(L10n.text("Toggle preview"))
                 Menu {
-                    Button("Text / Filename Encoding…") { showEncoding = true }
-                    Button("Credits & Sources…") { openWindow(id: "credits") }
-                    SettingsLink { Text("Settings…") }
+                    Button(L10n.text("Text / Filename Encoding…")) { showEncoding = true }
+                    Button(L10n.text("Credits & Sources…")) { openWindow(id: "credits") }
+                    SettingsLink { Text(L10n.text("Settings…")) }
                 } label: { Image(systemName: "ellipsis.circle") }
                 .popover(isPresented: $showEncoding) {
                     Form {
-                        Picker("Text Encoding", selection: $model.textEncoding) { ForEach(TextPreviewEncoding.allCases, id: \.self) { Text($0.label).tag($0) } }
-                        Picker("Archive Filename Encoding", selection: $model.encoding) { ForEach(FilenameEncoding.allCases, id: \.self) { Text($0.label).tag($0) } }
+                        Picker(L10n.text("Text Encoding"), selection: $model.textEncoding) { ForEach(TextPreviewEncoding.allCases, id: \.self) { Text(L10n.value($0.label)).tag($0) } }
+                        Picker(L10n.text("Archive Filename Encoding"), selection: $model.encoding) { ForEach(FilenameEncoding.allCases, id: \.self) { Text(L10n.value($0.label)).tag($0) } }
                     }.padding(18).frame(width: 440)
                 }
-            }.buttonStyle(.borderless).padding(.horizontal, 16).padding(.vertical, 12)
+            }.buttonStyle(HoverButtonStyle()).padding(.horizontal, 16).padding(.vertical, 7)
+            .background(WindowDragRegion())
             Divider()
             HStack(spacing: 12) {
-                Picker("Search in", selection: $model.searchScope) {
-                    Text("Filename").tag("Filename"); Text("Content").tag("Content"); Text("All").tag("All")
+                Picker(L10n.text("Search in"), selection: $model.searchScope) {
+                    Text(L10n.text("Filename")).tag("Filename"); Text(L10n.text("Content")).tag("Content"); Text(L10n.text("All")).tag("All")
                 }.pickerStyle(.segmented).frame(width: 250)
                 Image(systemName: "magnifyingglass").foregroundStyle(.secondary)
-                TextField(model.searchScope == "Filename" ? "Search paths or filenames · *.spr" : "Search text in this source · Press Return", text: $model.search)
-                    .textFieldStyle(.plain).focused($searchFocused).onSubmit { model.runContentSearch() }.accessibilityLabel("Search resources")
-                if !model.search.isEmpty { Button { model.search = "" } label: { Image(systemName: "xmark.circle.fill") }.buttonStyle(.plain).help("Clear search") }
+                TextField(L10n.value(searchPlaceholder), text: $model.search)
+                    .textFieldStyle(.plain).focused($searchFocused).onSubmit { model.runContentSearch() }.accessibilityLabel(L10n.text("Search resources"))
+                if !model.search.isEmpty { Button { model.search = "" } label: { Image(systemName: "xmark.circle.fill") }.buttonStyle(HoverButtonStyle()).help(L10n.text("Clear search")) }
                 if model.searchScope != "Filename" {
                     if model.searchRunning {
                         ProgressView(value: model.searchProgress).frame(width: 85)
-                        Button("Cancel", action: model.stopContentSearch)
-                    } else { Button("Search", action: model.runContentSearch).disabled(model.busy || model.search.isEmpty) }
+                        Button(L10n.text("Cancel"), action: model.stopContentSearch)
+                    } else { Button(L10n.text("Search"), action: model.runContentSearch).disabled(model.busy || model.search.isEmpty) }
                 }
-            }.padding(.horizontal, 16).padding(.vertical, 10)
+            }.buttonStyle(HoverButtonStyle()).padding(.horizontal, 16).padding(.vertical, 5)
         }.background(.bar)
+    }
+
+    private var searchPlaceholder: String {
+        switch model.searchScope {
+        case "Content": return "Search text inside files · Press Enter"
+        case "All": return "Search names and file contents · Press Enter"
+        default: return "Search filenames or paths · e.g. *.spr"
+        }
     }
 
     private var pendingChanges: some View {
@@ -957,55 +972,55 @@ private struct ArchiveView: View {
             Divider()
             HStack {
                 Button { model.showChanges.toggle() } label: {
-                    Label("Pending Changes · \(model.pendingCount)", systemImage: model.showChanges ? "chevron.down" : "chevron.right")
-                }.buttonStyle(.plain).font(.callout.weight(.medium))
+                    Label(L10n.text("Pending Changes · \(model.pendingCount)"), systemImage: model.showChanges ? "chevron.down" : "chevron.right")
+                }.buttonStyle(HoverButtonStyle()).font(.callout.weight(.medium))
                 Spacer()
-                Button("Undo Last", action: model.undoLastChange).disabled(model.busy || model.draft?.canUndo != true)
-                Button("Undo All", action: model.revertAllChanges).disabled(model.busy || model.pendingCount == 0)
-                Button("Save GRF As…", action: model.saveWorkspace).disabled(model.busy)
+                Button(L10n.text("Undo Last"), action: model.undoLastChange).disabled(model.busy || model.draft?.canUndo != true)
+                Button(L10n.text("Undo All"), action: model.revertAllChanges).disabled(model.busy || model.pendingCount == 0)
+                Button(L10n.text("Save GRF As…"), action: model.saveWorkspace).disabled(model.busy)
             }.padding(10)
             if model.showChanges && model.pendingCount > 0 {
                 ScrollView {
                     LazyVStack(spacing: 0) {
                         ForEach(model.draft?.changes ?? []) { change in
                             HStack {
-                                Text(change.status).font(.caption.weight(.semibold)).frame(width: 110, alignment: .leading).foregroundStyle(change.deleted ? .red : .orange)
+                                Text(change.status.components(separatedBy: " · ").map(L10n.value).joined(separator: " · ")).font(.caption.weight(.semibold)).frame(width: 110, alignment: .leading).foregroundStyle(change.deleted ? .red : .orange)
                                 VStack(alignment: .leading) {
                                     Text(change.file.path).lineLimit(1).truncationMode(.middle)
-                                    if let old = change.originalPath, old != change.file.path { Text("From: " + old).font(.caption).foregroundStyle(.secondary) }
+                                    if let old = change.originalPath, old != change.file.path { Text(L10n.text("From: \(old)")).font(.caption).foregroundStyle(.secondary) }
                                 }
                                 Spacer()
-                                Button("Reveal") { model.folder = ""; model.search = ""; model.selection = [change.id] }
-                                Button("Undo") { model.revertChange(change.id) }
+                                Button(L10n.text("Reveal")) { model.folder = ""; model.search = ""; model.selection = [change.id] }
+                                Button(L10n.text("Undo")) { model.revertChange(change.id) }
                             }.padding(.horizontal, 12).padding(.vertical, 7)
                             Divider()
                         }
                     }
                 }.frame(maxHeight: 170).disabled(model.busy)
             }
-        }.background(.background)
+        }.buttonStyle(HoverButtonStyle()).background(.background)
     }
 
     private var fileList: some View {
         VStack(spacing: 0) {
             HStack {
-                Text(model.folder.isEmpty ? "All Files" : model.folder).font(.headline).lineLimit(1)
+                Text(model.folder.isEmpty ? L10n.text("All Files") : model.folder).font(.headline).lineLimit(1)
                 Spacer()
-                Text("\(model.visibleEntries.count.formatted()) files").foregroundStyle(.secondary)
-            }.padding(14)
+                Text(L10n.text("\(model.visibleEntries.count.formatted()) files")).foregroundStyle(.secondary)
+            }.frame(height: 44).padding(.horizontal, 14)
             Divider()
             if model.searchScope != "Filename" && !model.submittedQuery.isEmpty {
                 if !model.searchFailures.isEmpty {
-                    Text("\(model.searchFailures.count) files skipped · \(model.searchFailures.first ?? "")").font(.caption).foregroundStyle(.secondary).padding(8).textSelection(.enabled)
+                    Text(L10n.text("\(model.searchFailures.count) files skipped · \(model.searchFailures.first ?? "")")).font(.caption).foregroundStyle(.secondary).padding(8).textSelection(.enabled)
                 }
                 List(selection: $model.selection) {
                     ForEach(model.visibleEntries) { entry in
                         VStack(alignment: .leading, spacing: 5) {
                             Label(entry.path, systemImage: fileIcon(entry.path)).font(.callout.weight(.medium))
                             if let hit = model.searchHits.first(where: { $0.resourceID == entry.id }) {
-                                Text("\(hit.count) matches · Line \(hit.line)").font(.caption).foregroundStyle(.secondary)
+                                Text(L10n.text("\(hit.count) matches · Line \(hit.line)")).font(.caption).foregroundStyle(.secondary)
                                 Text(hit.snippet).font(.caption.monospaced()).lineLimit(3)
-                            } else { Text("Filename match").font(.caption).foregroundStyle(.secondary) }
+                            } else { Text(L10n.text("Filename match")).font(.caption).foregroundStyle(.secondary) }
                         }.padding(.vertical, 4).tag(entry.id)
                     }
                 }
@@ -1023,11 +1038,11 @@ private struct ArchiveView: View {
             .overlay {
                 if !model.hasSource {
                     ContentUnavailableView {
-                        Label("Explore Your Game Resources", systemImage: "archivebox")
+                        Label(L10n.text("Explore Your Game Resources"), systemImage: "archivebox")
                     } description: {
-                        Text("Drop a GRF or GPF archive here, or choose Open.\nBrowse, preview and extract without changing the archive.")
+                        Text(L10n.text("Drop a GRF or GPF archive here, or choose Open.\nBrowse, preview and extract without changing the archive."))
                     } actions: {
-                        Button("Open Archive…", action: model.chooseArchive).buttonStyle(.borderedProminent).disabled(model.busy)
+                        Button(L10n.text("Open Archive…"), action: model.chooseArchive).buttonStyle(HoverButtonStyle()).disabled(model.busy)
                     }
                 } else if model.visibleEntries.isEmpty {
                     ContentUnavailableView.search(text: model.search)
@@ -1040,39 +1055,45 @@ private struct ArchiveView: View {
     private var previewPane: some View {
         VStack(alignment: .leading, spacing: 0) {
             HStack {
-                Text(model.currentEntry == nil ? "Preview" : model.previewName).font(.headline).lineLimit(1).truncationMode(.middle)
+                Text(model.currentEntry == nil ? L10n.text("Preview") : model.previewName).font(.headline).lineLimit(1).truncationMode(.middle)
                 Spacer()
-                if let id = model.currentEntry?.id, !model.statusForEntry(id).isEmpty { Text(model.statusForEntry(id)).font(.caption).foregroundStyle(.orange) }
-            }.padding(14)
+                if let id = model.currentEntry?.id, !model.statusForEntry(id).isEmpty { Text(model.statusForEntry(id).components(separatedBy: " · ").map(L10n.value).joined(separator: " · ")).font(.caption).foregroundStyle(.orange) }
+                if case .sprite(let frames) = model.preview, !frames.isEmpty { spriteZoomControls }
+            }.frame(height: 44).padding(.horizontal, 14)
             Divider()
             if model.searchScope != "Filename" && !model.submittedQuery.isEmpty {
                 HStack {
-                    Text("Find: " + model.submittedQuery).font(.caption).lineLimit(1)
+                    Text(L10n.text("Find: \(model.submittedQuery)")).font(.caption).lineLimit(1)
                     Spacer()
-                    Button { model.hitOccurrence -= 1 } label: { Image(systemName: "chevron.up") }.help("Previous match").accessibilityLabel("Previous match")
-                    Button { model.hitOccurrence += 1 } label: { Image(systemName: "chevron.down") }.help("Next match").accessibilityLabel("Next match")
+                    Button { model.hitOccurrence -= 1 } label: { Image(systemName: "chevron.up") }.help(L10n.text("Previous match")).accessibilityLabel(L10n.text("Previous match"))
+                    Button { model.hitOccurrence += 1 } label: { Image(systemName: "chevron.down") }.help(L10n.text("Next match")).accessibilityLabel(L10n.text("Next match"))
                 }.padding(8)
             }
             if let document = model.actionDocument {
-                Picker("Action", selection: $model.actionIndex) {
+                Picker(L10n.text("Action"), selection: $model.actionIndex) {
                     ForEach(document.actions.indices, id: \.self) { action in
-                        Text(actionLabel(action, count: document.actions.count)).tag(action)
+                        Text(L10n.value(actionLabel(action, count: document.actions.count))).tag(action)
                     }
                 }.padding(.horizontal).padding(.top, 10)
-                Text("\(document.actions.count) actions · \(document.sounds.count) sound events")
-                    .font(.caption).foregroundStyle(.secondary).padding(.horizontal)
+                HStack(spacing: 12) {
+                    Text(L10n.text("\(document.actions.count) actions"))
+                    Text(L10n.text("·")).accessibilityHidden(true)
+                    Text(L10n.text("\(document.sounds.count) sound events"))
+                }
+                .font(.caption).monospacedDigit().foregroundStyle(.secondary)
+                .padding(.horizontal).padding(.top, 6).padding(.bottom, 12)
             }
             Group {
                 switch model.preview {
                 case .empty:
-                    ContentUnavailableView("Select a File", systemImage: "doc.viewfinder", description: Text("Preview images, text, Lua/LUB scripts, audio, SPR sprites, PAL colors, ACT animations, GAT/GND maps, RSW scenes, RSM/GR2 models, IMF layers and FNA information."))
+                    ContentUnavailableView(L10n.text("Select a File"), systemImage: "doc.viewfinder", description: Text(L10n.text("Preview images, text, Lua/LUB scripts, audio, SPR sprites, PAL colors, ACT animations, GAT/GND maps, RSW scenes, RSM/GR2 models, IMF layers and FNA information.")))
                 case .loading:
-                    VStack { Spacer(); ProgressView("Loading preview…"); Spacer() }.frame(maxWidth: .infinity)
+                    VStack { Spacer(); ProgressView(L10n.text("Loading preview…")); Spacer() }.frame(maxWidth: .infinity)
                 case .message(let text):
                     VStack {
-                        ContentUnavailableView("Preview Unavailable", systemImage: "doc.questionmark", description: Text(text))
+                        ContentUnavailableView(L10n.text("Preview Unavailable"), systemImage: "doc.questionmark", description: Text(L10n.value(text)))
                         if model.isActionPreview {
-                            Button("Choose Matching SPR…", action: model.chooseCompanion).padding(.bottom)
+                            Button(L10n.text("Choose Matching SPR…"), action: model.chooseCompanion).buttonStyle(HoverButtonStyle()).padding(.bottom)
                         }
                     }
                 case .image(let image):
@@ -1080,19 +1101,19 @@ private struct ArchiveView: View {
                 case .text(let document):
                     VStack(alignment: .leading, spacing: 0) {
                         VStack(alignment: .leading, spacing: 6) {
-                            Picker("Text Encoding", selection: $model.textEncoding) {
-                                ForEach(TextPreviewEncoding.allCases, id: \.self) { Text($0.label).tag($0) }
+                            Picker(L10n.text("Text Encoding"), selection: $model.textEncoding) {
+                                ForEach(TextPreviewEncoding.allCases, id: \.self) { Text(L10n.value($0.label)).tag($0) }
                             }.pickerStyle(.menu).controlSize(.small)
-                            if model.formattedJSON != nil && model.submittedQuery.isEmpty { Toggle("Format JSON", isOn: $formatJSON).toggleStyle(.checkbox).font(.caption) }
-                            Text(model.textPreviewFailure == nil ? "Decoded as: \(document.encodingLabel)" : "Choose another encoding")
+                            if model.formattedJSON != nil && model.submittedQuery.isEmpty { Toggle(L10n.text("Format JSON"), isOn: $formatJSON).toggleStyle(.checkbox).font(.caption) }
+                            Text(model.textPreviewFailure == nil ? L10n.text("Decoded as: \(L10n.value(document.encodingLabel))") : L10n.text("Choose another encoding"))
                                 .font(.caption).foregroundStyle(.secondary)
                             if let warning = document.warning {
-                                Text(warning).font(.caption).foregroundStyle(.orange).textSelection(.enabled)
+                                Text(L10n.value(warning)).font(.caption).foregroundStyle(.orange).textSelection(.enabled)
                             }
                         }.padding(10)
                         Divider()
                         if let failure = model.textPreviewFailure {
-                            Text(failure).foregroundStyle(.secondary).padding()
+                            Text(L10n.value(failure)).foregroundStyle(.secondary).padding()
                             Spacer()
                         } else {
                             PlainTextPreview(text: formatJSON && model.submittedQuery.isEmpty ? (model.formattedJSON ?? document.text) : document.text, query: model.searchScope == "Filename" ? "" : model.submittedQuery, occurrence: model.hitOccurrence)
@@ -1104,7 +1125,7 @@ private struct ArchiveView: View {
                     PlainTextPreview(text: info)
                 case .script(let script):
                     VStack(alignment: .leading, spacing: 0) {
-                        Text(script.format).font(.caption).foregroundStyle(.secondary).padding(10)
+                        Text(L10n.value(script.format)).font(.caption).foregroundStyle(.secondary).padding(10)
                         Divider()
                         PlainTextPreview(text: script.text, query: model.searchScope == "Filename" ? "" : model.submittedQuery, occurrence: model.hitOccurrence)
                     }
@@ -1112,8 +1133,8 @@ private struct ArchiveView: View {
                     VStack(spacing: 18) {
                         Spacer()
                         Image(systemName: "waveform").font(.system(size: 56)).foregroundStyle(.tint)
-                        Text("\(Int(duration / 60)):\(String(format: "%02d", Int(duration) % 60))").monospacedDigit()
-                        Button(action: model.toggleAudio) { Label(model.playing ? "Pause" : "Play", systemImage: model.playing ? "pause.fill" : "play.fill") }.buttonStyle(.borderedProminent)
+                        Text(L10n.text("\(Int(duration / 60)):\(String(format: "%02d", Int(duration) % 60))")).monospacedDigit()
+                        Button(action: model.toggleAudio) { Label(L10n.value(model.playing ? "Pause" : "Play"), systemImage: model.playing ? "pause.fill" : "play.fill") }.buttonStyle(HoverButtonStyle())
                         Spacer()
                     }.frame(maxWidth: .infinity)
                 case .sprite(let frames):
@@ -1126,16 +1147,19 @@ private struct ArchiveView: View {
                     PalettePreview(colors: colors, chooseSprite: model.chooseSpriteForPalette)
                 }
             }.frame(maxWidth: .infinity, maxHeight: .infinity)
-            if model.externalPreviewName != nil || model.currentEntry != nil {
-                Divider()
-                VStack(alignment: .leading, spacing: 4) {
-                    Text(model.previewName).font(.callout.weight(.medium)).textSelection(.enabled)
-                    if model.externalPreviewName == nil, let entry = model.currentEntry {
-                        Text(ByteCountFormatter.string(fromByteCount: Int64(entry.size), countStyle: .file)).font(.caption).foregroundStyle(.secondary)
-                    }
-                }.padding(12)
-            }
         }.background(.background)
+    }
+
+    private var spriteZoomControls: some View {
+        HStack(spacing: 2) {
+            Button { model.zoom = max(0.25, model.zoom - 0.25) } label: { Image(systemName: "minus") }
+                .disabled(model.zoom <= 0.25).help(L10n.text("Zoom out")).accessibilityLabel(L10n.text("Zoom out"))
+            Button { model.zoom = 1 } label: {
+                Text(L10n.text("\(Int(model.zoom * 100))%")).monospacedDigit().frame(minWidth: 40)
+            }.help(L10n.text("Reset to 100%")).accessibilityLabel(L10n.text("Zoom \(Int(model.zoom * 100)) percent. Reset to 100 percent"))
+            Button { model.zoom = min(8, model.zoom + 0.25) } label: { Image(systemName: "plus") }
+                .disabled(model.zoom >= 8).help(L10n.text("Zoom in")).accessibilityLabel(L10n.text("Zoom in"))
+        }.font(.caption).fixedSize()
     }
 
     private func spritePreview(_ frames: [SpriteFrame]) -> some View {
@@ -1152,36 +1176,31 @@ private struct ArchiveView: View {
             .frame(maxWidth: .infinity, maxHeight: .infinity)
             .background { Checkerboard().opacity(model.transparent ? 1 : 0) }
             HStack {
-                Toggle("Transparent", isOn: $model.transparent).toggleStyle(.checkbox)
+                Toggle(L10n.text("Transparent"), isOn: $model.transparent).toggleStyle(.checkbox)
                 Spacer()
-                Text("\(frame.width) × \(frame.height)").foregroundStyle(.secondary)
+                Text(L10n.text("\(frame.width) × \(frame.height)")).foregroundStyle(.secondary)
             }.font(.caption).padding(.horizontal, 12)
             HStack {
-                Image(systemName: "minus.magnifyingglass")
-                Slider(value: $model.zoom, in: 0.25...8, step: 0.25)
-                Text("\(Int(model.zoom * 100))% ").monospacedDigit().frame(width: 42)
-            }.padding(.horizontal, 12)
-            HStack {
                 Button { model.frameIndex -= 1 } label: { Image(systemName: "chevron.left") }.disabled(index == 0)
-                Text("\(index + 1) / \(frames.count)").monospacedDigit().frame(minWidth: 90)
+                Text(L10n.text("\(index + 1) / \(frames.count)")).monospacedDigit().frame(minWidth: 90)
                 Button { model.frameIndex += 1 } label: { Image(systemName: "chevron.right") }.disabled(index + 1 == frames.count)
                 Button { model.spritePlaying.toggle() } label: { Image(systemName: model.spritePlaying ? "pause.fill" : "play.fill") }
-                    .help(model.isActionPreview ? "Play at the ACT frame rate" : "Cycle sprite frames at 8 frames per second")
+                    .help(L10n.value(model.isActionPreview ? "Play at the ACT frame rate" : "Cycle sprite frames at 8 frames per second"))
             }.padding(.vertical, 6)
             HStack {
                 Menu {
-                    Button("Load PAL File…", action: model.choosePalette)
-                    Button("Choose PAL from Archive…") { model.showPaletteBrowser = true }.disabled(model.paletteEntries.isEmpty)
-                    Button("Reset Palette") { model.applyPalette(nil) }
-                    if model.isActionPreview { Button("Change Matching SPR…", action: model.chooseCompanion) }
-                } label: { Label("Palette", systemImage: "paintpalette") }
+                    Button(L10n.text("Load PAL File…"), action: model.choosePalette)
+                    Button(L10n.text("Choose PAL from Archive…")) { model.showPaletteBrowser = true }.disabled(model.paletteEntries.isEmpty)
+                    Button(L10n.text("Reset Palette")) { model.applyPalette(nil) }
+                    if model.isActionPreview { Button(L10n.text("Change Matching SPR…"), action: model.chooseCompanion) }
+                } label: { Label(L10n.text("Palette"), systemImage: "paintpalette") }
                 Spacer()
-                Button("Save One") { model.saveSprite(all: false) }.disabled(model.busy)
-                    .help("Save the displayed frame as BMP")
-                Button("Save All") { model.saveSprite(all: true) }.disabled(model.busy)
-                    .help(model.isActionPreview ? "Save all frames in the selected action as BMP" : "Save every SPR frame as BMP")
+                Button(L10n.text("Save One")) { model.saveSprite(all: false) }.buttonStyle(HoverButtonStyle()).disabled(model.busy)
+                    .help(L10n.text("Save the displayed frame as BMP"))
+                Button(L10n.text("Save All")) { model.saveSprite(all: true) }.buttonStyle(HoverButtonStyle()).disabled(model.busy)
+                    .help(L10n.value(model.isActionPreview ? "Save all frames in the selected action as BMP" : "Save every SPR frame as BMP"))
             }.padding(.horizontal, 12)
-            Text(model.paletteLabel).font(.caption2).foregroundStyle(.secondary).lineLimit(1).help(model.paletteLabel)
+            Text(model.paletteLabel == "Embedded palette" ? L10n.text("Embedded palette") : model.paletteLabel).font(.caption2).foregroundStyle(.secondary).lineLimit(1).help(model.paletteLabel)
                 .padding(.horizontal).padding(.bottom, 8)
         }
         .task(id: model.spritePlaying) {
@@ -1196,23 +1215,23 @@ private struct ArchiveView: View {
 
     private func actionLabel(_ index: Int, count: Int) -> String {
         let directions = ["South", "Southwest", "West", "Northwest", "North", "Northeast", "East", "Southeast"]
-        return count >= 8 && count % 8 == 0 ? "Action \(index / 8) · \(directions[index % 8]) [\(index)]" : "Action \(index)"
+        return count >= 8 && count % 8 == 0 ? L10n.text("Action \(index / 8) · \(L10n.value(directions[index % 8])) [\(index)]") : L10n.text("Action \(index)")
     }
 
     private var statusBar: some View {
         HStack(spacing: 12) {
             if model.busy && !model.loading { ProgressView().controlSize(.small) }
-            Text(model.status).font(.caption).lineLimit(1).help(model.loadingLocation)
+            Text(L10n.value(model.status)).font(.caption).lineLimit(1).help(model.loadingLocation)
             Spacer()
             if let fraction = model.loadingFraction {
-                ProgressView(value: fraction, total: 1).frame(width: 160).accessibilityLabel("Archive loading progress")
-                Button("Cancel", action: model.cancel).controlSize(.small)
+                ProgressView(value: fraction, total: 1).frame(width: 160).accessibilityLabel(L10n.text("Archive loading progress"))
+                Button(L10n.text("Cancel"), action: model.cancel).buttonStyle(HoverButtonStyle()).controlSize(.small)
             } else if model.extracting {
                 ProgressView(value: Double(model.completed), total: Double(max(1, model.total))).frame(width: 130)
-                Text("\(model.completed) / \(model.total)").font(.caption).monospacedDigit()
-                Button("Cancel", action: model.cancel).controlSize(.small)
+                Text(L10n.text("\(model.completed) / \(model.total)")).font(.caption).monospacedDigit()
+                Button(L10n.text("Cancel"), action: model.cancel).buttonStyle(HoverButtonStyle()).controlSize(.small)
             } else if !model.selection.isEmpty {
-                Text("\(model.selection.count) selected").font(.caption).foregroundStyle(.secondary)
+                Text(L10n.text("\(model.selection.count) selected")).font(.caption).foregroundStyle(.secondary)
             }
         }.padding(.horizontal, 14).padding(.vertical, 9)
     }

@@ -40,15 +40,15 @@ struct MapPreviewView: View {
 
     var body: some View {
         VStack(spacing: 0) {
-            Picker("Map View", selection: $tab) {
-                ForEach(["Preview", "Info", "JSON"], id: \.self) { Text($0).tag($0) }
+            Picker(L10n.text("Map View"), selection: $tab) {
+                ForEach(["Preview", "Info", "JSON"], id: \.self) { Text(L10n.value($0)).tag($0) }
             }.pickerStyle(.segmented).padding(10)
             switch tab {
             case "Preview": mapView
             case "Info": infoView
             default:
                 VStack(alignment: .leading, spacing: 0) {
-                    Text("Summary + selected cell (\(selectedX), \(selectedY)). Export includes all cells and surfaces.")
+                    Text(L10n.text("Summary + selected cell (\(selectedX), \(selectedY)). Export includes all cells and surfaces."))
                         .font(.caption).foregroundStyle(.secondary).padding(10)
                     PlainTextPreview(text: (try? document.previewJSON(x: selectedX, y: selectedY)) ?? "Unable to encode selection.")
                 }
@@ -57,20 +57,20 @@ struct MapPreviewView: View {
             HStack {
                 if exporting {
                     ProgressView(value: fraction).frame(width: 70)
-                    Text("Exporting…").font(.caption)
+                    Text(L10n.text("Exporting…")).font(.caption)
                     Spacer()
-                    Button("Cancel") { flag.cancel() }
+                    Button(L10n.text("Cancel")) { flag.cancel() }
                 } else {
-                    Text(exportMessage.isEmpty ? "\(document.kind.rawValue) \(document.summary.version) · \(document.width) × \(document.height)" : exportMessage)
+                    Text(L10n.value(exportMessage.isEmpty ? "\(document.kind.rawValue) \(document.summary.version) · \(document.width) × \(document.height)" : exportMessage))
                         .font(.caption).foregroundStyle(.secondary).lineLimit(2)
                     Spacer(minLength: 4)
-                    Button("Export JSON…", action: exportJSON)
+                    Button(L10n.text("Export JSON…"), action: exportJSON)
                 }
             }.padding(10)
         }
-        .alert("Map Preview", isPresented: Binding(get: { error != nil }, set: { if !$0 { error = nil } })) {
-            Button("OK", role: .cancel) { error = nil }
-        } message: { Text(error ?? "") }
+        .alert(L10n.text("Map Preview"), isPresented: Binding(get: { error != nil }, set: { if !$0 { error = nil } })) {
+            Button(L10n.text("OK"), role: .cancel) { error = nil }
+        } message: { Text(L10n.value(error ?? "")) }
         .onDisappear { flag.cancel() }
     }
 
@@ -79,11 +79,11 @@ struct MapPreviewView: View {
             GeometryReader { geometry in
                 VStack(spacing: 8) {
                     HStack(spacing: 10) {
-                        Button("Fit") { fit(geometry.size) }
-                        Button { zoom = max(0.05, zoom / 2) } label: { Image(systemName: "minus.magnifyingglass") }.accessibilityLabel("Zoom Out")
-                        Button { zoom = min(16, zoom * 2) } label: { Image(systemName: "plus.magnifyingglass") }.accessibilityLabel("Zoom In")
+                        Button(L10n.text("Fit")) { fit(geometry.size) }
+                        Button { zoom = max(0.05, zoom / 2) } label: { Image(systemName: "minus.magnifyingglass") }.accessibilityLabel(L10n.text("Zoom Out"))
+                        Button { zoom = min(16, zoom * 2) } label: { Image(systemName: "plus.magnifyingglass") }.accessibilityLabel(L10n.text("Zoom In"))
                         Spacer(minLength: 0)
-                        Text(String(format: "%.0f%%", zoom * 100)).monospacedDigit().font(.caption)
+                        Text(L10n.value(String(format: "%.0f%%", zoom * 100))).monospacedDigit().font(.caption)
                     }
                     ScrollView([.horizontal, .vertical]) {
                         if let image {
@@ -113,60 +113,60 @@ struct MapPreviewView: View {
                                 .gesture(SpatialTapGesture().onEnded { event in
                                     select(x: Int(event.location.x / zoom), y: Int(event.location.y / zoom))
                                 })
-                                .accessibilityLabel("\(document.kind.rawValue) map, \(document.width) by \(document.height) cells. Use the X and Y fields to select a cell.")
+                                .accessibilityLabel(L10n.text("\(document.kind.rawValue) map, \(document.width) by \(document.height) cells. Use the X and Y fields to select a cell."))
                         }
                     }.frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
                         .background(Color.black.opacity(0.06))
                 }.onAppear { fit(geometry.size) }
             }
             HStack(spacing: 6) {
-                Text("X").font(.caption)
-                TextField("X coordinate", text: $xInput).frame(width: 48).onSubmit(goToCell)
-                    .accessibilityLabel("Cell X")
-                Text("Y").font(.caption)
-                TextField("Y coordinate", text: $yInput).frame(width: 48).onSubmit(goToCell)
-                    .accessibilityLabel("Cell Y")
-                Button("Go", action: goToCell)
+                Text(L10n.text("X")).font(.caption)
+                TextField(L10n.text("X coordinate"), text: $xInput).frame(width: 48).onSubmit(goToCell)
+                    .accessibilityLabel(L10n.text("Cell X"))
+                Text(L10n.text("Y")).font(.caption)
+                TextField(L10n.text("Y coordinate"), text: $yInput).frame(width: 48).onSubmit(goToCell)
+                    .accessibilityLabel(L10n.text("Cell Y"))
+                Button(L10n.text("Go"), action: goToCell)
                 Spacer(minLength: 0)
             }.textFieldStyle(.roundedBorder)
-            if let selectionError { Text(selectionError).font(.caption).foregroundStyle(.red) }
+            if let selectionError { Text(L10n.value(selectionError)).font(.caption).foregroundStyle(.red) }
             if let cell = document.cell(x: selectedX, y: selectedY) {
-                Text("Cell (\(selectedX), \(selectedY))" + (cell.terrainLabel.map { " · \($0)" } ?? ""))
+                Text(L10n.text("Cell (\(selectedX), \(selectedY))") + (cell.terrainLabel.map { " · \($0)" } ?? ""))
                     .font(.caption.bold()).textSelection(.enabled)
-                Text("File heights: " + cell.heights.map { String(format: "%.2f", $0) }.joined(separator: ", "))
+                Text(L10n.text("File heights: \(cell.heights.map { String(format: "%.2f", $0) }.joined(separator: ", "))"))
                     .font(.caption).foregroundStyle(.secondary).textSelection(.enabled)
             }
-            Text(document.kind == .gat ? "Green: walkable · Gray: blocked · Blue: type 3 water · Orange: ranged only · Purple: other type" : "Dark → light: low → high elevation · Charcoal: no top surface")
+            Text(L10n.value(document.kind == .gat ? "Green: walkable · Gray: blocked · Blue: type 3 water · Orange: ranged only · Purple: other type" : "Dark → light: low → high elevation · Charcoal: no top surface"))
                 .font(.caption2).foregroundStyle(.secondary)
-            Text("File coordinates · y=0 at top").font(.caption2).foregroundStyle(.secondary)
+            Text(L10n.text("File coordinates · y=0 at top")).font(.caption2).foregroundStyle(.secondary)
         }.padding(10)
     }
 
     private var infoView: some View {
         ScrollView {
             VStack(alignment: .leading, spacing: 12) {
-                LabeledContent("Format", value: "\(document.kind.rawValue) \(document.summary.version)")
-                LabeledContent("Dimensions", value: "\(document.width) × \(document.height)")
-                LabeledContent("Cells", value: document.summary.cellCount.formatted())
-                LabeledContent("File height range", value: String(format: "%.2f … %.2f", document.summary.minimumFileHeight, document.summary.maximumFileHeight))
-                if let scale = document.summary.geometryScale { LabeledContent("Geometry scale", value: String(format: "%g", scale)) }
+                LabeledContent(L10n.text("Format"), value: "\(document.kind.rawValue) \(document.summary.version)")
+                LabeledContent(L10n.text("Dimensions"), value: "\(document.width) × \(document.height)")
+                LabeledContent(L10n.text("Cells"), value: document.summary.cellCount.formatted())
+                LabeledContent(L10n.text("File height range"), value: String(format: "%.2f … %.2f", document.summary.minimumFileHeight, document.summary.maximumFileHeight))
+                if let scale = document.summary.geometryScale { LabeledContent(L10n.text("Geometry scale"), value: String(format: "%g", scale)) }
                 if document.kind == .gnd {
-                    LabeledContent("Surfaces", value: document.summary.surfaceCount.formatted())
-                    LabeledContent("Lightmaps", value: (document.summary.lightmaps?.count ?? 0).formatted())
-                    LabeledContent("Additional data", value: ByteCountFormatter.string(fromByteCount: Int64(document.summary.additionalByteCount), countStyle: .file))
-                    Text("Textures (\(document.textures.count))").font(.headline)
+                    LabeledContent(L10n.text("Surfaces"), value: document.summary.surfaceCount.formatted())
+                    LabeledContent(L10n.text("Lightmaps"), value: (document.summary.lightmaps?.count ?? 0).formatted())
+                    LabeledContent(L10n.text("Additional data"), value: ByteCountFormatter.string(fromByteCount: Int64(document.summary.additionalByteCount), countStyle: .file))
+                    Text(L10n.text("Textures (\(document.textures.count))")).font(.headline)
                     LazyVStack(alignment: .leading, spacing: 6) {
                         ForEach(document.textures.indices, id: \.self) { index in
-                            Text("\(index): \(document.textures[index])").font(.caption.monospaced()).textSelection(.enabled)
+                            Text(L10n.text("\(index): \(document.textures[index])")).font(.caption.monospaced()).textSelection(.enabled)
                         }
                     }
                 } else {
                     ForEach(document.summary.terrainCounts.keys.sorted { (Int($0) ?? 0) < (Int($1) ?? 0) }, id: \.self) { type in
-                        LabeledContent("\(type): \(MapDocument.terrainLabel(Int(type) ?? 0))", value: (document.summary.terrainCounts[type] ?? 0).formatted())
+                        LabeledContent(L10n.text("\(type): \(MapDocument.terrainLabel(Int(type) ?? 0))"), value: (document.summary.terrainCounts[type] ?? 0).formatted())
                     }
                 }
                 Divider()
-                ForEach(document.summary.notes, id: \.self) { Text($0).font(.caption).foregroundStyle(.secondary) }
+                ForEach(document.summary.notes, id: \.self) { Text(L10n.value($0)).font(.caption).foregroundStyle(.secondary) }
             }.padding(12).textSelection(.enabled)
         }
     }
@@ -186,7 +186,7 @@ struct MapPreviewView: View {
     }
 
     private func exportJSON() {
-        let panel = NSSavePanel(); panel.title = "Export Map JSON"
+        let panel = NSSavePanel(); panel.title = L10n.value("Export Map JSON")
         panel.allowedContentTypes = [.json]
         panel.nameFieldStringValue = (name as NSString).deletingPathExtension + ".json"
         guard panel.runModal() == .OK, let url = panel.url else { return }
