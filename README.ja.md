@@ -12,6 +12,10 @@ SwiftUI で **GRF Tool 1.2.0 (`grftool.exe`)**、**GRFBuilder 0.1.30 (`grfbuilde
 
 **macOS 14 以降**が必要です。ソースからのビルドには **Swift 6** を含む Xcode または Command Line Tools も必要です。
 
+**ダウンロード：**[GRF Tool v1.5.0（Apple Silicon）](https://github.com/stanleylaihk/GRF-tool/releases/download/v1.5.0/GRFToolMac-1.5.0-macOS-arm64.zip)。ZIP を展開し、**GRF Tool.app** を「アプリケーション」に移動してください。配布版は Apple Silicon Mac 用です。Intel Mac ではソースからビルドしてください。[すべてのリリース](https://github.com/stanleylaihk/GRF-tool/releases)も参照できます。
+
+ソースからビルドする場合：
+
 ```sh
 git clone https://github.com/stanleylaihk/GRF-tool.git
 cd GRF-tool
@@ -58,7 +62,7 @@ open "release/GRF Tool.app"
 
 GRF 内の項目を選ぶか単独ファイルを開いてください。関連モデル・テクスチャが必要な場合はローカルの `data` フォルダー構造を保ちます。不足リソースは報告します。3D シーンは回転・拡大縮小でき、情報／JSON も確認できます。
 
-以下は表示例です。画像は以前のレイアウトの場合があります。ゲーム画像は説明用で、リソース本体はアプリに含みません。
+以下の画像は v1.5.0 の英語インターフェースです。ゲーム画像は説明用で、リソース本体はアプリに含みません。
 
 ### RSW：3D マップ
 

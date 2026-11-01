@@ -16,6 +16,10 @@
 
 需要 **macOS 14 或以上**。由原始碼編譯另需包含 **Swift 6** 嘅 Xcode／Command Line Tools。
 
+**下載：**[GRF Tool v1.5.0（Apple Silicon）](https://github.com/stanleylaihk/GRF-tool/releases/download/v1.5.0/GRFToolMac-1.5.0-macOS-arm64.zip)。解壓後將 **GRF Tool.app** 搬去「應用程式」。此下載包適用於 Apple Silicon Mac；Intel Mac 需要自行編譯。亦可查看[所有版本](https://github.com/stanleylaihk/GRF-tool/releases)。
+
+由原始碼編譯：
+
 ```sh
 git clone https://github.com/stanleylaihk/GRF-tool.git
 cd GRF-tool
@@ -61,7 +65,7 @@ open "release/GRF Tool.app"
 
 直接選取 GRF 內資源，或用 **Local File** 開獨立檔案。場景／模型可拖曳旋轉、滾動縮放；資料按鈕可查看解碼資訊／JSON。獨立資源需要配套貼圖或模型時，請保留本機 `data` 資料夾結構；缺失資源會喺報告列出。
 
-以下係 App 預覽示例；截圖可能使用較早版本嘅排版。遊戲資源只用作展示，唔包含喺 App 內。
+以下截圖展示 v1.5.0 嘅英文介面。遊戲資源只用作展示，唔包含喺 App 內。
 
 ### `.rsw` — 3D 地圖場景
 

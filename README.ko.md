@@ -12,6 +12,10 @@ SwiftUI로 **GRF Tool 1.2.0 (`grftool.exe`)**, **GRFBuilder 0.1.30 (`grfbuilder.
 
 **macOS 14 이상**이 필요합니다. 소스 빌드에는 **Swift 6**을 포함한 Xcode 또는 Command Line Tools도 필요합니다.
 
+**다운로드:** [GRF Tool v1.5.0(Apple Silicon)](https://github.com/stanleylaihk/GRF-tool/releases/download/v1.5.0/GRFToolMac-1.5.0-macOS-arm64.zip). ZIP 파일을 풀고 **GRF Tool.app**을 응용 프로그램 폴더로 이동하세요. 배포 파일은 Apple Silicon Mac용입니다. Intel Mac에서는 소스에서 빌드해야 합니다. [모든 릴리스](https://github.com/stanleylaihk/GRF-tool/releases)도 확인할 수 있습니다.
+
+소스에서 빌드하려면:
+
 ```sh
 git clone https://github.com/stanleylaihk/GRF-tool.git
 cd GRF-tool
@@ -58,7 +62,7 @@ open "release/GRF Tool.app"
 
 GRF 항목을 선택하거나 독립 파일을 여세요. 연결된 모델·텍스처가 필요하면 로컬 `data` 폴더 구조를 유지하세요. 누락된 리소스는 보고합니다. 3D 장면은 회전·확대/축소와 정보/JSON 보기를 지원합니다.
 
-다음 이미지는 미리 보기 예시이며 이전 레이아웃일 수 있습니다. 게임 이미지는 설명용으로만 사용되고 리소스 원본은 앱에 포함되지 않습니다.
+다음 이미지는 v1.5.0의 영어 인터페이스입니다. 게임 이미지는 설명용으로만 사용되고 리소스 원본은 앱에 포함되지 않습니다.
 
 ### RSW: 3D 지도
 

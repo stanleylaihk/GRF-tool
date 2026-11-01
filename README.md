@@ -12,6 +12,10 @@ Built with SwiftUI, it reconstructs workflows from **GRF Tool 1.2.0 (`grftool.ex
 
 Requires **macOS 14 or later**. Building from source also requires Xcode or Command Line Tools with **Swift 6**.
 
+**Download:** [GRF Tool v1.5.0 for Apple Silicon](https://github.com/stanleylaihk/GRF-tool/releases/download/v1.5.0/GRFToolMac-1.5.0-macOS-arm64.zip). Unzip and move **GRF Tool.app** to Applications. This download is for Apple Silicon Macs; Intel Macs must build from source. See [all releases](https://github.com/stanleylaihk/GRF-tool/releases).
+
+To build from source:
+
 ```sh
 git clone https://github.com/stanleylaihk/GRF-tool.git
 cd GRF-tool
@@ -58,7 +62,7 @@ Open Settings with **⌘,** to choose **Default (balanced)** or compression **0�
 
 Select an archive entry or open a standalone file. Preserve the local `data` directory structure when resources need companion textures/models. Missing dependencies are reported. Scenes support orbit/zoom and an information/JSON view.
 
-These are example previews; screenshots may show an earlier layout. Game artwork is shown for illustration and is not bundled with the app.
+These screenshots show the v1.5.0 interface in English. Game artwork is shown for illustration and is not bundled with the app.
 
 ### RSW — 3D map scenes
 
